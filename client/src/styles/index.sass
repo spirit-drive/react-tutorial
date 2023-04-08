@@ -1,5 +1,6 @@
+@import "mixins"
 @import "common"
-@import "reset.sass"
+@import "reset"
 
 *
   box-sizing: border-box
@@ -10,9 +11,9 @@ body
   height: 100%
   font-size: 14px
   font-family: "Open Sans", "Helvetica", "Helvetica Neue", "Arial", sans-serif
-  color: $dark2Color
   -webkit-font-smoothing: antialiased
   -webkit-overflow-scrolling: touch
 
 body
+  @include theme(color, dark2Color)
   background-size: 350px
