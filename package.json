@@ -1,0 +1,13 @@
+{
+  "name": "react-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:spirit-drive/react-tutorial.git",
+  "author": "Igor <spirit-drive@yandex.ru>",
+  "license": "MIT",
+  "scripts": {
+    "start:client": "cd client && yarn start",
+    "build": "webpack --mode production",
+    "test": "jest src"
+  }
+}
