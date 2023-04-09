@@ -51,6 +51,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.svg/,
+        type: 'asset/inline'
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           "style-loader",
