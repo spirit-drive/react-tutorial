@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './localization';
 import { SassModuleExample } from "./components/SassModuleExample";
 
 function App() {

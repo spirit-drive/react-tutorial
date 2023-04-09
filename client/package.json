@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
+    "i18next": "^22.4.14",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-i18next": "^12.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",
