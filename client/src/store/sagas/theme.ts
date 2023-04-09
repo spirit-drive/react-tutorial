@@ -1,4 +1,4 @@
-import { takeEvery, select } from 'redux-saga/effects'
+import { takeEvery, select, put } from 'redux-saga/effects'
 
 import { Theme, themeActions } from '../reducers/theme';
 import { initedActions } from '../reducers/inited';
@@ -20,7 +20,9 @@ function* initTheme() {
   const themeSaved = localStorage.getItem(KEY);
   const html = document.querySelector('html');
   html.classList.remove(...Object.keys(Theme))
-  html.classList.add(themeSaved || theme);
+  const result = themeSaved || theme;
+  html.classList.add(result);
+  yield put(set(result));
 }
 
 export function* themeSaga() {
