@@ -5,14 +5,22 @@ export const resources = {
   en: {
     translation: {
       header: {
-        nav: "Navigation"
+        nav: "Navigation",
+        "root": "Home",
+        "home-works": "Home works",
+        "examples": "Examples",
+        "teachers": "Teachers",
       },
     }
   },
   ru: {
     translation: {
       header: {
-        nav: "Навигация"
+        nav: "Навигация",
+        "root": "Главная",
+        "home-works": "Домашние работы",
+        "examples": "Примеры",
+        "teachers": "Учителя",
       }
     }
   }

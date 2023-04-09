@@ -12,12 +12,14 @@ export type ResponseNavigationItem = {
 
 export type ResponseNavigationProps = {
   className?: string;
+  classNameMenuIcon?: string;
+  gap?: number;
   left?: ResponseNavigationItem[];
   right?: ResponseNavigationItem[];
   title?: React.ReactNode;
 };
 
-export const ResponseNavigation = memo<ResponseNavigationProps>(({ className, title, right, left }) => {
+export const ResponseNavigation = memo<ResponseNavigationProps>(({ className, gap, classNameMenuIcon, title, right, left }) => {
   const [opened, { open, close }] = useOpenCloseNotMemo();
   const [mobile, setMobile] = useState<boolean>(false);
 
@@ -39,41 +41,41 @@ export const ResponseNavigation = memo<ResponseNavigationProps>(({ className, ti
   return (
     <div className={cn(s.root, className)}>
       <nav ref={root} className={cn(s.wrapper, mobile && s.mobile)}>
-        <ul className={s.elem}>
-          {left.map((i) => (
+        <ul className={cn(s.elem, s.list)} style={{ gap }}>
+          {left?.map((i) => (
             <li className={s.li} key={i.key}>
               {i.horizontalElem}
             </li>
           ))}
         </ul>
-        <ul className={s.elem}>
-          {right.map((i) => (
+        <ul className={cn(s.elem, s.list)} style={{ gap }}>
+          {right?.map((i) => (
             <li className={s.li} key={i.key}>
               {i.horizontalElem}
             </li>
           ))}
         </ul>
       </nav>
-      <button type="button" onClick={open} className={cn(s.menu, s.menuButton, mobile && s.mobile)}>
+      <button type="button" onClick={open} className={cn(s.menu, s.menuButton, mobile && s.mobile, classNameMenuIcon)}>
         <MenuOutlined />
       </button>
       <div className={cn(s.holder, opened && s.opened)}>
         <div className={s.closeHolder}>
           <div className={s.menuTitle}>{title}</div>
-          <button type="button" onClick={close} className={s.menuButton}>
+          <button type="button" onClick={close} className={cn(s.menuButton, classNameMenuIcon)}>
             <CloseOutlined />
           </button>
         </div>
         <nav>
-          <ul>
-            {left.map((i) => (
+          <ul className={s.list}>
+            {left?.map((i) => (
               <li role="presentation" onClick={close} className={s.li} key={i.key}>
                 {i.verticalElem}
               </li>
             ))}
           </ul>
-          <ul>
-            {right.map((i) => (
+          <ul className={s.list}>
+            {right?.map((i) => (
               <li role="presentation" onClick={close} className={s.li} key={i.key}>
                 {i.verticalElem}
               </li>
