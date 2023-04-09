@@ -12,6 +12,11 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.11.16",
+    "@mui/styled-engine": "^5.11.16",
     "@reduxjs/toolkit": "^1.9.3",
     "antd": "^5.4.0",
     "clsx": "^1.2.1",

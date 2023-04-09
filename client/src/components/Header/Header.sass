@@ -6,7 +6,10 @@ $height: 40px
   height: $height
   +theme(background-color, dark2Color)
   +theme(box-shadow, boxShadow2)
-  color: white
+  +theme(color, white)
+
+.switcher
+  +theme(color, white)
 
 .frame
   display: flex
@@ -19,9 +22,19 @@ $height: 40px
 
 .menu
   flex: 1
+  
+  :global(.response-navigation__list_hor)
+    gap: 16px
 
-.icon
-  color: #fff
+  :global(.response-navigation__icon)
+    +theme(color, white)
+
+  :global(.response-navigation__list_ver_right)
+    margin-top: 12px
+
+  :global(.response-navigation__list-item_ver_right)
+    display: inline-block
+    vertical-align: middle
 
 .container
   background: none
@@ -29,7 +42,7 @@ $height: 40px
   cursor: pointer
   border: 0
   padding: 0
-  color: #fff
+  +theme(color, white)
 
   & + &
     margin-left: 20px
@@ -38,7 +51,7 @@ $height: 40px
   display: flex
   align-items: center
   position: relative
-  color: #fff
+  +theme(color, white)
   text-decoration: none
   height: 40px
   line-height: $height
@@ -68,7 +81,7 @@ $height: 40px
   align-items: center
   position: relative
   text-decoration: none
-  color: #fff
+  +theme(color, white)
   +theme(border-bottom, border2)
 
   &.active

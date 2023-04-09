@@ -5,6 +5,8 @@ import { Logo } from 'src/components/Logo';
 import { ResponseNavigation, ResponseNavigationProps } from 'src/components/ResponseNavigation';
 import {WithTranslation, withTranslation} from 'react-i18next';
 import { NavLink, NavLinkProps } from 'react-router-dom';
+import {ThemeSwitcher} from "../ThemeSwitcher";
+import {LangSwitcher} from "../LangSwitcher";
 import s from './Header.sass';
 
 export type HeaderOriginProps = WithTranslation & {
@@ -15,7 +17,7 @@ const horClassName: NavLinkProps['className'] = ({ isActive }) => cn(s.horizonta
 const verClassName: NavLinkProps['className'] = ({ isActive }) => cn(s.verticalLink, isActive && s.active);
 
 export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
-  const { left, right } = useMemo<Pick<ResponseNavigationProps, 'left'>>(
+  const { left, right } = useMemo<Pick<ResponseNavigationProps, 'left' | 'right'>>(
     () => ({
       left: [
         {
@@ -39,6 +41,18 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
           verticalElem: <NavLink className={verClassName} to="/teachers">{t(`header.teachers`)}</NavLink>,
         },
       ],
+      right: [
+        {
+          key: 'theme-switcher',
+          horizontalElem: <ThemeSwitcher className={s.switcher} />,
+          verticalElem: <ThemeSwitcher className={s.switcher} />,
+        },
+        {
+          key: 'lang-switcher',
+          horizontalElem: <LangSwitcher className={s.switcher} />,
+          verticalElem: <LangSwitcher className={s.switcher} />,
+        },
+      ]
     }),
     [t]
   );
