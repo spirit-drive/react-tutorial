@@ -20,8 +20,8 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
       left: [
         {
           key: '/practices',
-          horizontalElem: <NavLink className={horClassName} to="/practices">{t(`nav`)}</NavLink>,
-          verticalElem: <NavLink className={verClassName} to="/practices">{t(`nav`)}</NavLink>,
+          horizontalElem: <NavLink className={horClassName} to="/practices">{t(`header.nav`)}</NavLink>,
+          verticalElem: <NavLink className={verClassName} to="/practices">{t(`header.nav`)}</NavLink>,
         },
       ],
       right: [
@@ -47,7 +47,7 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
     <header className={cn(s.root, className)}>
       <Frame className={s.frame}>
         <Logo className={s.logo} />
-        <ResponseNavigation title={t(`nav`)} className={s.menu} left={left} right={right} />
+        <ResponseNavigation title={t(`header.nav`)} className={s.menu} left={left} right={right} />
       </Frame>
     </header>
   );
@@ -55,4 +55,4 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
 
 HeaderOrigin.displayName = 'HeaderOrigin';
 
-export const Header = withTranslation('header')(HeaderOrigin);
+export const Header = withTranslation()(HeaderOrigin);
