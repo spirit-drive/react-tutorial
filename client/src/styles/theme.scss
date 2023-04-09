@@ -1,4 +1,4 @@
-// Переменные цветов для светлой темы
+// Переменные для светлой темы
 $light: (
   backgroundErrorColor: #fffbf6,
   mainYellow: #ffed92,
@@ -32,8 +32,12 @@ $light: (
   boxShadow5: 0 0 1px rgba(0, 0, 0, 0.1),
   boxShadow6: 0 1px 7px rgba(0, 0, 0, 0.1),
   boxShadow7: 0 0 16px rgba(0, 0, 0, 0.05),
+  border1: 1px solid #eff1f3,
+  border2: 1px solid #738b94,
+  border3: 1px solid #b8c7cc,
 );
 
+// Переменные для темной темы
 $dark: (
   backgroundErrorColor: #817e7b,
   mainYellow: #ffed92,
@@ -67,4 +71,7 @@ $dark: (
   boxShadow5: 0 0 1px rgba(0, 0, 0, 0.1),
   boxShadow6: 0 1px 7px rgba(0, 0, 0, 0.1),
   boxShadow7: 0 0 16px rgba(0, 0, 0, 0.05),
+  border1: 1px solid #eff1f3,
+  border2: 1px solid #738b94,
+  border3: 1px solid #b8c7cc,
 );

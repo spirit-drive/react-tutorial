@@ -1,0 +1,14 @@
+@import src/styles/common
+
+.root
+  font-weight: 600
+  line-height: 1.5
+  +theme(color, dark2Color)
+
+.required
+  &:after
+    display: inline-block
+    padding-left: 4px
+    content: '*'
+    +theme(color, mainRed)
+    font-size: 12px
