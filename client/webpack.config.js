@@ -8,6 +8,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: "./src/index.tsx",
   devtool: "source-map",
+  devServer: {
+    // для корректной работы react-router-dom при перезагрузке страницы
+    historyApiFallback: true,
+  },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     alias: {

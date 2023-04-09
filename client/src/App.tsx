@@ -1,12 +1,13 @@
 import * as React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Navigation } from './navigation/Navigation';
 import './localization';
-import { SassModuleExample } from "./components/SassModuleExample";
 
 function App() {
   return (
-    <div>
-      <SassModuleExample>SassModuleExample</SassModuleExample>
-    </div>
+    <BrowserRouter>
+      <Navigation />
+    </BrowserRouter>
   );
 }
 
