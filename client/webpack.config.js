@@ -1,16 +1,23 @@
 const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ContextReplacementPlugin } = require('webpack');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.tsx",
   devtool: "source-map",
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+    alias: {
+      src: path.resolve('./src'),
+    },
   },
   output: {
     path: path.join(__dirname, "/dist"),
-    filename: "index.js",
+    filename: `js/[name].js`,
+    chunkFilename: `js/[name].js`,
   },
   module: {
     rules: [
@@ -18,6 +25,26 @@ module.exports = {
         test: /\.(js|ts)x?$/,
         loader: require.resolve("babel-loader"),
         exclude: /node_modules/,
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'css-loader',
+          'postcss-loader',
+          {
+            loader: 'less-loader',
+            options: {
+              sourceMap: true,
+              lessOptions: {
+                javascriptEnabled: true,
+                modifyVars: {
+                  'primary-color': '#1BA829',
+                  'border-radius-base': '4px',
+                },
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -39,6 +66,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+    }),
+    new ContextReplacementPlugin(/moment[/\\]locale$/, /ru|en/),
+    new CleanWebpackPlugin(),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        configFile: path.join(__dirname, 'tsconfig.json'),
+      },
     }),
   ],
 };

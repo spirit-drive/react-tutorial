@@ -1,0 +1,70 @@
+@import ../../styles/common
+
+$height: 40px
+
+.root
+  height: $height
+  +theme(background-color, dark2Color)
+  +theme(box-shadow, boxShadow2)
+  color: white
+
+.frame
+  display: flex
+  align-items: center
+  justify-content: space-between
+  height: 100%
+
+.logo
+  margin-right: 20px
+
+.menu
+  flex: 1
+
+.container
+  background: none
+  outline: none
+  cursor: pointer
+  border: 0
+  padding: 0
+  color: #fff
+
+  & + &
+    margin-left: 20px
+
+.horizontalLink
+  display: flex
+  align-items: center
+  position: relative
+  color: #fff
+  height: 40px
+  line-height: $height
+
+  &:after
+    position: absolute
+    bottom: -3px
+    left: 50%
+    content: ''
+    height: 3px
+    display: block
+    border-top-left-radius: 4px
+    border-top-right-radius: 4px
+    +theme(background-color, mainGreen)
+    width: 0
+    transition: 0.3s
+    transform: translate(-50%, -100%)
+
+  &.active
+    &:after
+      width: 100%
+
+.verticalLink
+  padding: 0 16px
+  height: 40px
+  display: flex
+  align-items: center
+  position: relative
+  color: #fff
+  +theme(border-bottom, border2)
+
+  &.active
+    +theme(color, mainGreen)
