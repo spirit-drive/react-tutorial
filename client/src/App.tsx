@@ -6,15 +6,18 @@ import { store } from './store'
 import './localization';
 import { Layout } from './layout';
 import { Initializer } from './Initializer';
+import { ThemeProvider } from './theming';
 
 function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
         <Initializer />
-        <Layout>
-          <Navigation />
-        </Layout>
+        <ThemeProvider>
+          <Layout>
+            <Navigation />
+          </Layout>
+        </ThemeProvider>
       </Provider>
     </BrowserRouter>
   );

@@ -1,4 +1,4 @@
-@import "mixins";
+@import "src/theming/mixins";
 
 :export {
   light_backgroundErrorColor: map-get($light, backgroundErrorColor);
