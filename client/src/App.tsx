@@ -5,14 +5,14 @@ import { Navigation } from './navigation/Navigation';
 import { store } from './store'
 import './localization';
 import { Layout } from './layout';
-import { Initializer } from './Initializer';
 import { ThemeProvider } from './theming';
+import {LocalizationInitiator} from "./localization/LocalizationInitiator";
 
 function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <Initializer />
+        <LocalizationInitiator />
         <ThemeProvider>
           <Layout>
             <Navigation />

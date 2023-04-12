@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import cn from 'clsx';
-import {useDispatch, useSelector} from "react-redux";
-import {langActions, langSelectors } from "../../store/reducers/lang";
+import { useTranslation } from 'react-i18next';
+import { Locale } from '../../localization';
 import s from './LangSwitcher.sass';
 
 export type ThemeSwitcherProps = {
@@ -9,11 +9,10 @@ export type ThemeSwitcherProps = {
 };
 
 export const LangSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
-  const lang = useSelector(langSelectors.get);
-  const dispatch = useDispatch();
+  const { i18n } = useTranslation();
   return (
-    <button className={cn(s.root, className)} onClick={() => dispatch(langActions.toggle())}>
-      {lang}
+    <button className={cn(s.root, className)} onClick={() => i18n.changeLanguage((i18n.language as Locale) === Locale.ru ? Locale.en : Locale.ru )}>
+      {i18n.language}
     </button>
   );
 };
