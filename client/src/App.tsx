@@ -1,11 +1,12 @@
-import * as React from 'react';
-import { SassModuleExample } from "./components/SassModuleExample";
+import React from 'react';
+import { SassModuleExample } from './components/SassModuleExample';
+import { Layout } from './components/Layout';
 
 function App() {
   return (
-    <div>
+    <Layout>
       <SassModuleExample>SassModuleExample</SassModuleExample>
-    </div>
+    </Layout>
   );
 }
 

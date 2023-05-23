@@ -3,15 +3,15 @@
 /**
 Пример использования:
   body
-    @include theme(color, dark2Color)
+    @include theme(color, text)
 
   создаст
   html.light body {
-    color: dark2Color для светлой темы
+    color: text для светлой темы
   }
 
   html.dark body {
-    color: dark2Color для темной темы
+    color: text для темной темы
   }
 */
 

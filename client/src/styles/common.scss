@@ -1,3 +1,5 @@
+@import "mixins";
+
 @mixin little-text {
   font-size: 12px;
   color: $dark2Color;
