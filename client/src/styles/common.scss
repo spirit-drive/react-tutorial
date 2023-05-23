@@ -1,86 +1,19 @@
-@import "mixins";
-
-@mixin little-text {
-  font-size: 12px;
-  color: $dark2Color;
-}
-
-$backgroundErrorColor: #fffbf6;
-
-$mainYellow: #ffed92;
-$mainPurple: #b198f5;
-$mainPurpleLight: #f2c6f7;
-$mainOrange: #ffc400;
-$mainRed: #ec5f57;
-$mainRedLight: #fa8989;
-$mainGreen: #1ba829;
-$mainGreenLight: #d3fa89;
-$mainBlue: #289ec9;
-$mainBlueLight: #40eafd;
-$disableColor: #a8a8a8;
-$lightBackground: #f5f5f5;
-$lightBackground1: #fafafa;
-$dark1Color: #0e1a1f;
-$dark2Color: #505d6e;
-$gray1Color: #738b94;
-$gray2Color: #b8c7cc;
-$borderColor: #eff1f3;
-$bgColor: #f5f8fa;
-$noteBackground: #fff6f2;
-$noteBorder: #f5ede9;
-$noteColor: #8c8c8c;
-$answerBackground: #f5fcff;
-$answerBorder: #e9f1f5;
-
-$boxShadow1: 0 3px 20px rgba(0, 0, 0, 0.1);
-$boxShadow2: 0 3px 16px rgba(0, 0, 0, 0.12);
-$boxShadow3: 0 3px 6px rgba(0, 0, 0, 0.05);
-$boxShadow4: 0 1px 1px rgba(0, 0, 0, 0.1);
-$boxShadow5: 0 0 1px rgba(0, 0, 0, 0.1);
-$boxShadow6: 0 1px 7px rgba(0, 0, 0, 0.1);
-$boxShadow7: 0 0 16px rgba(0, 0, 0, 0.05);
-$boxShadowError: 0 0 16px rgba($mainRed, 0.05);
-
-$numberFont: normal 20px KaTeX_Main, Times New Roman, serif;
-
-$border1: 1px solid $borderColor;
-$border2: 1px solid $gray1Color;
-$border3: 1px solid $gray2Color;
+@import "src/theming/mixins";
 
 :export {
-  backgroundErrorColor: $backgroundErrorColor;
-  mainYellow: $mainYellow;
-  mainPurple: $mainPurple;
-  mainPurpleLight: $mainPurpleLight;
-  mainOrange: $mainOrange;
-  mainRed: $mainRed;
-  mainRedLight: $mainRedLight;
-  mainGreen: $mainGreen;
-  mainGreenLight: $mainGreenLight;
-  mainBlue: $mainBlue;
-  mainBlueLight: $mainBlueLight;
-  disableColor: $disableColor;
-  lightBackground: $lightBackground;
-  lightBackground1: $lightBackground1;
-  dark1Color: $dark1Color;
-  dark2Color: $dark2Color;
-  gray1Color: $gray1Color;
-  gray2Color: $gray2Color;
-  borderColor: $borderColor;
-  bgColor: $bgColor;
-  noteBackground: $noteBackground;
-  noteBorder: $noteBorder;
-  noteColor: $noteColor;
-  answerBackground: $answerBackground;
-  answerBorder: $answerBorder;
-  boxShadow1: $boxShadow1;
-  boxShadow2: $boxShadow2;
-  boxShadow3: $boxShadow3;
-  boxShadow4: $boxShadow4;
-  boxShadow5: $boxShadow5;
-  boxShadow6: $boxShadow6;
-  boxShadow7: $boxShadow7;
-  boxShadowError: $boxShadowError;
-  numberFont: $numberFont;
-  border1: $border1;
+  light_mainBg: map-get($light, mainBg);
+  light_bg: map-get($light, bg);
+  light_borderColor: map-get($light, borderColor);
+  light_brightText: map-get($light, brightText);
+  light_text: map-get($light, text);
+  light_lightText: map-get($light, lightText);
+  light_accent: map-get($light, accent);
+
+  dark_mainBg: map-get($dark, mainBg);
+  dark_bg: map-get($dark, bg);
+  dark_borderColor: map-get($dark, borderColor);
+  dark_brightText: map-get($dark, brightText);
+  dark_text: map-get($dark, text);
+  dark_lightText: map-get($dark, lightText);
+  dark_accent: map-get($dark, accent);
 }

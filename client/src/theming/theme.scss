@@ -1,8 +1,10 @@
-// Переменные цветов для светлой темы
+// Переменные для светлой темы
 $light: (
   mainBg: #fff,
   bg: #f3f4f6,
   borderColor: #e9e9ea,
+  border: 1px solid #e9e9ea,
+  boxShadow: 0 3px 6px rgba(0, 0, 0, 0.05),
   brightText: #23272f,
   text: #404757,
   lightText: #5f697e,
@@ -14,6 +16,8 @@ $dark: (
   mainBg: #23272f,
   bg: #1a1c22,
   borderColor: #2d2f33,
+  border: 1px solid #2d2f33,
+  boxShadow: 0 3px 6px rgba(255, 255, 255, 0.05),
   brightText: #f6f7f9,
   text: #f6f7f9,
   lightText: #ebecf0,
