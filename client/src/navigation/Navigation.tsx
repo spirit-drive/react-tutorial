@@ -2,6 +2,7 @@ import React, { FC, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 const HomeScreen = lazy(() => import('../screens/Home'));
+const SecretScreen = lazy(() => import('../screens/Secret'));
 const TeachersScreen = lazy(() => import('../screens/Teachers'));
 const HomeWorksScreen = lazy(() => import('../screens/HomeWorks'));
 const NotFoundScreen = lazy(() => import('../screens/NotFound'));
@@ -21,6 +22,14 @@ export const Navigation: FC = () => (
       element={
         <Suspense fallback="loading">
           <TeachersScreen />
+        </Suspense>
+      }
+    />
+    <Route
+      path="secret"
+      element={
+        <Suspense fallback="loading">
+          <SecretScreen />
         </Suspense>
       }
     />

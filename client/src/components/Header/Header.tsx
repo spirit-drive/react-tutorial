@@ -7,6 +7,7 @@ import { WithTranslation, withTranslation } from 'react-i18next';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 import { LangSwitcher } from '../LangSwitcher';
+import { Login } from '../Login';
 import s from './Header.sass';
 
 export type HeaderOriginProps = WithTranslation & {
@@ -34,15 +35,15 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
           ),
         },
         {
-          key: '/home-works',
+          key: '/secret',
           horizontalElem: (
-            <NavLink className={horClassName} to="/home-works">
-              {t(`header.home-works`)}
+            <NavLink className={horClassName} to="/secret">
+              {t(`header.secret`)}
             </NavLink>
           ),
           verticalElem: (
-            <NavLink className={verClassName} to="/home-works">
-              {t(`header.home-works`)}
+            <NavLink className={verClassName} to="/secret">
+              {t(`header.secret`)}
             </NavLink>
           ),
         },
@@ -83,6 +84,11 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
           key: 'lang-switcher',
           horizontalElem: <LangSwitcher className={s.switcher} />,
           verticalElem: <LangSwitcher className={s.switcher} />,
+        },
+        {
+          key: 'login',
+          horizontalElem: <Login className={s.switcher} />,
+          verticalElem: <Login className={s.switcher} />,
         },
       ],
     }),

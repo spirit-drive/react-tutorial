@@ -25,7 +25,8 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^12.2.0",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "redux-saga": "^1.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

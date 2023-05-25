@@ -4,9 +4,14 @@
 export const resources = {
   en: {
     translation: {
+      login: {
+        enter: 'Вход',
+        leave: 'Выход',
+      },
       header: {
         nav: 'Navigation',
         root: 'Home',
+        secret: 'Secret screen',
         'home-works': 'Home works',
         examples: 'Examples',
         teachers: 'Teachers',
@@ -15,9 +20,14 @@ export const resources = {
   },
   ru: {
     translation: {
+      login: {
+        enter: 'Вход',
+        leave: 'Выход',
+      },
       header: {
         nav: 'Навигация',
         root: 'Главная',
+        secret: 'Секретный экран',
         'home-works': 'Домашние работы',
         examples: 'Примеры',
         teachers: 'Учителя',
