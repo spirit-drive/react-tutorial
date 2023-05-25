@@ -7,11 +7,13 @@ import './localization';
 import { Layout } from './layout';
 import { ThemeProvider } from './theming';
 import { LocalizationInitiator } from './localization/LocalizationInitiator';
+import { Initializer } from './store/Initializer';
 
 function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
+        <Initializer />
         <LocalizationInitiator />
         <ThemeProvider>
           <Layout>
