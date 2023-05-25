@@ -9,8 +9,5 @@
     "start:client": "cd client && yarn start",
     "build": "webpack --mode production",
     "test": "jest src"
-  },
-  "dependencies": {
-    "redux-saga": "^1.2.3"
   }
 }
