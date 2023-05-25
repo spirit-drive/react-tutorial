@@ -1,0 +1,316 @@
+# This file was generated based on "graphql.schema.json". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Answer {
+    solution: AnswerSolution!
+    value: String!
+}
+
+type AnswerSolution {
+    cost: Int!
+    value: String!
+}
+
+type AuthResult {
+    token: String!
+}
+
+type Breadcrumb {
+    id: ID!
+    name: String!
+    type: EntityType!
+}
+
+type Hint {
+    cost: Int!
+    number: Int!
+    value: String!
+}
+
+type Lecture {
+    breadcrumbs: [Breadcrumb!]
+    cover: [String]
+    description: String!
+    id: ID!
+    name: String
+    practices: [Practice!]
+    similar: [Lecture]
+    tags: [String!]
+}
+
+type Map {
+    breadcrumbs: [Breadcrumb!]
+    data: [MapData!]!
+    description: String
+    id: ID!
+    name: String
+    points: [MindMapPoint]!
+    tags: [String!]
+}
+
+type MapData {
+    height: Int!
+    id: ID!
+    img: [String!]!
+    width: Int!
+}
+
+type MathPractice {
+    createdAt: String!
+    creator: User!
+    data: MathPracticeData!
+    id: ID!
+    locale: String
+    tags: [PracticeTag]
+    variables: [MathPracticeVariable]
+}
+
+type MathPracticeData {
+    answers: [String!]!
+    condition: String!
+    solveSteps: [SolveStep]
+}
+
+type MathPracticeVariable {
+    value: MathPracticeVariableValue
+    variable: String
+}
+
+type MathPracticeVariableValue {
+    deps: String
+    random: MathPracticeVariableValueRandom
+}
+
+type MathPracticeVariableValueRandom {
+    exclude: [NumberRange]
+    value: NumberRange!
+}
+
+type MindMapPoint {
+    connections: [MindMapPointConnection]
+    hiddenBy: [ID!]
+    iconID: ID!
+    id: ID!
+    lockedBy: [ID!]
+    name: String
+    type: EntityType!
+    x: Int!
+    y: Int!
+}
+
+type MindMapPointConnection {
+    color: String
+    id: ID!
+}
+
+type Mutation {
+    addMathPractice(input: MathPracticeInput!): Boolean!
+    changePassword(input: ChangePasswordInput!): ResetPassword!
+    editMathPractice(id: ID!, input: MathPracticeInput!): Boolean!
+    resetPassword(email: String!): ResetPassword!
+    setNewPassword(email: String!, password: String!, token: String!): ResetPassword!
+    setTraining(input: SetTrainingInput!): Training
+    setTrainings(input: SetTrainingsInput!): JSONObject
+    signin(email: String!, password: String!): AuthResult!
+    signup(email: String!, password: String!): AuthResult!
+    updateProfile(input: UpdateProfileInput!): User!
+}
+
+type NumberRange {
+    from: Int
+    to: Int
+}
+
+type Opened {
+    id: ID!
+    type: EntityType!
+}
+
+type Practice {
+    answer: Answer!
+    breadcrumbs: [Breadcrumb!]
+    complexity: ComplexityType
+    cost: Int
+    cover: [String]
+    description: String
+    expression: String!
+    hints: [Hint!]
+    id: ID!
+    name: String
+    reward: Reward
+    similar: [Practice]
+    tags: [String!]
+    type: PracticeType
+}
+
+type PracticesMap {
+    dependencies: [PracticesMapDependence!]
+    id: ID!
+    type: EntityType!
+}
+
+type PracticesMapDependence {
+    id: ID!
+    type: EntityType
+}
+
+type Query {
+    getMathPractice(id: ID!): MathPractice
+    lectures(filters: LectureFilters): [Lecture]
+    maps(filters: MapFilters): [Map]
+    practices(filters: PracticeFilters): [Practice]
+    practicesMap(filters: PracticesMapFilters): [PracticesMap!]
+    profile: User
+    users(filters: UserFilters): [User]
+}
+
+type ResetPassword {
+    success: Boolean!
+}
+
+type Reward {
+    energy: Int
+    experience: Int!
+}
+
+type SolveStep {
+    result: String!
+    solve: String!
+}
+
+type Training {
+    count: Int!
+    value: String!
+}
+
+type User {
+    email: String!
+    id: String!
+    name: String
+    signUpDate: String!
+    trainings: JSONObject
+}
+
+enum ComplexityType {
+    difficult
+    easy
+    middle
+}
+
+enum EntityType {
+    lectures
+    maps
+    practices
+}
+
+enum MapID {
+    finished
+    init
+}
+
+enum PracticeTag {
+    algebra
+    arithmetic
+    extent
+    geometry
+    logarithm
+    sqrt
+    trigonometry
+}
+
+enum PracticeType {
+    extra
+    main
+    olympic
+}
+
+"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
+scalar JSON
+
+"The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
+scalar JSONObject
+
+input ChangePasswordInput {
+    newPassword: String!
+    password: String!
+}
+
+input LectureFilters {
+    id: ID!
+}
+
+input MapFilters {
+    id: ID!
+}
+
+input MathPracticeDataInput {
+    answers: [String!]!
+    condition: String!
+    solveSteps: [SolveStepInput]
+}
+
+input MathPracticeInput {
+    data: MathPracticeDataInput!
+    tags: [PracticeTag]
+    variables: [MathPracticeVariableInput]
+}
+
+input MathPracticeVariableInput {
+    value: MathPracticeVariableValueInput
+    variable: String
+}
+
+input MathPracticeVariableValueInput {
+    deps: String
+    random: MathPracticeVariableValueRandomInput
+}
+
+input MathPracticeVariableValueRandomInput {
+    exclude: [NumberRangeInput]
+    value: NumberRangeInput!
+}
+
+input NumberRangeInput {
+    from: Int
+    to: Int
+}
+
+input PracticeFilters {
+    id: ID!
+}
+
+input PracticesMapFilters {
+    id: ID!
+    type: EntityType
+}
+
+input SetTrainingInput {
+    key: String!
+    value: SetTrainingInputValue
+}
+
+input SetTrainingInputValue {
+    count: Int!
+    value: String!
+}
+
+input SetTrainingsInput {
+    trainings: JSONObject
+}
+
+input SolveStepInput {
+    result: String!
+    solve: String!
+}
+
+input UpdateProfileInput {
+    name: String
+}
+
+input UserFilters {
+    id: ID!
+}

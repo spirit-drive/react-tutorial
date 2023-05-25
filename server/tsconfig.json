@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "esModuleInterop": false,
+    "downlevelIteration": true,
+    "target": "es5",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": [ "ES2015" ],
+    "outDir": "build"
+  },
+  "files": ["src/app.ts"]
+}

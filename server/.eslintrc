@@ -1,0 +1,44 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["prettier", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      }
+    }
+  },
+  "globals": {
+    "document": true,
+    "navigator": true,
+    "cy": true,
+    "fetch": true,
+    "requestAnimationFrame": true,
+    "cancelAnimationFrame": true,
+    "window": true
+  },
+  "env": { "jest": true },
+  "rules": {
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true, "caughtErrors": "none", "args": "after-used" }],
+    "@typescript-eslint/no-empty-function": "off",
+    "prettier/prettier": ["error"],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-plusplus": 0,
+    "import/prefer-default-export": 0,
+    "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": false }],
+    "@typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": ["error"],
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "no-console": "warn"
+  }
+}

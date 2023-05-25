@@ -1,0 +1,5 @@
+{
+  "url": "http://localhost:4000/",
+  "expiresIn": "10d",
+  "jwtsecret": "PDjYfac8waTO0q1Tp0aLlIGEWL"
+}

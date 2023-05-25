@@ -1,0 +1,13 @@
+# Важно! Токен необходимо обновлять и не забывайте про vpn. Чтобы получить токен, необходимо запустить тест login.http (ищи в корне)
+overwrite: true
+schema: "http://localhost:4000/graphql"
+documents: ""
+generates:
+  src/graphql.types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

@@ -1,0 +1,12 @@
+{
+  "name": "Root GraphQL Schema",
+  "schemaPath": "graphql.schema.json",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "https://education-server.herokuapp.com/graphql",
+        "introspect": false
+      }
+    }
+  }
+}
