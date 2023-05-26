@@ -15,14 +15,16 @@ export const createErrorHandlers = <
   Keys extends string = string,
   Err extends Record<string, unknown> = Record<string, unknown>
 >(
-  handle: (code: string, graphqlError: GraphQLError, apolloError: ApolloError) => void,
+  handle: (code: string | null, graphqlError: GraphQLError | null, apolloError: ApolloError) => void,
   validatorSchema?: ValidatorSchema<Keys>
 ): ErrorHandlers<Err> => ({
   catcher: (error) => {
-    if ('graphQLErrors' in error && Array.isArray(error.graphQLErrors)) {
+    if ('graphQLErrors' in error && Array.isArray(error.graphQLErrors) && error.graphQLErrors.length) {
       error.graphQLErrors.forEach((err) => {
         handle(err.extensions.code as string, err, error);
       });
+    } else {
+      handle(null, null, error);
     }
   },
   catcherValidator: ({ setErrors, getMessage }) => {

@@ -6,7 +6,8 @@ export const resources = {
     translation: {
       errors: {
         unexpected_error: 'Неожиданная ошибка. Мы автоматически регистрируем ошибки и скоро все исправим',
-        'Failed to fetch': 'Ошибка соединения. Проверьте подключение',
+        'Failed to fetch':
+          'Ошибка соединения. Перейдите в директорию server и запустите сервер с помощью скрипта start',
         is_required: 'Обязательное поле',
         invalid_email_address: 'Некорректный email адрес',
         too_short_password: 'Слишком короткий пароль',
@@ -107,7 +108,8 @@ export const resources = {
     translation: {
       errors: {
         unexpected_error: 'Неожиданная ошибка. Мы автоматически регистрируем ошибки и скоро все исправим',
-        'Failed to fetch': 'Ошибка соединения. Проверьте подключение',
+        'Failed to fetch':
+          'Ошибка соединения. Перейдите в директорию server и запустите сервер с помощью скрипта start',
         is_required: 'Обязательное поле',
         invalid_email_address: 'Некорректный email адрес',
         too_short_password: 'Слишком короткий пароль',
