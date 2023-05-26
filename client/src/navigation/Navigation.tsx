@@ -1,6 +1,7 @@
 import React, { FC, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ProtectedRoute } from './ProtectedRoute';
+import { useLoginNavigate } from './useLoginNavigate';
 
 const HomeScreen = lazy(() => import('../screens/Home'));
 const SecretScreen = lazy(() => import('../screens/Secret'));
@@ -15,52 +16,56 @@ const authElement = (
   </Suspense>
 );
 
-export const Navigation: FC = () => (
-  <Routes>
-    <Route
-      index
-      element={
-        <Suspense fallback="loading">
-          <HomeScreen />
-        </Suspense>
-      }
-    />
-    <Route
-      path="teachers"
-      element={
-        <Suspense fallback="loading">
-          <TeachersScreen />
-        </Suspense>
-      }
-    />
-    <Route path="auth/*" element={authElement}>
-      <Route path=":mode" />
-    </Route>
-    <Route
-      path="secret"
-      element={
-        <ProtectedRoute>
+export const Navigation: FC = () => {
+  useLoginNavigate();
+
+  return (
+    <Routes>
+      <Route
+        index
+        element={
           <Suspense fallback="loading">
-            <SecretScreen />
+            <HomeScreen />
           </Suspense>
-        </ProtectedRoute>
-      }
-    />
-    <Route
-      path="home-works"
-      element={
-        <Suspense fallback="loading">
-          <HomeWorksScreen />
-        </Suspense>
-      }
-    />
-    <Route
-      path="*"
-      element={
-        <Suspense fallback="loading">
-          <NotFoundScreen />
-        </Suspense>
-      }
-    />
-  </Routes>
-);
+        }
+      />
+      <Route
+        path="teachers"
+        element={
+          <Suspense fallback="loading">
+            <TeachersScreen />
+          </Suspense>
+        }
+      />
+      <Route path="auth/*" element={authElement}>
+        <Route path=":mode" />
+      </Route>
+      <Route
+        path="secret"
+        element={
+          <ProtectedRoute>
+            <Suspense fallback="loading">
+              <SecretScreen />
+            </Suspense>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="home-works"
+        element={
+          <Suspense fallback="loading">
+            <HomeWorksScreen />
+          </Suspense>
+        }
+      />
+      <Route
+        path="*"
+        element={
+          <Suspense fallback="loading">
+            <NotFoundScreen />
+          </Suspense>
+        }
+      />
+    </Routes>
+  );
+};
