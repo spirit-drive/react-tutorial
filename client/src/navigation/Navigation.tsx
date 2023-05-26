@@ -7,6 +7,7 @@ const HomeScreen = lazy(() => import('../screens/Home'));
 const ProfileScreen = lazy(() => import('../screens/ProfileScreen'));
 const AuthScreen = lazy(() => import('../screens/AuthScreen'));
 const TeachersScreen = lazy(() => import('../screens/Teachers'));
+const ExamplesScreen = lazy(() => import('../screens/Examples'));
 const HomeWorksScreen = lazy(() => import('../screens/HomeWorks'));
 const NotFoundScreen = lazy(() => import('../screens/NotFound'));
 
@@ -34,6 +35,14 @@ export const Navigation: FC = () => {
         element={
           <Suspense fallback="loading">
             <TeachersScreen />
+          </Suspense>
+        }
+      />
+      <Route
+        path="examples"
+        element={
+          <Suspense fallback="loading">
+            <ExamplesScreen />
           </Suspense>
         }
       />
