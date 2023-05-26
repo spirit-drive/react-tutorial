@@ -1,6 +1,10 @@
 @import "src/theming/mixins";
 
+$headerHeight: 40px;
+
 :export {
+  headerHeight: $headerHeight;
+
   light_mainBg: map-get($light, mainBg);
   light_bg: map-get($light, bg);
   light_borderColor: map-get($light, borderColor);
