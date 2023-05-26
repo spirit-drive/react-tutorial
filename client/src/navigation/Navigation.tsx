@@ -4,7 +4,7 @@ import { ProtectedRoute } from './ProtectedRoute';
 import { useLoginNavigate } from './useLoginNavigate';
 
 const HomeScreen = lazy(() => import('../screens/Home'));
-const ProfileScreen = lazy(() => import('../screens/Profile/Profile'));
+const ProfileScreen = lazy(() => import('../screens/ProfileScreen'));
 const AuthScreen = lazy(() => import('../screens/AuthScreen'));
 const TeachersScreen = lazy(() => import('../screens/Teachers'));
 const HomeWorksScreen = lazy(() => import('../screens/HomeWorks'));

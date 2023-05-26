@@ -26,6 +26,19 @@ export const resources = {
           'The alias must be at least 7 characters and can contain only numbers, letters and an underscore',
       },
       screens: {
+        ProfileScreen: {
+          title: 'Profile',
+          updateProfile: {
+            title: 'Change profile',
+            success: 'Profile changed successfully',
+            save: 'Save',
+          },
+          changePassword: {
+            title: 'Change password',
+            success: 'Password changed successfully',
+            save: 'Change',
+          },
+        },
         auth: {
           title: 'Authentication',
           signIn: {
@@ -73,6 +86,10 @@ export const resources = {
           name: {
             title: 'Nickname',
             placeholder: 'Come up with a pseudonym for yourself',
+          },
+          about: {
+            title: 'About',
+            placeholder: 'Write something about yourself',
           },
         },
         RepeatPasswordForm: {
@@ -128,6 +145,19 @@ export const resources = {
           'Псевдоним должен быть от 7 символов и может содержать только числа, буквы и символ нижнего подчеркивания',
       },
       screens: {
+        ProfileScreen: {
+          title: 'Профиль',
+          updateProfile: {
+            title: 'Изменить профиль',
+            success: 'Профиль успешно изменен',
+            save: 'Сохранить',
+          },
+          changePassword: {
+            title: 'Изменить пароль',
+            success: 'Пароль успешно изменен',
+            save: 'Изменить',
+          },
+        },
         auth: {
           title: 'Аутентификация',
           signIn: {
@@ -175,6 +205,10 @@ export const resources = {
           name: {
             title: 'Псевдоним',
             placeholder: 'Придумайте себе псевдоним',
+          },
+          about: {
+            title: 'О себе',
+            placeholder: 'Напишите что-нибудь о себе',
           },
         },
         RepeatPasswordForm: {

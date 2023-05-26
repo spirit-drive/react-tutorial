@@ -3,6 +3,7 @@ import cn from 'clsx';
 import { ProfileFormProps } from './types';
 import { NameField } from './NameField';
 import s from './ProfileForm.sass';
+import { AboutField } from './AboutField';
 
 export const ProfileForm = memo<ProfileFormProps>(
   ({ className, formManager, formElement, autoFocusElement, disabled }) => {
@@ -18,6 +19,15 @@ export const ProfileForm = memo<ProfileFormProps>(
           errors={errors.name}
           submitCount={submitCount}
           touched={touched.name}
+          disabled={disabled}
+        />
+        <AboutField
+          onBlur={handleBlur}
+          onChange={handleChange}
+          value={values.about}
+          errors={errors.about}
+          submitCount={submitCount}
+          touched={touched.about}
           disabled={disabled}
         />
       </form>
