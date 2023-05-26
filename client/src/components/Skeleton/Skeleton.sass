@@ -1,6 +1,8 @@
+@import src/styles/common
+
 .root
-  background-color: #f2f2f2
-  background-image: linear-gradient(90deg, #f2f2f2, #e6e6e6, #f2f2f2)
+  +theme(background-color, skeletonLight)
+  +theme(background-image, skeletonImage)
   background-size: 200px 100%
   background-repeat: no-repeat
   display: inline-block
