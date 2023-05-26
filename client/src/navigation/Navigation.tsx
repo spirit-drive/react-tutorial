@@ -1,5 +1,6 @@
 import React, { FC, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ProtectedRoute } from './ProtectedRoute';
 
 const HomeScreen = lazy(() => import('../screens/Home'));
 const SecretScreen = lazy(() => import('../screens/Secret'));
@@ -28,9 +29,11 @@ export const Navigation: FC = () => (
     <Route
       path="secret"
       element={
-        <Suspense fallback="loading">
-          <SecretScreen />
-        </Suspense>
+        <ProtectedRoute>
+          <Suspense fallback="loading">
+            <SecretScreen />
+          </Suspense>
+        </ProtectedRoute>
       }
     />
     <Route
