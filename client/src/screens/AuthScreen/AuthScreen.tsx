@@ -1,7 +1,8 @@
 import React, { FC, useMemo } from 'react';
-import { Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { SingInBlock } from 'src/screens/AuthScreen/SingInBlock';
 import { SingUpBlock } from 'src/screens/AuthScreen/SingUpBlock';
+import { StyledLink } from 'src/components/StyledLink';
 import { Title } from 'src/components/Title';
 import { useTranslation } from 'react-i18next';
 import s from './AuthScreen.sass';
@@ -23,7 +24,7 @@ export const AuthScreen: FC = () => {
     <>
       <div className={s.top}>
         <Title className={s.title}>{t(`screens.auth.signIn.title`)}</Title>
-        <Link to={`${path}/${AuthMode.signUp}`}>{t(`screens.auth.signUp.title`)}</Link>
+        <StyledLink to={`${path}/${AuthMode.signUp}`}>{t(`screens.auth.signUp.title`)}</StyledLink>
       </div>
       <SingInBlock />
     </>
@@ -33,7 +34,7 @@ export const AuthScreen: FC = () => {
     <>
       <div className={s.top}>
         <Title className={s.title}>{t(`screens.auth.signUp.title`)}</Title>
-        <Link to={`${path}/${AuthMode.signIn}`}>{t(`screens.auth.signIn.title`)}</Link>
+        <StyledLink to={`${path}/${AuthMode.signIn}`}>{t(`screens.auth.signIn.title`)}</StyledLink>
       </div>
       <SingUpBlock />
     </>

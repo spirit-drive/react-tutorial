@@ -8,19 +8,22 @@ import { Layout } from './layout';
 import { ThemeProvider } from './theming';
 import { LocalizationInitiator } from './localization/LocalizationInitiator';
 import { Initializer } from './store/Initializer';
+import { ClientProvider } from './client';
 
 function App() {
   return (
     <BrowserRouter>
-      <Provider store={store}>
-        <Initializer />
-        <LocalizationInitiator />
-        <ThemeProvider>
-          <Layout>
-            <Navigation />
-          </Layout>
-        </ThemeProvider>
-      </Provider>
+      <ClientProvider>
+        <Provider store={store}>
+          <Initializer />
+          <LocalizationInitiator />
+          <ThemeProvider>
+            <Layout>
+              <Navigation />
+            </Layout>
+          </ThemeProvider>
+        </Provider>
+      </ClientProvider>
     </BrowserRouter>
   );
 }

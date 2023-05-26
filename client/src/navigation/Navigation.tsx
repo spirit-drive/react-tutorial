@@ -9,6 +9,12 @@ const TeachersScreen = lazy(() => import('../screens/Teachers'));
 const HomeWorksScreen = lazy(() => import('../screens/HomeWorks'));
 const NotFoundScreen = lazy(() => import('../screens/NotFound'));
 
+const authElement = (
+  <Suspense fallback="loading">
+    <AuthScreen />
+  </Suspense>
+);
+
 export const Navigation: FC = () => (
   <Routes>
     <Route
@@ -27,14 +33,9 @@ export const Navigation: FC = () => (
         </Suspense>
       }
     />
-    <Route
-      path="auth"
-      element={
-        <Suspense fallback="loading">
-          <AuthScreen />
-        </Suspense>
-      }
-    />
+    <Route path="auth/*" element={authElement}>
+      <Route path=":mode" element={authElement} />
+    </Route>
     <Route
       path="secret"
       element={
