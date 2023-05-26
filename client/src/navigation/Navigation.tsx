@@ -34,7 +34,7 @@ export const Navigation: FC = () => (
       }
     />
     <Route path="auth/*" element={authElement}>
-      <Route path=":mode" element={authElement} />
+      <Route path=":mode" />
     </Route>
     <Route
       path="secret"

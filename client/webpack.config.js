@@ -5,21 +5,30 @@ const { ContextReplacementPlugin } = require('webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const port = 2033;
+const dist = path.join(__dirname, 'dist');
+const src = path.join(__dirname, 'src');
+const host = 'localhost';
+
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: "./index.tsx",
   devtool: "source-map",
+  context: src,
   devServer: {
-    // для корректной работы react-router-dom при перезагрузке страницы
+    port,
+    hot: true,
     historyApiFallback: true,
+    host,
   },
   resolve: {
+    modules: [src, 'node_modules'],
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     alias: {
-      src: path.resolve('./src'),
+      src,
     },
   },
   output: {
-    path: path.join(__dirname, "/dist"),
+    path: dist,
     filename: `js/[name].js`,
     chunkFilename: `js/[name].js`,
   },
@@ -35,19 +44,7 @@ module.exports = {
         use: [
           'css-loader',
           'postcss-loader',
-          {
-            loader: 'less-loader',
-            options: {
-              sourceMap: true,
-              lessOptions: {
-                javascriptEnabled: true,
-                modifyVars: {
-                  'primary-color': '#077ea5',
-                  'border-radius-base': '4px',
-                },
-              },
-            },
-          },
+          'less-loader',
         ],
       },
       {
@@ -73,8 +70,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      favicon: "./src/favicon.svg"
+      template: "./index.html",
+      favicon: "./favicon.svg"
     }),
     new ContextReplacementPlugin(/moment[/\\]locale$/, /ru|en/),
     new CleanWebpackPlugin(),
