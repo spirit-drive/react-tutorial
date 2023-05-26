@@ -4,6 +4,7 @@ import { ProtectedRoute } from './ProtectedRoute';
 
 const HomeScreen = lazy(() => import('../screens/Home'));
 const SecretScreen = lazy(() => import('../screens/Secret'));
+const AuthScreen = lazy(() => import('../screens/AuthScreen'));
 const TeachersScreen = lazy(() => import('../screens/Teachers'));
 const HomeWorksScreen = lazy(() => import('../screens/HomeWorks'));
 const NotFoundScreen = lazy(() => import('../screens/NotFound'));
@@ -23,6 +24,14 @@ export const Navigation: FC = () => (
       element={
         <Suspense fallback="loading">
           <TeachersScreen />
+        </Suspense>
+      }
+    />
+    <Route
+      path="auth"
+      element={
+        <Suspense fallback="loading">
+          <AuthScreen />
         </Suspense>
       }
     />

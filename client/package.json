@@ -20,17 +20,19 @@
     "@mui/material": "^5.11.16",
     "@mui/styled-engine": "^5.11.16",
     "@reduxjs/toolkit": "^1.9.5",
-    "antd": "^5.4.0",
+    "antd": "^5.5.1",
     "clsx": "^1.2.1",
     "formik": "^2.2.9",
     "graphql": "^16.6.0",
     "i18next": "^22.4.14",
+    "query-string": "^8.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.10.0",
-    "redux-saga": "^1.2.3"
+    "redux-saga": "^1.2.3",
+    "unchanged": "^2.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

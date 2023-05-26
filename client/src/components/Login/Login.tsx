@@ -13,7 +13,7 @@ export const Login: FC<LoginProps> = ({ className }) => {
   return (
     <div className={cn(s.root, className)}>
       <LoginIcon />
-      {t('login.enter')}
+      {t('components.login.enter')}
     </div>
   );
 };

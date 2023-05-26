@@ -25,12 +25,12 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
           key: '/',
           horizontalElem: (
             <NavLink className={horClassName} to="/">
-              {t(`header.root`)}
+              {t(`components.header.root`)}
             </NavLink>
           ),
           verticalElem: (
             <NavLink className={verClassName} to="/">
-              {t(`header.root`)}
+              {t(`components.header.root`)}
             </NavLink>
           ),
         },
@@ -38,12 +38,12 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
           key: '/secret',
           horizontalElem: (
             <NavLink className={horClassName} to="/secret">
-              {t(`header.secret`)}
+              {t(`components.header.secret`)}
             </NavLink>
           ),
           verticalElem: (
             <NavLink className={verClassName} to="/secret">
-              {t(`header.secret`)}
+              {t(`components.header.secret`)}
             </NavLink>
           ),
         },
@@ -51,12 +51,12 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
           key: '/examples',
           horizontalElem: (
             <NavLink className={horClassName} to="/examples">
-              {t(`header.examples`)}
+              {t(`components.header.examples`)}
             </NavLink>
           ),
           verticalElem: (
             <NavLink className={verClassName} to="/examples">
-              {t(`header.examples`)}
+              {t(`components.header.examples`)}
             </NavLink>
           ),
         },
@@ -64,12 +64,12 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
           key: '/teachers',
           horizontalElem: (
             <NavLink className={horClassName} to="/teachers">
-              {t(`header.teachers`)}
+              {t(`components.header.teachers`)}
             </NavLink>
           ),
           verticalElem: (
             <NavLink className={verClassName} to="/teachers">
-              {t(`header.teachers`)}
+              {t(`components.header.teachers`)}
             </NavLink>
           ),
         },
@@ -100,7 +100,7 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
       <Frame className={s.frame}>
         <Logo className={s.logo} />
         <ResponseNavigation
-          title={t(`header.nav`)}
+          title={t(`components.header.nav`)}
           className={s.menu}
           gap={16}
           left={left}
