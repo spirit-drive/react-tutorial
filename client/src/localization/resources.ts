@@ -94,7 +94,7 @@ export const resources = {
         header: {
           nav: 'Navigation',
           root: 'Home',
-          secret: 'Secret screen',
+          profile: 'Profile screen',
           'home-works': 'Home works',
           examples: 'Examples',
           teachers: 'Teachers',
@@ -196,7 +196,7 @@ export const resources = {
         header: {
           nav: 'Навигация',
           root: 'Главная',
-          secret: 'Секретный экран',
+          profile: 'Профиль',
           'home-works': 'Домашние работы',
           examples: 'Примеры',
           teachers: 'Учителя',
