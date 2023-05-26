@@ -1,0 +1,69 @@
+# This file was generated based on "server.schema.json". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+interface UserInterface {
+    about: String
+    id: ID!
+    name: String
+    signUpDate: String!
+}
+
+type AuthResult {
+    token: String!
+}
+
+type Mutation {
+    profile: ProfileMutations
+}
+
+type Profile implements UserInterface {
+    about: String
+    email: String!
+    id: ID!
+    name: String
+    signUpDate: String!
+}
+
+type ProfileMutations {
+    password: ProfilePasswordMutations
+    signin(email: String!, password: String!): AuthResult!
+    signup(email: String!, password: String!): AuthResult!
+    update(input: UpdateProfileInput!): Profile!
+}
+
+type ProfilePasswordMutations {
+    change(input: ChangePasswordInput!): ResetPassword!
+}
+
+type Query {
+    profile: Profile
+}
+
+type ResetPassword {
+    success: Boolean!
+}
+
+type User implements UserInterface {
+    about: String
+    id: ID!
+    name: String
+    signUpDate: String!
+}
+
+input ChangePasswordInput {
+    newPassword: String!
+    password: String!
+}
+
+input UpdateProfileInput {
+    about: String
+    name: String
+}
+
+input UserFilters {
+    id: ID!
+}

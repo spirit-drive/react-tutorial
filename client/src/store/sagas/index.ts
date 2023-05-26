@@ -1,26 +1,24 @@
 import { all, put, takeEvery, select, SelectEffect, PutEffect } from 'redux-saga/effects';
 import { storage } from 'src/utils/storage';
 import { profileActions } from '../profile';
-import { tokenActions, tokenSelectors } from '../token';
+import { TOKEN_KEY, tokenActions, tokenSelectors } from '../token';
 import { initializedActions } from '../initialized';
 import { RootState } from '../index';
 
-export const KEY = 'token';
-
 export function* clearByToken(): Generator<void | SelectEffect | PutEffect, void, string> {
-  storage.remove(KEY);
+  storage.remove(TOKEN_KEY);
   yield put(profileActions.set(null));
 }
 
 export function* setToken(): Generator<void | SelectEffect | PutEffect, void, string> {
   const token = yield select<(state: RootState) => RootState['token']>(tokenSelectors.get);
   if (token) {
-    storage.set(KEY, token);
+    storage.set(TOKEN_KEY, token);
   }
 }
 
 export function* getToken(): Generator<void | SelectEffect | PutEffect, void, string> {
-  const token = storage.get(KEY);
+  const token = storage.get(TOKEN_KEY);
   yield put(tokenActions.set(token));
 }
 

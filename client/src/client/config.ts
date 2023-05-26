@@ -1,0 +1,1 @@
+export const NOT_AUTHORIZED_CODE = 'ERR_JWT_ERROR';

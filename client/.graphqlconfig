@@ -1,0 +1,12 @@
+{
+  "name": "Root GraphQL Schema",
+  "schemaPath": "server.schema.json",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://localhost:4042/graphql",
+        "introspect": false
+      }
+    }
+  }
+}
