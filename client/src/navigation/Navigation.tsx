@@ -1,80 +1,36 @@
-import React, { FC, lazy, Suspense } from 'react';
+import React, { FC, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ProtectedRoute } from './ProtectedRoute';
 import { useLoginNavigate } from './useLoginNavigate';
+import { SpinLoading } from './SpinLoading';
+import { getWithSuspense } from './getWithSuspense';
+import { PageSkeleton } from './PageSkeleton';
 
-const HomeScreen = lazy(() => import('../screens/Home'));
-const ProfileScreen = lazy(() => import('../screens/ProfileScreen'));
-const AuthScreen = lazy(() => import('../screens/AuthScreen'));
-const TeachersScreen = lazy(() => import('../screens/Teachers'));
-const ExamplesScreen = lazy(() => import('../screens/Examples'));
-const HomeWorksScreen = lazy(() => import('../screens/HomeWorks'));
-const NotFoundScreen = lazy(() => import('../screens/NotFound'));
+const getWithPageSuspense = getWithSuspense(<PageSkeleton />);
+const getWithSpinSuspense = getWithSuspense(<SpinLoading />);
 
-const authElement = (
-  <Suspense fallback="loading">
-    <AuthScreen />
-  </Suspense>
-);
+const homeScreen = getWithPageSuspense(lazy(() => import('../screens/Home')));
+const profileScreen = getWithPageSuspense(lazy(() => import('../screens/ProfileScreen')));
+const authScreen = getWithSpinSuspense(lazy(() => import('../screens/AuthScreen')));
+const teachersScreen = getWithPageSuspense(lazy(() => import('../screens/Teachers')));
+const examplesScreen = getWithPageSuspense(lazy(() => import('../screens/Examples')));
+const homeWorksScreen = getWithPageSuspense(lazy(() => import('../screens/HomeWorks')));
+const notFoundScreen = getWithSpinSuspense(lazy(() => import('../screens/NotFound')));
 
 export const Navigation: FC = () => {
   useLoginNavigate();
 
   return (
     <Routes>
-      <Route
-        index
-        element={
-          <Suspense fallback="loading">
-            <HomeScreen />
-          </Suspense>
-        }
-      />
-      <Route
-        path="teachers"
-        element={
-          <Suspense fallback="loading">
-            <TeachersScreen />
-          </Suspense>
-        }
-      />
-      <Route
-        path="examples"
-        element={
-          <Suspense fallback="loading">
-            <ExamplesScreen />
-          </Suspense>
-        }
-      />
-      <Route path="auth/*" element={authElement}>
+      <Route index element={homeScreen} />
+      <Route path="teachers" element={teachersScreen} />
+      <Route path="examples" element={examplesScreen} />
+      <Route path="auth/*" element={authScreen}>
         <Route path=":mode" />
       </Route>
-      <Route
-        path="profile"
-        element={
-          <ProtectedRoute>
-            <Suspense fallback="loading">
-              <ProfileScreen />
-            </Suspense>
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="home-works"
-        element={
-          <Suspense fallback="loading">
-            <HomeWorksScreen />
-          </Suspense>
-        }
-      />
-      <Route
-        path="*"
-        element={
-          <Suspense fallback="loading">
-            <NotFoundScreen />
-          </Suspense>
-        }
-      />
+      <Route path="profile" element={<ProtectedRoute>{profileScreen}</ProtectedRoute>} />
+      <Route path="home-works" element={homeWorksScreen} />
+      <Route path="*" element={notFoundScreen} />
     </Routes>
   );
 };
