@@ -121,6 +121,14 @@ export class InvalidPasswordError extends ApolloError {
   }
 }
 
+export class InvalidEmailError extends ApolloError {
+  constructor(message: string, properties?: Record<string, unknown>) {
+    super(message, Messages.INVALID_EMAIL, properties);
+
+    Object.defineProperty(this, 'name', { value: 'InvalidEmailError' });
+  }
+}
+
 export class UserNotFoundError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
     super(message, Messages.USER_NOT_FOUND, properties);

@@ -1,8 +1,9 @@
 import { ResolverWithoutParent } from '../../../../types';
 import { ProfileMutations, ProfileMutationsSignupArgs } from '../../../graphql.types';
 import { UserDocument, UserModel } from '../../../models/User';
-import { AccountAlreadyExistError, DataBaseError } from '../../../Errors';
+import { AccountAlreadyExistError, DataBaseError, InvalidEmailError } from '../../../Errors';
 import { getTokenByParams } from '../../../utils/helpers';
+import { isValidEmail } from '../../../models/User/helpers';
 
 export const signup: ResolverWithoutParent<ProfileMutationsSignupArgs, ProfileMutations['signup'] | Error> = async (
   _,
@@ -18,6 +19,9 @@ export const signup: ResolverWithoutParent<ProfileMutationsSignupArgs, ProfileMu
   }
   if (foundUsers) {
     return new AccountAlreadyExistError(`User with email: ${foundUsers.email} already exist`);
+  }
+  if (!isValidEmail(email)) {
+    return new InvalidEmailError(`"${foundUsers.email}" is not valid`);
   }
   const user = new UserModel() as UserDocument;
   user.email = email;

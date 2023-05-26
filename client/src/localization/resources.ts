@@ -17,6 +17,7 @@ export const resources = {
         ERR_INCORRECT_PASSWORD: 'Invalid password',
         ERR_ACCOUNT_ALREADY_EXIST: 'An account with this email already exists',
         ERR_INVALID_PASSWORD: 'The password must contain at least 8 characters',
+        ERR_INVALID_EMAIL: 'Invalid email',
         ERR_TOKEN_REQUIRED_ERROR:
           'Server token error. We automatically register all errors and will fix everything soon',
         ERR_JWT_ERROR: 'You are not logged in, log in to your account and try again',
@@ -135,6 +136,7 @@ export const resources = {
         ERR_INCORRECT_PASSWORD: 'Некорректный пароль',
         ERR_ACCOUNT_ALREADY_EXIST: 'Аккаунт с таким email уже существует',
         ERR_INVALID_PASSWORD: 'Пароль должен содержать от 8 символов',
+        ERR_INVALID_EMAIL: 'Некорректный email',
         ERR_TOKEN_REQUIRED_ERROR:
           'Серверная ошибка токена. Мы автоматически регистрируем все ошибки и скоро все исправим',
         ERR_JWT_ERROR: 'Вы не авторизованы, войдите в учетную запись и повторите попытку',

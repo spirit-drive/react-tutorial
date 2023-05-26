@@ -1,6 +1,7 @@
 import { generateHash, isValidCode, isValidEmail, isValidNickname } from './helpers';
 import { Profile } from '../../graphql.types';
 import { get, set } from './db';
+import { InvalidEmailError, InvalidNickNameError } from '../../Errors';
 
 export type UserDocument = Profile & {
   password: string;
@@ -19,8 +20,8 @@ export class UserModel {
   generateHash: (string: string) => Promise<string>;
 
   constructor(data?: UserDocument) {
-    if (data?.name && !isValidNickname(data.name)) throw new Error(`"${data.name}" is not valid name`);
-    if (data?.email && !isValidEmail(data.email)) throw new Error(`"${data.email}" is not valid email`);
+    if (data?.name && !isValidNickname(data.name)) throw new InvalidNickNameError(`"${data.name}" is not valid name`);
+    if (data?.email && !isValidEmail(data.email)) throw new InvalidEmailError(`"${data.email}" is not valid email`);
 
     this.id = data?.id || (Math.random() * 10 ** 17).toString(16);
     this.name = data?.name;
