@@ -10,12 +10,10 @@ export type ThemeSwitcherProps = {
 
 export const LangSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
   const { i18n } = useTranslation();
+  const lang = (i18n.language as Locale) === Locale.ru ? Locale.en : Locale.ru;
   return (
-    <button
-      className={cn(s.root, className)}
-      onClick={() => i18n.changeLanguage((i18n.language as Locale) === Locale.ru ? Locale.en : Locale.ru)}
-    >
-      {i18n.language}
+    <button className={cn(s.root, className)} onClick={() => i18n.changeLanguage(lang)}>
+      {lang}
     </button>
   );
 };
