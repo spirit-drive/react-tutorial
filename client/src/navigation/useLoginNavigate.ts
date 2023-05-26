@@ -7,5 +7,5 @@ export const useLoginNavigate = () => {
   const token = useSelector<RootState, RootState['token']>(tokenSelectors.get);
   const location = useLocation();
   const navigate = useNavigate();
-  if (token && location.state?.from) navigate(location.state?.from);
+  if (token && location.state?.from) setTimeout(() => navigate(location.state?.from));
 };
