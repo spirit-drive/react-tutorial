@@ -2,6 +2,7 @@ import React, { createContext, FC, useCallback, useContext, useInsertionEffect, 
 import { ConfigProvider, theme as antdTheme } from 'antd';
 import vars from 'src/styles/common.scss';
 import { Theme } from './types';
+import { ThemeConfig } from 'antd/es/config-provider/context';
 
 export type ThemeProviderProps = {
   children: React.ReactNode;
@@ -35,9 +36,15 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const isLight = theme === Theme.light;
   const colorPrimary = isLight ? vars.light_accent : vars.dark_accent;
   const algorithm = isLight ? antdTheme.defaultAlgorithm : antdTheme.darkAlgorithm;
+  const config: ThemeConfig = {
+    token: {
+      colorPrimary,
+    },
+    algorithm,
+  };
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
-      <ConfigProvider theme={{ token: { colorPrimary }, algorithm }}>{children}</ConfigProvider>
+      <ConfigProvider theme={config}>{children}</ConfigProvider>
     </ThemeContext.Provider>
   );
 };
