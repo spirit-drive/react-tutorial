@@ -3,6 +3,7 @@ import { ConfigProvider, theme as antdTheme } from 'antd';
 import vars from 'src/styles/common.scss';
 import { Theme } from './types';
 import { ThemeConfig } from 'antd/es/config-provider/context';
+import s from './ThemeProvider.sass';
 
 export type ThemeProviderProps = {
   children: React.ReactNode;
@@ -44,7 +45,9 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   };
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
-      <ConfigProvider theme={config}>{children}</ConfigProvider>
+      <ConfigProvider theme={config}>
+        <div className={s.root}>{children}</div>
+      </ConfigProvider>
     </ThemeContext.Provider>
   );
 };

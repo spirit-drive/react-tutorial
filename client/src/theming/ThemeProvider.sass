@@ -1,0 +1,33 @@
+@import src/styles/common
+
+.root
+  :global(.ant-input)
+    +theme(background-color, mainBg)
+    +theme(color, text)
+    +theme(border-color, borderColor2)
+
+  :global(.ant-input-affix-wrapper:hover)
+    +theme(border-color, accent)
+
+  :global(.ant-input-affix-wrapper)
+    +theme(background-color, mainBg)
+    +theme(color, text)
+    +theme(border-color, borderColor2)
+
+  :global(.ant-input-suffix)
+    +theme(color, lightText)
+
+  :global(.ant-input-password-icon)
+    +theme(color, lightText)
+
+  :global(.ant-input:hover)
+    +theme(border-color, accent)
+  :global(.ant-input:focus)
+    +theme(border-color, accent)
+
+  :global(.ant-input::placeholder)
+    +theme(color, lightText)
+
+  :global(.ant-input-prefix)
+    +theme(color, brightText)
+
