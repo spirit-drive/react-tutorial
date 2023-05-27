@@ -30,7 +30,6 @@ export const AboutField = memo<AboutFieldProps>(
       <FormItem
         className={cn(s.root, className)}
         title={t(`forms.ProfileForm.about.title`)}
-        required
         validateStatus={validateStatus}
         help={help}
       >

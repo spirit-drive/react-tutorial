@@ -10,8 +10,8 @@ export type ThemeSwitcherProps = {
 };
 
 const icons = {
-  [Theme.dark]: <DarkModeIcon />,
-  [Theme.light]: <LightModeIcon />
+  [Theme.light]: <DarkModeIcon />,
+  [Theme.dark]: <LightModeIcon />,
 };
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
