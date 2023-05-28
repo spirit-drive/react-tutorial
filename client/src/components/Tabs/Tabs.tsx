@@ -19,7 +19,7 @@ export const Tabs: FC<TabsProps> = ({ className, tabs, activeKey, onTab }) => {
   const runner = useRef<HTMLDivElement>();
   useEffect(() => {
     const fn = () => {
-      const activeElem = root.current.querySelector('button[data-active="true"]');
+      const activeElem = root.current?.querySelector('button[data-active="true"]');
       if (activeElem) {
         const rootRect = root.current.getBoundingClientRect();
         const activeRect = activeElem.getBoundingClientRect();
