@@ -125,6 +125,7 @@ export const resources = {
         ExampleKey: {
           modal: 'Modal',
           movable: 'Movable',
+          sortableList: 'Sortable List',
         },
       },
     },
@@ -254,6 +255,7 @@ export const resources = {
         ExampleKey: {
           modal: 'Модальное окно',
           movable: 'Перемещаемый',
+          sortableList: 'Сортируемый список',
         },
       },
     },

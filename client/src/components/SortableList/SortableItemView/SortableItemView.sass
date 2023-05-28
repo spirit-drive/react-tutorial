@@ -1,0 +1,18 @@
+@import src/styles/common
+
+.root
+  display: inline-block
+  padding: 8px
+  cursor: pointer
+  
+  &.active
+    cursor: grabbing
+
+.badge
+  border-radius: 8px
+  padding: 8px
+  +theme(background-color, bg)
+  transition: 0.3s
+
+  &.active
+    +theme(background-color, mainRed)

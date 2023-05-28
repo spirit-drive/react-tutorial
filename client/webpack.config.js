@@ -26,6 +26,7 @@ module.exports = {
     alias: {
       src,
     },
+    fallback: { "crypto": require.resolve("crypto-browserify"), "stream": require.resolve("stream-browserify") }
   },
   output: {
     path: dist,
