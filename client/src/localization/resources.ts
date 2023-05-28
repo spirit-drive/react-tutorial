@@ -118,6 +118,7 @@ export const resources = {
           profile: 'Profile',
           'home-works': 'Home works',
           examples: 'Examples',
+          lessons: 'Lessons',
           teachers: 'Teachers',
         },
       },
@@ -127,6 +128,10 @@ export const resources = {
           movable: 'Movable',
           sortableList: 'Sortable List',
           waveSlider: 'Wave Slider',
+        },
+        LessonKey: {
+          generator: 'Generators iterators',
+          babel: 'Babel + typescript',
         },
       },
     },
@@ -173,6 +178,9 @@ export const resources = {
         },
         ExamplesScreen: {
           title: 'Примеры',
+        },
+        LessonsScreen: {
+          title: 'Уроки',
         },
         auth: {
           title: 'Аутентификация',
@@ -249,6 +257,7 @@ export const resources = {
           profile: 'Профиль',
           'home-works': 'Домашние работы',
           examples: 'Примеры',
+          lessons: 'Уроки',
           teachers: 'Учителя',
         },
       },
@@ -258,6 +267,10 @@ export const resources = {
           movable: 'Перемещаемый',
           sortableList: 'Сортируемый список',
           waveSlider: 'Слайдер',
+        },
+        LessonKey: {
+          generator: 'Генераторы итераторы',
+          babel: 'Babel + typescript',
         },
       },
     },
