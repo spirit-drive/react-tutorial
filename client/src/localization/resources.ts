@@ -112,7 +112,7 @@ export const resources = {
         header: {
           nav: 'Navigation',
           root: 'Home',
-          profile: 'Profile screen',
+          profile: 'Profile',
           'home-works': 'Home works',
           examples: 'Examples',
           teachers: 'Teachers',
