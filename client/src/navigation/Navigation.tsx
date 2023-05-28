@@ -24,9 +24,9 @@ export const Navigation: FC = () => {
     <Routes>
       <Route index element={homeScreen} />
       <Route path="teachers" element={teachersScreen} />
-      <Route path="examples" element={examplesScreen} />
+      <Route path="examples/*" element={examplesScreen} />
       <Route path="auth/*" element={authScreen}>
-        <Route path=":mode" />
+        <Route path=":mode" element={authScreen} />
       </Route>
       <Route path="profile" element={<ProtectedRoute>{profileScreen}</ProtectedRoute>} />
       <Route path="home-works" element={homeWorksScreen} />

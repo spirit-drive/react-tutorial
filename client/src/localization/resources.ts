@@ -40,6 +40,9 @@ export const resources = {
             save: 'Change',
           },
         },
+        ExamplesScreen: {
+          title: 'Examples',
+        },
         auth: {
           title: 'Authentication',
           signIn: {
@@ -118,6 +121,12 @@ export const resources = {
           teachers: 'Teachers',
         },
       },
+      enums: {
+        ExampleKey: {
+          modal: 'Modal',
+          movable: 'Movable',
+        },
+      },
     },
   },
   ru: {
@@ -159,6 +168,9 @@ export const resources = {
             success: 'Пароль успешно изменен',
             save: 'Изменить',
           },
+        },
+        ExamplesScreen: {
+          title: 'Примеры',
         },
         auth: {
           title: 'Аутентификация',
@@ -236,6 +248,12 @@ export const resources = {
           'home-works': 'Домашние работы',
           examples: 'Примеры',
           teachers: 'Учителя',
+        },
+      },
+      enums: {
+        ExampleKey: {
+          modal: 'Модальное окно',
+          movable: 'Перемещаемый',
         },
       },
     },
