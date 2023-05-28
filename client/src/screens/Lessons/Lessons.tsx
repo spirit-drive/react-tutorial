@@ -2,7 +2,7 @@ import React, { FC, useState, Key, useEffect } from 'react';
 import { Page } from 'src/components/Page';
 import { Tabs, TabsItem } from '../../components/Tabs';
 import { useTranslation } from 'react-i18next';
-import { ModalExample } from './ModalExample';
+import { GeneratorsExample } from './GeneratorsExample';
 import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import s from './Lessons.sass';
 
@@ -12,8 +12,8 @@ export enum LessonKey {
 }
 
 const lessons = {
-  [LessonKey.babel]: <ModalExample />,
-  [LessonKey.generator]: <ModalExample />,
+  [LessonKey.babel]: null,
+  [LessonKey.generator]: <GeneratorsExample />,
 };
 
 const getContent = (key: string) => () => {
