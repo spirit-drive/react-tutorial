@@ -18,14 +18,21 @@ export const Tabs: FC<TabsProps> = ({ className, tabs, activeKey, onTab }) => {
   const root = useRef<HTMLDivElement>();
   const runner = useRef<HTMLDivElement>();
   useEffect(() => {
-    const activeElem = root.current.querySelector('button[data-active="true"]');
-    if (activeElem) {
-      const rootRect = root.current.getBoundingClientRect();
-      const activeRect = activeElem.getBoundingClientRect();
-      const y = activeRect.y - rootRect.y;
-      const x = activeRect.x - rootRect.x;
-      runner.current.style.transform = `translate(${x}px, ${y}px)`;
-    }
+    const fn = () => {
+      const activeElem = root.current.querySelector('button[data-active="true"]');
+      if (activeElem) {
+        const rootRect = root.current.getBoundingClientRect();
+        const activeRect = activeElem.getBoundingClientRect();
+        const y = activeRect.y - rootRect.y;
+        const x = activeRect.x - rootRect.x;
+        runner.current.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    };
+
+    const observer = new ResizeObserver(fn);
+    observer.observe(root.current);
+
+    return () => observer.disconnect();
   }, [activeKey]);
   return (
     <div ref={root} className={cn(s.root, className)}>
