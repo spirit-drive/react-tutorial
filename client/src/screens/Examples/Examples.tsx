@@ -3,7 +3,7 @@ import { Page } from 'src/components/Page';
 import { Tabs, TabsItem } from '../../components/Tabs';
 import { useTranslation } from 'react-i18next';
 import { ModalExample } from './ModalExample';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { MovableExample } from './MovableExample';
 import { SortableListExample } from './SortableListExample';
 import { WaveSliderExample } from './WaveSliderExample';
@@ -35,9 +35,10 @@ const tabs: TabsItem[] = Object.keys(examples).map((key) => {
 });
 
 export const Examples: FC = () => {
+  const { mode } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [activeKey, setActiveKey] = useState<Key>(ExampleKey.modal);
+  const [activeKey, setActiveKey] = useState<Key>(mode || ExampleKey.modal);
   useEffect(() => {
     navigate(activeKey.toString());
   }, [navigate, activeKey]);
@@ -47,7 +48,7 @@ export const Examples: FC = () => {
       <div>
         <Routes>
           {Object.keys(ExampleKey).map((key) => (
-            <Route path={key} element={examples[key]} />
+            <Route path={key} key={key} element={examples[key]} />
           ))}
         </Routes>
       </div>
