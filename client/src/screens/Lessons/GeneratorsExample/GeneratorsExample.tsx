@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import cn from 'clsx';
 import { FibonacciExample } from './FibonacciExample';
 import { PrimeExample } from './PrimeExample';
+import { PermutationsExample } from './PermutationsExample';
 import s from './GeneratorsExample.sass';
 
 export type ModalExampleProps = {
@@ -12,5 +13,6 @@ export const GeneratorsExample: FC<ModalExampleProps> = ({ className }) => (
   <div className={cn(s.root, className)}>
     <FibonacciExample />
     <PrimeExample />
+    <PermutationsExample />
   </div>
 );
