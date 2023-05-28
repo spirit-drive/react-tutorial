@@ -6,18 +6,21 @@ import { ModalExample } from './ModalExample';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { MovableExample } from './MovableExample';
 import { SortableListExample } from './SortableListExample';
+import { WaveSliderExample } from './WaveSliderExample';
 import s from './Examples.sass';
 
 export enum ExampleKey {
   modal = 'modal',
   movable = 'movable',
   sortableList = 'sortableList',
+  waveSlider = 'waveSlider',
 }
 
 const examples = {
   [ExampleKey.modal]: <ModalExample />,
   [ExampleKey.movable]: <MovableExample />,
   [ExampleKey.sortableList]: <SortableListExample />,
+  [ExampleKey.waveSlider]: <WaveSliderExample />,
 };
 
 const getContent = (key: string) => () => {

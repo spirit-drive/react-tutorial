@@ -1,0 +1,50 @@
+@import src/styles/common
+
+.root
+  position: absolute
+  font-size: 0
+  z-index: 1
+  bottom: 16px
+  left: 50%
+  transform: translateX(-50%)
+
+.nav
+  display: flex
+  gap: 16px
+
+.item
+  width: 32px
+  height: 32px
+  display: inline-flex
+  padding: 0
+  border: 0
+  border-radius: 100%
+  align-items: center
+  justify-content: center
+  outline: none
+  cursor: pointer
+  background: none
+
+  &.active
+    border: 1px solid #999
+
+    .mark
+      opacity: 0
+
+.mark
+  width: 8px
+  height: 8px
+  opacity: 1
+  border-radius: 100%
+  background-color: #fff
+  transition: all 0.3s
+
+.point
+  top: 12px
+  left: 12px
+  position: absolute
+  width: 8px
+  height: 8px
+  border-radius: 100%
+  transition: .3s
+  +theme(background-color, accent)
