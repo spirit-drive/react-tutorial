@@ -4,6 +4,7 @@ import { Tabs, TabsItem } from '../../components/Tabs';
 import { useTranslation } from 'react-i18next';
 import { ModalExample } from './ModalExample';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { MovableExample } from './MovableExample';
 import s from './Examples.sass';
 
 export enum ExampleKey {
@@ -13,7 +14,7 @@ export enum ExampleKey {
 
 const examples = {
   [ExampleKey.modal]: <ModalExample />,
-  [ExampleKey.movable]: null,
+  [ExampleKey.movable]: <MovableExample />,
 };
 
 const getContent = (key: string) => () => {

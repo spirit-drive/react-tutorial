@@ -1,0 +1,39 @@
+.root
+  display: block
+
+.top,
+.right,
+.bottom,
+.left
+  position: absolute
+  z-index: 3
+
+.top,
+.bottom
+  height: 6px
+  cursor: row-resize
+
+.top
+  top: 0
+  left: 0
+  right: 0
+
+.bottom
+  bottom: 0
+  left: 0
+  right: 0
+
+.right,
+.left
+  width: 6px
+  cursor: col-resize
+
+.right
+  top: 0
+  right: 0
+  bottom: 0
+
+.left
+  top: 0
+  left: 0
+  bottom: 0
