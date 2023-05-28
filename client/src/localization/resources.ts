@@ -58,6 +58,10 @@ export const resources = {
           title: 'Home',
           desc: `Welcome to the react course from otus!\n\nThis is a training project of the course. Here you will find materials for lectures, homework, as well as examples of some complex components.\n\nThe project is written in **typescript**, **redux**, **redux-saga** using **webpack**. In it , you can spy on the implementation of the dark/light theme, locale switching, navigation, token exchange between browser tabs.\n\nThe project also has its own server implemented on **graphql**, **apollo**, **express** and using a json file as a database (in real development, do not do this, it's just to save you from installing the database). Interaction with the server is implemented, namely the ability to register a user, log in to an account, but do not forget to start the server locally - use the _start:client_ and _start:server_ commands.\n\nWelcome and good luck in learning!`,
         },
+        TeachersScreen: {
+          title: 'Teachers',
+          desc: "Someday there will be teachers' cards here, but that's not for sure",
+        },
       },
       forms: {
         AuthForm: {
@@ -201,6 +205,10 @@ export const resources = {
           title: 'Главная',
           desc: `Приветствую на курсе по react от otus!\n\nЭто учебный проект курса. Здесь ты найдешь материалы к лекциям, домашние задания, а так же примеры некоторых сложных компонентов.\n\nПроект написан на **typescript**, **redux**, **redux-saga** с использованием **webpack**. В нем можно подсмотреть реализацию темной/светлой темы, переключение локали, навигацию, обмен токен между вкладками браузера.\n\nТакже в проекте есть свой сервер, реализованный на **graphql**, **apollo**, **express** и использующий в качестве базы данных json файл (в реальной разработке не делайте так, это только чтобы избавить вас от установки базы данных). Реализовано взаимодействие с сервером, а именно возможность зарегистрировать пользователя, войти в учетную запись, но не забудьте запустить сервер локально - используйте команды _start:client_ и _start:server_.\n\nДобро пожаловать и удачи в обучении!`,
         },
+        TeachersScreen: {
+          title: 'Преподаватели',
+          desc: 'Когда-нибудь здесь появятся карточки преподавателей, но это не точно',
+        },
       },
       forms: {
         AuthForm: {
@@ -266,7 +274,7 @@ export const resources = {
           'home-works': 'Домашние работы',
           examples: 'Примеры',
           lessons: 'Уроки',
-          teachers: 'Учителя',
+          teachers: 'Преподаватели',
         },
       },
       enums: {
