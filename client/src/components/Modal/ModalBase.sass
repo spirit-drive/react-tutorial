@@ -1,0 +1,70 @@
+@import src/styles/common
+
+.mask
+  z-index: 1000
+  position: fixed
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  background-color: rgba(0,0,0,.45)
+  overflow: auto
+  will-change: opacity
+  padding: 60px 16px
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
+  min-height: 100%
+  animation: mask-hide 0.3s forwards
+
+  &.visible
+    animation: mask-show 0.3s  forwards
+
+@keyframes mask-hide
+  from
+    visibility: visible
+    opacity: 1
+
+  to
+    visibility: hidden
+    opacity: 0
+
+@keyframes mask-show
+  from
+    visibility: hidden
+    opacity: 0
+
+  to
+    visibility: visible
+    opacity: 1
+
+.root
+  display: block
+  width: 520px
+  border-radius: 4px
+  max-width: 100%
+  +theme(background-color, mainBg)
+  +theme(box-shadow, boxShadow)
+  will-change: transform
+  animation: root-hide 0.3s forwards
+
+  &.visible
+    animation: root-show 0.3s forwards
+
+  &.full
+    width: 100%
+
+@keyframes root-hide
+  from
+    transform: translateY(0)
+
+  to
+    transform: translateY(-100%)
+
+@keyframes root-show
+  from
+    transform: translateY(-100%)
+
+  to
+    transform: translateY(0)

@@ -1,0 +1,28 @@
+@import src/styles/common
+
+.root
+  position: absolute
+  top: -12px
+  right: -8px
+
+.btn
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  width: 28px
+  height: 24px
+  font-size: 12px
+  border-radius: 4px
+  +theme(box-shadow, boxShadow)
+  +theme(background-color, mainBg)
+  +theme(color, text)
+  transition: 0.3s
+  cursor: pointer
+  vertical-align: middle
+
+  &:hover
+    +theme(color, lightText)
+
+  & + &
+    margin-left: 16px
+
