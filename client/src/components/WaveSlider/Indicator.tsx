@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, FC } from 'react';
+import React, { useRef, useEffect, useImperativeHandle, forwardRef } from 'react';
 import s from './Indicator.sass';
 
 const drawArc = (context: CanvasRenderingContext2D, size: number, radius: number, start: number, end: number) => {
@@ -14,20 +14,21 @@ const rotationStep = Math.PI / 50;
 const colorIndicator = '#fff';
 
 export type IndicatorProps = {
-  transform: string;
   interval: number;
   isPause: boolean;
 };
 
 const size = window.devicePixelRatio * 32;
 
-export const Indicator: FC<IndicatorProps> = ({ transform, interval, isPause }) => {
+export const Indicator = forwardRef<HTMLCanvasElement, IndicatorProps>(({ interval, isPause }, ref) => {
   const arcStep = ((2 * Math.PI) / (interval - canvasInterval * 3)) * canvasInterval;
 
   const intervalId = useRef<number>();
   const count = useRef(0);
   const ctx = useRef<CanvasRenderingContext2D>(null);
   const canvas = useRef<HTMLCanvasElement>();
+
+  useImperativeHandle(ref, () => canvas.current, []);
 
   useEffect(() => {
     ctx.current = canvas.current.getContext('2d');
@@ -55,5 +56,5 @@ export const Indicator: FC<IndicatorProps> = ({ transform, interval, isPause }) 
     };
   }, [isPause, arcStep]);
 
-  return <canvas ref={canvas} style={{ transform }} className={s.root} width={size} height={size} />;
-};
+  return <canvas ref={canvas} className={s.root} width={size} height={size} />;
+});
