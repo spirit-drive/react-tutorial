@@ -51,7 +51,6 @@ export const SortableListCells = memo<SortableListItemsProps>(
 
     const { onMouseDown, setCoords, onTouchStart } = useMemo(() => {
       let timeoutId: number;
-      let overId: string;
       let transition: string;
       let elem: HTMLDivElement;
 
@@ -85,19 +84,16 @@ export const SortableListCells = memo<SortableListItemsProps>(
           elem.style.transform = getTransformForMove({ x: coord.screenX, y: coord.screenY });
           elementSizes.forEach((elementSize) => {
             if (elementSize.id === activeIdCopy.current) {
-              overId = null;
               return;
             }
             if (
               coord.clientX > elementSize.rect.left &&
               coord.clientX < elementSize.rect.right &&
               coord.clientY > elementSize.rect.top &&
-              coord.clientY < elementSize.rect.bottom &&
-              overId !== elementSize.id
+              coord.clientY < elementSize.rect.bottom
             ) {
               clearTimeout(timeoutId);
               timeoutId = window.setTimeout(() => {
-                overId = elementSize.id;
                 reorder(activeIdCopy.current, elementSize.id);
               });
             }
@@ -122,7 +118,6 @@ export const SortableListCells = memo<SortableListItemsProps>(
         elem.style.transition = transition;
         elem.style.zIndex = '0';
 
-        overId = null;
         setActiveId(null);
 
         setTimeout(() => _setCoords());
