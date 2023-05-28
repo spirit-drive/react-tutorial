@@ -12,7 +12,7 @@ export const MovableExample: FC<MovableExampleProps> = ({ className }) => {
   return (
     <div className={cn(s.root, className)}>
       <div className={s.target} onMouseDown={onMouseDown} onTouchStart={onTouchStart} style={style}>
-        Перемести меня
+        Перемести меня за экран
       </div>
     </div>
   );
