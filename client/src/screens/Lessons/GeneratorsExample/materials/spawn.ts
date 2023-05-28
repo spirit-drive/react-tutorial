@@ -14,6 +14,8 @@ export function spawn<A, P, G>(generator: (...args: A[]) => Generator<G>) {
         // generator done, resolve promise
         return value;
       }
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       return Promise.resolve(value).then(onValue, iter.throw.bind(iter)) as Promise<P>; // repeat
     });
   };

@@ -145,8 +145,9 @@ export const coroutine: CouroutineType<unknown> =
   };
 
 const gen = function* () {
-  const result = `First input: ${yield}`;
-  return result;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return `First input: ${yield}`;
 };
 
 export const wrapped = coroutine(gen);
