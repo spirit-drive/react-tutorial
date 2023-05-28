@@ -30,14 +30,14 @@ function factorial(n: number): number {
 
 const count = factorial(LENGTH);
 
-// function permutations(arr: number[]) {
-//   const result: number[] = [];
-//   const permute = (arr: number[], m: number[] = []) => {
-//     if (arr.length === 0) {
+// function permutations(arr: number[]): number[][] {
+//   const result: number[][] = [];
+//   const permute = (_arr: number[], m: number[] = []) => {
+//     if (_arr.length === 0) {
 //       result.push(m);
 //     } else {
-//       for (let i = 0; i < arr.length; i++) {
-//         const curr = [...arr];
+//       for (let i = 0; i < _arr.length; i++) {
+//         const curr = [..._arr];
 //         const next = curr.splice(i, 1);
 //         permute(curr.slice(), m.concat(next));
 //       }
@@ -50,7 +50,7 @@ const count = factorial(LENGTH);
 // }
 //
 // export const PermutationsExample: FC<PermutationsExampleProps> = ({ className }) => {
-//   const [list, setList] = useState<number[]>([]);
+//   const [list, setList] = useState<number[][]>([]);
 //
 //   const onClick = () => setList(permutations(array));
 //
