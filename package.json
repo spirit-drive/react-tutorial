@@ -6,9 +6,11 @@
   "author": "Igor <spirit-drive@yandex.ru>",
   "license": "MIT",
   "scripts": {
+    "slides": "reveal-md ./presentations",
     "start:client": "cd client && yarn start",
-    "start:server": "cd server && yarn start",
-    "build": "webpack --mode production",
-    "test": "jest src"
+    "start:server": "cd server && yarn start"
+  },
+  "devDependencies": {
+    "reveal-md": "^5.4.1"
   }
 }
