@@ -43,6 +43,9 @@ export const resources = {
         ExamplesScreen: {
           title: 'Examples',
         },
+        LessonsScreen: {
+          title: 'Lessons',
+        },
         auth: {
           title: 'Authentication',
           signIn: {
