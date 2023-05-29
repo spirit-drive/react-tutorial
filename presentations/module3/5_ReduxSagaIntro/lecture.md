@@ -11,8 +11,6 @@ description: Generators and Iterators
 
 ### Меня хорошо слышно и видно?
 
-![Не забыл?](https://www.meme-arsenal.com/memes/1bc94af1680d8ec9c2053b076d5f7990.jpg)
-
 ### Не забыл включить запись?
 
 <!--v-->
