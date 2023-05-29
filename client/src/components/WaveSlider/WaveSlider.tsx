@@ -8,18 +8,9 @@ export type SliderProps = {
   className?: string;
   classNameNav?: string;
   interval?: number;
-  transitionDuration?: number;
-  transitionTimingFunction?: string;
 };
 
-export const WaveSlider: FC<SliderProps> = ({
-  className,
-  classNameNav,
-  transitionDuration = 800,
-  transitionTimingFunction = 'ease',
-  children,
-  interval = 3000,
-}) => {
+export const WaveSlider: FC<SliderProps> = ({ className, classNameNav, children, interval = 3000 }) => {
   const [isPause, setPause] = useState(false);
   const quantity = React.Children.count(children);
 
@@ -46,8 +37,7 @@ export const WaveSlider: FC<SliderProps> = ({
 
   const zIndex = useRef(0);
   const intervalId = useRef(-1);
-  const prevSlide = useRef(-1);
-  const slides = useRef(children.map(() => React.createRef()));
+  const slides = useRef(children.map(() => React.createRef<HTMLDivElement>()));
   const slider = useRef(null);
 
   const { play, clear, stop, start } = useMemo(
@@ -77,27 +67,9 @@ export const WaveSlider: FC<SliderProps> = ({
   }, [clear, isPause, start]);
 
   useEffect(() => {
-    const {
-      style,
-      children: [child],
-    } = slides.current[slide].current;
-
-    style.transition = 'none';
-    style.width = '0%';
-    if (prevSlide.current > slide) {
-      style.left = 'auto';
-      child.style.float = 'right';
-    } else {
-      style.left = 0;
-      child.style.float = 'none';
-    }
-    prevSlide.current = slide;
-    style.zIndex = ++zIndex.current;
-    setTimeout(() => {
-      style.transition = `width ${transitionDuration}ms ${transitionTimingFunction}`;
-      style.width = '100%';
-    });
-  }, [slide, transitionDuration, transitionTimingFunction]);
+    slides.current[slide].current.classList.add(s.play);
+    slides.current[slide].current.style.zIndex = `${++zIndex.current}`;
+  }, [slide]);
 
   useEffect(() => {
     play();
@@ -114,22 +86,29 @@ export const WaveSlider: FC<SliderProps> = ({
   useEffect(() => {
     const setWidthForSlides = () => {
       const { width } = getComputedStyle(slider.current);
-      slides.current.forEach((item) => (item.current.children[0].style.width = width)); // eslint-disable-line no-param-reassign, no-return-assign
+      slides.current.forEach((item) => {
+        (item.current.children[0] as HTMLElement).style.width = width;
+      });
     };
 
     setWidthForSlides();
-    window.addEventListener('resize', setWidthForSlides);
+    const observer = new ResizeObserver(setWidthForSlides);
 
-    return () => {
-      window.removeEventListener('resize', setWidthForSlides);
-    };
+    observer.observe(slider.current);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div className={cn(s.root, className)} ref={slider} onMouseOver={stop} onMouseOut={play}>
       <div className={s.wrapper}>
         {children.map((item, i) => (
-          <div ref={slides.current[i]} key={i} className={s.slide}>
+          <div
+            onAnimationEnd={(e) => (e.target as HTMLDivElement).classList.remove(s.play)}
+            ref={slides.current[i]}
+            key={i}
+            className={s.slide}
+          >
             {item}
           </div>
         ))}

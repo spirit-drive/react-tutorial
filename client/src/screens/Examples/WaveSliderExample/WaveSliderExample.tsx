@@ -17,7 +17,7 @@ const items = [
 
 export const WaveSliderExample: FC<ModalExampleProps> = ({ className }) => (
   <div className={cn(s.root, className)}>
-    <WaveSlider transitionDuration={1500}>
+    <WaveSlider interval={4000}>
       {items.map((item, i) => (
         <div className={s.item} key={item} style={{ backgroundImage: `url(${item})` }}>
           {i}
