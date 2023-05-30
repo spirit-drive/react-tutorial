@@ -21,7 +21,7 @@ export const Tabs: FC<TabsProps> = ({ className, tabs, activeKey, onTab }) => {
     const activeElem = root.current?.querySelector('button[data-active="true"]');
     const fn = () => {
       if (activeElem) {
-        const rootRect = root.current.getBoundingClientRect();
+        const rootRect = root.current?.getBoundingClientRect();
         const activeRect = activeElem.getBoundingClientRect();
         const y = activeRect.y - rootRect.y;
         const x = activeRect.x - rootRect.x;
