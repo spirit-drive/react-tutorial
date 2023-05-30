@@ -80,6 +80,7 @@
     "sass-loader": "^13.2.2",
     "stream-browserify": "^3.0.0",
     "style-loader": "^3.3.2",
+    "symbol-observable": "^4.0.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4",

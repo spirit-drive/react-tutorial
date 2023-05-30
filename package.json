@@ -8,9 +8,11 @@
   "scripts": {
     "slides": "reveal-md ./presentations",
     "start:client": "cd client && yarn start",
-    "start:server": "cd server && yarn start"
+    "start:server": "cd server && yarn start",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "reveal-md": "^5.4.1"
+    "reveal-md": "^5.4.1",
+    "husky": "^8.0.0"
   }
 }

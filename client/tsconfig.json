@@ -9,6 +9,8 @@
         "allowSyntheticDefaultImports": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
+        "target": "ES2015",
+        "module": "commonjs",
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "moduleResolution": "node",
