@@ -7,11 +7,11 @@ export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> =
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string | number; output: string; }
-  String: { input: string; output: string; }
-  Boolean: { input: boolean; output: boolean; }
-  Int: { input: number; output: number; }
-  Float: { input: number; output: number; }
+  ID: { input: string | number; output: string };
+  String: { input: string; output: string };
+  Boolean: { input: boolean; output: boolean };
+  Int: { input: number; output: number };
+  Float: { input: number; output: number };
 };
 
 export type AuthResult = {
@@ -46,18 +46,15 @@ export type ProfileMutations = {
   update: Profile;
 };
 
-
 export type ProfileMutationsSigninArgs = {
   email: Scalars['String']['input'];
   password: Scalars['String']['input'];
 };
 
-
 export type ProfileMutationsSignupArgs = {
   email: Scalars['String']['input'];
   password: Scalars['String']['input'];
 };
-
 
 export type ProfileMutationsUpdateArgs = {
   input: UpdateProfileInput;
@@ -67,7 +64,6 @@ export type ProfilePasswordMutations = {
   __typename?: 'ProfilePasswordMutations';
   change: ResetPassword;
 };
-
 
 export type ProfilePasswordMutationsChangeArgs = {
   input: ChangePasswordInput;

@@ -21,7 +21,8 @@ export const deepCheckNodesOnHavingChild = (nodes: Node[], target: EventTarget):
   return false;
 };
 
-const transformRegexp = /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
+const transformRegexp =
+  /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
 export type Coordinate = { x: number; y: number };
 export const getTransform = (value: string): Coordinate => {

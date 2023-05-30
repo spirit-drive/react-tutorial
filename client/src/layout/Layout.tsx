@@ -6,11 +6,9 @@ export type LayoutProps = {
   children: React.ReactNode;
 };
 
-export const Layout: FC<LayoutProps> = ({ children }) => {
-  return (
-    <div className={s.root}>
-      <Header className={s.header} />
-      {children}
-    </div>
-  );
-};
+export const Layout: FC<LayoutProps> = ({ children }) => (
+  <div className={s.root}>
+    <Header className={s.header} />
+    {children}
+  </div>
+);

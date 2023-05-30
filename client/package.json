@@ -9,6 +9,7 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "test": "jest src",
+    "lint": "eslint src --fix",
     "schemagen": "graphql-codegen && ts-node enhance.server.types.ts && node src/client/possibleTypesGen.js"
   },
   "dependencies": {
