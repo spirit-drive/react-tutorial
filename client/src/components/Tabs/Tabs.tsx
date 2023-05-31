@@ -32,7 +32,7 @@ export const Tabs: FC<TabsProps> = ({ className, tabs, activeKey, onTab }) => {
     const resizerRoot = new ResizeObserver(fn);
     const resizerActive = new ResizeObserver(fn);
 
-    resizerRoot.observe(root.current);
+    if (root.current) resizerRoot.observe(root.current);
     if (activeElem) resizerActive.observe(activeElem);
 
     return () => {

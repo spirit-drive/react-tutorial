@@ -1,4 +1,4 @@
-import { put, select, takeEvery } from 'redux-saga/effects';
+import { put, select, takeEvery, takeLatest } from 'redux-saga/effects';
 import { RootState } from '../../index';
 import { TOKEN_KEY, tokenActions, tokenSelectors } from '../../token';
 import { storage } from '../../../utils/storage';
@@ -31,5 +31,5 @@ export function* getToken() {
 
 export function* tokenSaga() {
   yield takeEvery(tokenActions.logout().type, clearToken);
-  yield takeEvery(tokenActions.set().type, setToken);
+  yield takeLatest(tokenActions.set().type, setToken); // setToken отправляет запрос, потому лучше использовать takeLatest
 }
