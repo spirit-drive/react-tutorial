@@ -118,7 +118,30 @@ export const resources = {
           },
         },
       },
+      fields: {
+        string: 'String value',
+      },
       components: {
+        RemoveButton: {
+          title: 'Data will be lost, delete?',
+          ok: 'Remove',
+          cancel: 'Cancel',
+        },
+        RangeInputs: {
+          from: 'From',
+          to: 'To',
+        },
+        InputIntRangeList: {
+          title: 'List of range sliders',
+        },
+        NumberInput: {
+          float: {
+            placeholder: 'Fractional number',
+          },
+          integer: {
+            placeholder: 'Integer',
+          },
+        },
         login: {
           enter: 'Login',
           leave: 'Logout',
@@ -265,7 +288,30 @@ export const resources = {
           },
         },
       },
+      fields: {
+        string: 'Строковое значение',
+      },
       components: {
+        RemoveButton: {
+          title: 'Данные будут потеряны, удалить?',
+          ok: 'Удалить',
+          cancel: 'Отмена',
+        },
+        RangeInputs: {
+          from: 'От',
+          to: 'До',
+        },
+        InputIntRangeList: {
+          title: 'Список слайдеров диапазона',
+        },
+        NumberInput: {
+          float: {
+            placeholder: 'Дробное число',
+          },
+          integer: {
+            placeholder: 'Целое число',
+          },
+        },
         login: {
           enter: 'Вход',
           leave: 'Выход',

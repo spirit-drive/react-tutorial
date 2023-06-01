@@ -1,0 +1,23 @@
+@import src/styles/common
+
+.root
+  display: block
+
+.container
+  border-radius: 4px
+  padding: 8px
+  +theme(background-color, bd)
+
+  & + &
+    margin-top: 8px
+
+.item
+  position: relative
+
+  & + &
+    margin-top: 16px
+
+.delete
+  position: absolute
+  top: 0
+  right: 0
