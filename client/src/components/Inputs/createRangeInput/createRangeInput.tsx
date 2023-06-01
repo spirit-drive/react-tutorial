@@ -1,7 +1,7 @@
 import React, { memo, NamedExoticComponent, useMemo, useRef } from 'react';
-import { Title } from 'src/components/Title';
 import { useTranslation } from 'react-i18next';
 import cn from 'clsx';
+import { Title } from '../../Title';
 import s from './createRangeInput.sass';
 
 export type InputComponentProps<T> = {

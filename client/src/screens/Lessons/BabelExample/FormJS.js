@@ -1,3 +1,5 @@
 import React from 'react';
 
-export const FormJS = ({ className }) => <div className={className}>FormJS</div>;
+export function FormJS({ className }) {
+  return <div className={className}>FormJS</div>;
+}

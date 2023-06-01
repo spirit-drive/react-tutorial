@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import cn from 'clsx';
-import logo from './logo.svg';
 import { Link } from 'react-router-dom';
+import logo from './logo.svg';
 import s from './Logo.sass';
 
 export type LogoProps = {

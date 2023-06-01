@@ -17,7 +17,7 @@ const icons = {
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
   const { theme, toggleTheme } = useThemeContext();
   return (
-    <button className={cn(s.root, className)} onClick={toggleTheme}>
+    <button type="button" className={cn(s.root, className)} onClick={toggleTheme}>
       {icons[theme]}
     </button>
   );

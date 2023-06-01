@@ -1,8 +1,8 @@
 import React, { createContext, FC, useCallback, useContext, useInsertionEffect, useState } from 'react';
 import { ConfigProvider, theme as antdTheme } from 'antd';
 import vars from 'src/styles/common.scss';
-import { Theme } from './types';
 import { ThemeConfig } from 'antd/es/config-provider/context';
+import { Theme } from './types';
 import s from './ThemeProvider.sass';
 
 export type ThemeProviderProps = {
@@ -43,8 +43,9 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     },
     algorithm,
   };
+  const value = useMemo(() => ({ theme, toggleTheme, setTheme }), [theme, toggleTheme, setTheme]);
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
+    <ThemeContext.Provider value={value}>
       <ConfigProvider theme={config}>
         <div className={s.root}>{children}</div>
       </ConfigProvider>

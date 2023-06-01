@@ -72,7 +72,7 @@ export const useResize = (element: MutableRefObject<HTMLElement>, onEndHandler?:
     const start = (e: React.MouseEvent | React.TouchEvent, cursor: Position): void => {
       e.preventDefault();
       e.stopPropagation();
-      const { width, height } = refs.current.element.current?.getBoundingClientRect();
+      const { width, height } = refs.current.element.current?.getBoundingClientRect() || {};
       const { transform, transition } = getTransformElement(refs.current.element.current);
       const { x, y } = transform;
       refs.current.element.current.style.transition = null;

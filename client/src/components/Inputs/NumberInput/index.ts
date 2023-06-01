@@ -1,3 +1,3 @@
-export { IntInput } from './IntInput';
+export { IntInput, IntInputWithArrows } from './IntInput';
 export { FloatInput } from './FloatInput';
-export { NumberInputProps } from './types';
+export type { NumberInputProps } from './types';

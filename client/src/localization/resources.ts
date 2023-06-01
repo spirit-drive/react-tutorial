@@ -132,7 +132,7 @@ export const resources = {
           to: 'To',
         },
         InputIntRangeList: {
-          title: 'List of range sliders',
+          title: 'Range',
         },
         NumberInput: {
           float: {
@@ -162,6 +162,7 @@ export const resources = {
           movable: 'Movable',
           sortableList: 'Sortable List',
           waveSlider: 'Wave Slider',
+          inputs: 'Inputs',
         },
         LessonKey: {
           generator: 'Generators iterators',
@@ -302,7 +303,7 @@ export const resources = {
           to: 'До',
         },
         InputIntRangeList: {
-          title: 'Список слайдеров диапазона',
+          title: 'Диапазон',
         },
         NumberInput: {
           float: {
@@ -332,6 +333,7 @@ export const resources = {
           movable: 'Перемещаемый',
           sortableList: 'Сортируемый список',
           waveSlider: 'Слайдер',
+          inputs: 'Инпуты',
         },
         LessonKey: {
           generator: 'Генераторы итераторы',

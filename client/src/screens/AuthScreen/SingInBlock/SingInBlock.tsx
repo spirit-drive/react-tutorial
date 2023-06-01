@@ -10,8 +10,8 @@ import { tokenActions } from 'src/store/token';
 import { createErrorHandlers } from 'src/utils/createErrorHandlers';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { NavigationState } from 'src/navigation/types';
-import { SIGN_IN, SignInResponse, SignInVars, extractSignIn } from '../connections';
 import { useTranslation } from 'react-i18next';
+import { SIGN_IN, SignInResponse, SignInVars, extractSignIn } from '../connections';
 import s from './SingInBlock.sass';
 
 export type SingInBlockProps = {

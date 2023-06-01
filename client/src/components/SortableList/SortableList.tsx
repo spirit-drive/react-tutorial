@@ -25,6 +25,7 @@ export type SortableListState<T> = {
 
 export class SortableList<T> extends Component<SortableListProps<T>, SortableListState<T>> {
   bases: RefObject<HTMLElement[]>;
+
   root: RefObject<HTMLDivElement>;
 
   constructor(props: SortableListProps<T>) {
@@ -49,6 +50,8 @@ export class SortableList<T> extends Component<SortableListProps<T>, SortableLis
     const { list } = this.props;
 
     if (prevProps.list !== list) {
+      // todo
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ items: getItems(list) });
     }
   }

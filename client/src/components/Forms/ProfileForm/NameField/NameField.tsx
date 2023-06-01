@@ -5,8 +5,8 @@ import { FormItem } from 'src/components/FormItem';
 import Input from 'antd/lib/input';
 import { FormikHandlers } from 'formik/dist/types';
 import { UserOutlined } from '@ant-design/icons';
-import { ProfileFormProps } from '../types';
 import { useTranslation } from 'react-i18next';
+import { ProfileFormProps } from '../types';
 import s from './NameField.sass';
 
 export type NameFieldProps = Pick<ProfileFormProps, 'className' | 'disabled' | 'autoFocusElement'> & {

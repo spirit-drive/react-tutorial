@@ -3,10 +3,10 @@ import React, { memo, useRef } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import cn from 'clsx';
 import { useTranslation } from 'react-i18next';
-import { Title } from '../../Title';
-import { IntRangeInput } from '../../RangeInputs';
-import { RemoveButton } from '../../RemoveButton';
 import { deepClear } from 'src/utils/deepClear';
+import { Title } from '../../Title';
+import { IntRangeInput } from '../IntRangeInput';
+import { RemoveButton } from '../../RemoveButton';
 import { createListInput, ItemInputProps, ListInputRef, ListInputProps } from '../createListInput';
 import s from './InputIntRangeList.sass';
 
@@ -21,12 +21,13 @@ const PreparedInput = memo<ItemInputProps<Value>>(({ onChange, onRemove, classNa
         <Title>{`${t`components.InputIntRangeList.title`} ${index + 1}`}</Title>
         <RemoveButton confirmed={!!deepClear(value)} onRemove={onRemove} />
       </div>
-      <IntRangeInput size="small" onChange={onChange} value={value} />
+      <IntRangeInput onChange={onChange} value={value} />
     </div>
   );
 });
 
 export type InputIntRangeListRef = ListInputRef;
+export type InputIntRangeListProps = ListInputProps<Value>;
 
 export const InputIntRangeListOrigin = createListInput<Value>(PreparedInput, { from: 0, to: 0 });
 
@@ -35,8 +36,8 @@ export const InputIntRangeList = memo<ListInputProps<Value>>(({ className, ...pr
 
   return (
     <div className={cn(s.root, className)}>
-      <InputIntRangeListOrigin ref={input} {...props} />
-      <Button size="small" onClick={() => input.current.add()}>
+      <InputIntRangeListOrigin ref={input} {...props} className={s.items} />
+      <Button type="primary" onClick={() => input.current?.add()}>
         <PlusOutlined />
       </Button>
     </div>

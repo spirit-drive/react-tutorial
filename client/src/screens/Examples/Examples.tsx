@@ -1,12 +1,13 @@
 import React, { FC, useState, Key, useEffect } from 'react';
 import { Page } from 'src/components/Page';
-import { Tabs, TabsItem } from '../../components/Tabs';
 import { useTranslation } from 'react-i18next';
-import { ModalExample } from './ModalExample';
 import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
+import { Tabs, TabsItem } from '../../components/Tabs';
+import { ModalExample } from './ModalExample';
 import { MovableExample } from './MovableExample';
 import { SortableListExample } from './SortableListExample';
 import { WaveSliderExample } from './WaveSliderExample';
+import { InputsExample } from './InputsExample';
 import s from './Examples.sass';
 
 export enum ExampleKey {
@@ -14,6 +15,7 @@ export enum ExampleKey {
   movable = 'movable',
   sortableList = 'sortableList',
   waveSlider = 'waveSlider',
+  inputs = 'inputs',
 }
 
 const examples = {
@@ -21,6 +23,7 @@ const examples = {
   [ExampleKey.movable]: <MovableExample />,
   [ExampleKey.sortableList]: <SortableListExample />,
   [ExampleKey.waveSlider]: <WaveSliderExample />,
+  [ExampleKey.inputs]: <InputsExample />,
 };
 
 const getContent = (key: string) => () => {

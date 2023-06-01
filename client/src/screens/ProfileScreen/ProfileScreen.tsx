@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { SettingsBlock } from './SettingsBlock';
 import { useTranslation } from 'react-i18next';
+import { SettingsBlock } from './SettingsBlock';
 import { Page } from '../../components/Page';
 import s from './ProfileScreen.sass';
 

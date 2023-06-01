@@ -9,8 +9,8 @@ import React, {
   useImperativeHandle,
 } from 'react';
 import cn from 'clsx';
-import { getRandomId } from '../../../utils/random';
 import { useDidUpdate } from 'src/hooks/useDidUpdate';
+import { getRandomId } from '../../../utils/random';
 import { ItemInputProps, ListInputProps, State, ListInputRef } from './type';
 import s from './createListInput.sass';
 

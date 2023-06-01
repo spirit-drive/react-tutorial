@@ -30,6 +30,7 @@ export const createSimpleAsyncIterator: SimpleIterator<{
   [Symbol.asyncIterator]() {
     return {
       async next() {
+        // eslint-disable-next-line no-promise-executor-return
         await new Promise((resolve) => setTimeout(resolve, 100));
 
         return from <= to ? { done: false, value: from++ } : { done: true };
@@ -47,6 +48,7 @@ export async function* generateSequence(
   return {
     async *[Symbol.asyncIterator]() {
       for (let i = from; i <= to; i++) {
+        // eslint-disable-next-line no-promise-executor-return
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
         yield i;

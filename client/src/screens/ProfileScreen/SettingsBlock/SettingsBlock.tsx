@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import cn from 'clsx';
-import { ProfileCompletedForm } from '../ProfileCompletedForm';
 import { Divider } from 'antd';
+import { ProfileCompletedForm } from '../ProfileCompletedForm';
 import { ChangePasswordCompletedForm } from '../ChangePasswordCompletedForm';
 import s from './SettingsBlock.sass';
 

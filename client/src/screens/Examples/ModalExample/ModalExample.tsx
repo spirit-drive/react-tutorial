@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import cn from 'clsx';
-import { Modal } from '../../../components/Modal';
 import { Button } from 'antd';
+import { Modal } from '../../../components/Modal';
 import s from './ModalExample.sass';
 
 export type ModalExampleProps = {

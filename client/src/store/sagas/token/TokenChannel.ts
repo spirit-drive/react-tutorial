@@ -14,9 +14,13 @@ type TokenChannelMessage = TokenChannelMessageSet | TokenChannelMessageInit;
 
 export class TokenChannel {
   channel: BroadcastChannel;
+
   init: boolean;
+
   wasUpdated: boolean;
-  token: string;
+
+  token: string | undefined;
+
   constructor(key: string) {
     this.channel = new BroadcastChannel(key);
     this.wasUpdated = false;
@@ -36,13 +40,17 @@ export class TokenChannel {
 
         case 'set': {
           this.wasUpdated = true;
-          const token = (<TokenChannelMessageInit>event.data).payload;
+          const token = (<TokenChannelMessageSet>event.data).payload;
           if (token) {
             store.dispatch(tokenActions.set(token));
           } else {
             store.dispatch(tokenActions.logout());
           }
+          break;
         }
+
+        default:
+          break;
       }
     });
   }

@@ -7,8 +7,8 @@ import { Button, message } from 'antd';
 import { createErrorHandlers } from 'src/utils/createErrorHandlers';
 import { isNotDefinedString } from 'src/utils/validation';
 import { Title } from 'src/components/Title';
-import { CHANGE_PASSWORD, ChangePasswordResponse, ChangePasswordVars } from './connection';
 import { useTranslation } from 'react-i18next';
+import { CHANGE_PASSWORD, ChangePasswordResponse, ChangePasswordVars } from './connection';
 import s from './ChangePasswordCompletedForm.sass';
 
 export type ChangePasswordCompletedFormProps = {

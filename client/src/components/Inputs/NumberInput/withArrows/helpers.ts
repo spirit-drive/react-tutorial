@@ -1,4 +1,4 @@
-import { getOnlyNumber } from 'src/utils/helpers';
+import { getOnlyNumber } from 'src/utils/format';
 import { NumberInputProps } from 'src/components/Inputs/NumberInput';
 import { useCallback, useRef } from 'react';
 import { DEFAULT_MAX_VALUE } from '../config';

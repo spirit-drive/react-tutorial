@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useReducer, useEffect, useRef, FC } from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 import { Navigation } from './Navigation';
 import s from './WaveSlider.sass';
 
@@ -15,7 +15,6 @@ export const WaveSlider: FC<SliderProps> = ({ className, classNameNav, children,
   const quantity = React.Children.count(children);
 
   const reducer = (state: number, action) => {
-    console.log(action);
     switch (action.type) {
       case 'next':
         if (state + 1 === quantity) return 0;
@@ -100,7 +99,7 @@ export const WaveSlider: FC<SliderProps> = ({ className, classNameNav, children,
   }, []);
 
   return (
-    <div className={cn(s.root, className)} ref={slider} onMouseOver={stop} onMouseOut={play}>
+    <div role="presentation" className={cn(s.root, className)} ref={slider} onMouseOver={stop} onMouseOut={play}>
       <div className={s.wrapper}>
         {children.map((item, i) => (
           <div

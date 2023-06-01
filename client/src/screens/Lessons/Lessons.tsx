@@ -1,10 +1,10 @@
 import React, { FC, useState, Key, useEffect } from 'react';
 import { Page } from 'src/components/Page';
-import { Tabs, TabsItem } from '../../components/Tabs';
 import { useTranslation } from 'react-i18next';
+import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
+import { Tabs, TabsItem } from '../../components/Tabs';
 import { GeneratorsExample } from './GeneratorsExample';
 import { BabelExample } from './BabelExample';
-import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import s from './Lessons.sass';
 
 export enum LessonKey {

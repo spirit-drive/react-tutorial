@@ -10,8 +10,8 @@ import { tokenActions } from 'src/store/token';
 import { createErrorHandlers } from 'src/utils/createErrorHandlers';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { NavigationState } from 'src/navigation/types';
-import { SIGN_UP, SignUpResponse, SignUpVars, extractSignUp } from '../connections';
 import { useTranslation } from 'react-i18next';
+import { SIGN_UP, SignUpResponse, SignUpVars, extractSignUp } from '../connections';
 import s from './SingUpBlock.sass';
 
 export type SingUpBlockProps = {

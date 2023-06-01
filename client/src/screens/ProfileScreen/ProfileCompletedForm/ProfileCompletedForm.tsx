@@ -9,8 +9,8 @@ import { isNotDefinedString } from 'src/utils/validation';
 import { useSelector } from 'react-redux';
 import { profileSelectors } from 'src/store/profile';
 import { Title } from 'src/components/Title';
-import { UPDATE_PROFILE, UpdateProfileResponse, UpdateProfileVars } from './connection';
 import { useTranslation } from 'react-i18next';
+import { UPDATE_PROFILE, UpdateProfileResponse, UpdateProfileVars } from './connection';
 import s from './ProfileCompletedForm.sass';
 
 export type ProfileCompletedFormProps = {
