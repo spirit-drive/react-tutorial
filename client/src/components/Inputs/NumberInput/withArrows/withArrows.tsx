@@ -4,13 +4,11 @@ import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import cn from 'clsx';
 import { NumberInputProps } from '../types';
 import { useCreateUpDown } from './helpers';
-import s from './withArrows.sass';
+import s from './withArrows.module.sass';
 
-export const withArrows = <T extends NumberInputProps>(
-  Component: React.FC<T> | React.NamedExoticComponent<T>
-): NamedExoticComponent<T> =>
-  memo(({ value, onChange, maxValue, onKeyDown, minValue, disabled, className, ...props }) => {
-    const createUpDown = useCreateUpDown(value, onChange, { max: maxValue, min: minValue });
+export const withArrows = (Component: React.ElementType<NumberInputProps>): NamedExoticComponent<NumberInputProps> =>
+  memo(({ value, onChange, max, onKeyDown, min, disabled, className, ...props }) => {
+    const createUpDown = useCreateUpDown(value, onChange, { max, min });
 
     const { down, fastDown, fastUp, up } = useMemo(
       () => ({
@@ -55,7 +53,7 @@ export const withArrows = <T extends NumberInputProps>(
           disabled={disabled}
           onKeyDown={handleKeyDown}
           className={cn(s.input, className)}
-          maxValue={maxValue}
+          max={max}
           value={value}
           onChange={onChange}
         />

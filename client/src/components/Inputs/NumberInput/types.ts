@@ -1,11 +1,10 @@
-import { InputProps } from 'antd/lib/input/Input';
 import { Ref } from 'react';
-import { Input } from 'antd';
+import { Input, InputNumberProps } from 'antd';
 
-export type NumberInputProps = Omit<InputProps, 'value' | 'onChange'> & {
-  value: number | string;
+export type NumberInputProps = Omit<InputNumberProps, 'value' | 'onChange' | 'max' | 'min'> & {
+  value: number;
   onChange: (value: number) => void;
-  maxValue?: number;
-  minValue?: number;
-  forwardElem?: Ref<Input>;
+  max?: number;
+  min?: number;
+  forwardElem?: Ref<typeof Input>;
 };

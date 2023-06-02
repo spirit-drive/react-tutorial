@@ -144,9 +144,7 @@ export const coroutine: CouroutineType<unknown> =
     return generatorObject;
   };
 
-const gen = function* () {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
+const gen = function* (): Generator<void> {
   return `First input: ${yield}`;
 };
 

@@ -1,23 +1,21 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "src/*": ["src/*"]
-        },
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "target": "ES2015",
-        "module": "commonjs",
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "jsx": "react"
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"]
     },
-    "include": ["declarations.d.ts"]
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "target": "ES2015",
+    "module": "esnext",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react"
+  }
 }

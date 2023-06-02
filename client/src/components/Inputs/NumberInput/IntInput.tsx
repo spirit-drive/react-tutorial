@@ -28,6 +28,4 @@ export const IntInput = memo<Props>(({ className, ...props }) => {
   );
 });
 
-export const IntInputWithArrows = withArrows(({ maxValue, minValue, ...props }) => (
-  <IntInput {...props} max={maxValue} min={minValue} />
-));
+export const IntInputWithArrows = withArrows((props) => <IntInput {...(props as Props)} />);
