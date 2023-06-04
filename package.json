@@ -12,7 +12,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "reveal-md": "^5.4.1",
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "reveal-md": "^5.4.1"
   }
 }

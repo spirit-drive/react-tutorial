@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
-import { InputNumber, InputNumberProps } from 'antd';
+import { InputNumber } from 'antd';
 import cn from 'clsx';
 import { useTranslation } from 'react-i18next';
+import { NumberInputProps } from './types';
 import { DEFAULT_MAX_VALUE } from './config';
 import { withArrows } from './withArrows';
 import s from './NumberInput.sass';
@@ -12,7 +13,7 @@ export const parser = (v: string): number => {
   return value;
 };
 
-export type Props = InputNumberProps<number>;
+export type Props = NumberInputProps;
 
 export const IntInput = memo<Props>(({ className, ...props }) => {
   const { t } = useTranslation();
@@ -28,4 +29,4 @@ export const IntInput = memo<Props>(({ className, ...props }) => {
   );
 });
 
-export const IntInputWithArrows = withArrows((props) => <IntInput {...(props as Props)} />);
+export const IntInputWithArrows = withArrows(IntInput);

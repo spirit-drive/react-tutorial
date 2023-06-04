@@ -29,7 +29,7 @@ const examples = {
 const getContent = (key: string) => () => {
   const { t } = useTranslation();
 
-  return t(`enums.ExampleKey.${key}`);
+  return <>{t(`enums.ExampleKey.${key}`)}</>;
 };
 
 const tabs: TabsItem[] = Object.keys(examples).map((key) => {
@@ -50,7 +50,7 @@ export const Examples: FC = () => {
       <Tabs tabs={tabs} onTab={setActiveKey} activeKey={activeKey} />
       <div>
         <Routes>
-          {Object.keys(ExampleKey).map((key) => (
+          {Object.keys(ExampleKey).map((key: ExampleKey) => (
             <Route path={key} key={key} element={examples[key]} />
           ))}
         </Routes>
