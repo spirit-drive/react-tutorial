@@ -4,7 +4,7 @@ import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import cn from 'clsx';
 import { NumberInputProps } from '../types';
 import { useCreateUpDown } from './helpers';
-import s from './withArrows.module.sass';
+import s from './withArrows.sass';
 
 export const withArrows = (Component: React.ElementType<NumberInputProps>): NamedExoticComponent<NumberInputProps> =>
   memo(({ value, onChange, max, onKeyDown, min, disabled, className, ...props }) => {

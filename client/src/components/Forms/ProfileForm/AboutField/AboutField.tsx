@@ -4,7 +4,6 @@ import { getValidates } from 'src/utils/validation';
 import { FormItem } from 'src/components/FormItem';
 import Input from 'antd/lib/input';
 import { FormikHandlers } from 'formik/dist/types';
-import { UserOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { ProfileFormProps } from '../types';
 import s from './AboutField.sass';
@@ -17,8 +16,6 @@ export type AboutFieldProps = Pick<ProfileFormProps, 'className' | 'disabled'> &
   onChange: FormikHandlers['handleChange'];
   onBlur: FormikHandlers['handleBlur'];
 };
-
-const prefix = <UserOutlined />;
 
 export const AboutField = memo<AboutFieldProps>(
   ({ className, onChange, onBlur, touched, value, errors, disabled, submitCount }) => {
@@ -34,7 +31,6 @@ export const AboutField = memo<AboutFieldProps>(
         help={help}
       >
         <Input.TextArea
-          prefix={prefix}
           disabled={disabled}
           name="about"
           onChange={onChange}

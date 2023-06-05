@@ -4,7 +4,7 @@ import s from './Frame.sass';
 
 export type FrameProps = {
   className?: string;
-  children: React.ReactNode | React.ReactChildren;
+  children: React.ReactNode;
 };
 
 export const Frame = memo<FrameProps>(({ className, children }) => (

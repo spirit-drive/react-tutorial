@@ -112,14 +112,7 @@ export const HeaderOrigin = memo<HeaderOriginProps>(({ className, t }) => {
     <header className={cn(s.root, className)}>
       <Frame className={s.frame}>
         <Logo className={s.logo} />
-        <ResponseNavigation
-          title={t(`components.header.nav`)}
-          className={s.menu}
-          gap={16}
-          left={left}
-          right={right}
-          classNameMenuIcon={s.icon}
-        />
+        <ResponseNavigation title={t(`components.header.nav`)} className={s.menu} left={left} right={right} />
       </Frame>
     </header>
   );

@@ -10,12 +10,28 @@ export type SliderProps = {
   interval?: number;
 };
 
+export type WaveSliderActionNext = {
+  type: 'next';
+};
+
+export type WaveSliderActionBack = {
+  type: 'back';
+};
+
+export type WaveSliderActionTo = {
+  type: 'to';
+  payload: number;
+};
+
+export type WaveSliderAction = WaveSliderActionNext | WaveSliderActionBack | WaveSliderActionTo;
+
 export const WaveSlider: FC<SliderProps> = ({ className, classNameNav, children, interval = 3000 }) => {
   const [isPause, setPause] = useState(false);
   const quantity = React.Children.count(children);
 
-  const reducer = (state: number, action) => {
-    switch (action.type) {
+  const reducer = (state: number, action: WaveSliderAction) => {
+    const { type } = action;
+    switch (type) {
       case 'next':
         if (state + 1 === quantity) return 0;
         return state + 1;
@@ -27,8 +43,11 @@ export const WaveSlider: FC<SliderProps> = ({ className, classNameNav, children,
       case 'to':
         return action.payload;
 
-      default:
-        throw new Error(`invalid type: ${action.type}`);
+      default: {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const unhandled: never = type;
+        throw new Error(`unhandled type: ${type}`);
+      }
     }
   };
 

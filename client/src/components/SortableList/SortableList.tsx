@@ -28,6 +28,11 @@ export class SortableList<T> extends Component<SortableListProps<T>, SortableLis
 
   root: RefObject<HTMLDivElement>;
 
+  static defaultProps = {
+    elementView: SortableItemView,
+    sortable: true,
+  };
+
   constructor(props: SortableListProps<T>) {
     super(props);
     const { list } = this.props;
@@ -95,8 +100,3 @@ export class SortableList<T> extends Component<SortableListProps<T>, SortableLis
     );
   }
 }
-
-SortableList.defaultProps = {
-  elementView: SortableItemView,
-  sortable: true,
-};

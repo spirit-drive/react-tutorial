@@ -1,20 +1,20 @@
 import { put, select, takeEvery, takeLatest } from 'redux-saga/effects';
-import { RootState } from '../../index';
+import { storage } from 'src/utils/storage';
+import { client } from 'src/client';
+import { FetchResult } from '@apollo/client';
 import { TOKEN_KEY, tokenActions, tokenSelectors } from '../../token';
-import { storage } from '../../../utils/storage';
-import { client } from '../../../client';
 import { profileActions } from '../../profile';
-import { GET_PROFILE, extractGetProfile } from './connections';
+import { GET_PROFILE, extractGetProfile, GetProfileResponse } from './connections';
 import { TokenChannel } from './TokenChannel';
 
 const tokenChannel = new TokenChannel('token-saver-channel');
 
-export function* setToken() {
-  const token = yield select<(state: RootState) => RootState['token']>(tokenSelectors.get);
+export function* setToken(): Generator {
+  const token = (yield select(tokenSelectors.get)) as string;
   tokenChannel.setToken(token);
   if (token) {
     storage.set(TOKEN_KEY, token);
-    const { data: res } = yield client.query({ query: GET_PROFILE });
+    const { data: res } = (yield client.query({ query: GET_PROFILE })) as FetchResult<GetProfileResponse>;
     yield put(profileActions.set(extractGetProfile(res)));
   }
 }

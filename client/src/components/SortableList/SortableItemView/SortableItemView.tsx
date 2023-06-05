@@ -19,6 +19,6 @@ export const SortableItemView: FC<SortableItemProps<unknown>> = ({
   ...props
 }) => (
   <div className={cn(s.root, active && s.active, className)} {...props}>
-    <div className={cn(s.badge, active && s.active, classNameBadge)}>{value}</div>
+    <div className={cn(s.badge, active && s.active, classNameBadge)}>{value as React.ReactNode}</div>
   </div>
 );
