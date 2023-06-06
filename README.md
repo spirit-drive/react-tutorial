@@ -8,6 +8,8 @@
 
 Добро пожаловать и удачи в обучении!
 
+[Стартовый шаблон](https://github.com/spirit-drive/react-start-template) - его нужно форкнуть (только ветку main), с его помощью будут выполняться все домашние задания.
+
 ## Модуль 1 - предисловие
 
 ### Урок 1: Введение в современную frontend разработку
@@ -25,3 +27,20 @@
 
 
   [Презентация](https://docs.google.com/presentation/d/1Az2Y5ltjlz-YK2dyfya2ReMhum1SiomGGyM5m5b3XPU/edit?usp=sharing)
+
+### Урок 2: Typescript (часть 1)
+
+**Цели занятия**
+- писать приложения с использованием typescript;
+  использовать: Basic Types, Interfaces, Functions, Classes, Generics, Enums, Type Checking JavaScript Files.
+
+**Краткое содержание**
+- базовая настройка Typescript, как с ним работать в проекте;
+- basic Types;
+- enums;
+- interfaces;
+- functions.
+
+[Презентация](https://drive.google.com/file/d/1JsIhJGOIc-ibbmxpK0-7wkViMZbg3gOX/view)
+
+[Дополнительная песочница](https://codesandbox.io/s/typescript-1-hfer2p?file=/src/basis.ts:7265-7308)
