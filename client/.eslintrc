@@ -57,6 +57,7 @@
     "no-await-in-loop": 0,
     "require-yield": 0,
     "react/require-default-props": 0,
+    "react/jsx-no-useless-fragment": 0,
     "consistent-return": 0,
     "no-restricted-exports": 0,
     "jsx-a11y/mouse-events-have-key-events": 0,
