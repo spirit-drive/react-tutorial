@@ -41,6 +41,6 @@
 - interfaces;
 - functions.
 
-[Презентация](https://drive.google.com/file/d/1JsIhJGOIc-ibbmxpK0-7wkViMZbg3gOX/view)
+[Презентация](https://drive.google.com/file/d/1w_JZM1i3cyF0u-hhsCJ7dUbBNSc5oU2i/view)
 
 [Дополнительная песочница](https://codesandbox.io/s/typescript-1-hfer2p?file=/src/basis.ts:7265-7308)
