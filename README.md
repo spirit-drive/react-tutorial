@@ -32,10 +32,9 @@
 
 **Цели занятия**
 - писать приложения с использованием typescript;
-  использовать: Basic Types, Interfaces, Functions, Classes, Generics, Enums, Type Checking JavaScript Files.
+  использовать: Basic Types, Interfaces, Functions, Classes, Enums.
 
 **Краткое содержание**
-- базовая настройка Typescript, как с ним работать в проекте;
 - basic Types;
 - enums;
 - interfaces;
@@ -44,3 +43,17 @@
 [Презентация](https://drive.google.com/file/d/1w_JZM1i3cyF0u-hhsCJ7dUbBNSc5oU2i/view)
 
 [Дополнительная песочница](https://codesandbox.io/s/typescript-1-hfer2p?file=/src/basis.ts:7265-7308)
+
+### Урок 3: Установка и настройка React
+
+**Цели занятия**
+- С нуля установить и настроить проект ReactJS с использованием webpack. 
+- Настроить Jest для работы с тестами; 
+- Установить и настроить Storybook;
+
+**Краткое содержание**
+- Webpack and Babel; 
+- Jest; 
+- Storybook;
+
+[Презентация](https://docs.google.com/presentation/d/1THc00FQjJXYXPUIXrXAI5rEHeDXbASreBgWOJ-VwEkM/edit?)
