@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import cn from 'clsx';
 import { Divider } from 'antd';
 import { Title } from 'src/components/Title';
+import { HigherOrderComponentExample } from 'src/screens/Lessons/PatternsExample/HigherOrderComponentExample';
 import { DestructuringPropsExample } from './DestructuringPropsExample';
 import { ChildrenExample } from './ChildrenExample';
 import { ConditionalRenderExample } from './ConditionalRenderExample';
@@ -21,6 +22,9 @@ export const PatternsExample: FC<BabelExampleProps> = ({ className }) => (
     <Divider />
     <Title className={s.title}>Условный рендеринг</Title>
     <ConditionalRenderExample />
+    <Divider />
+    <Title className={s.title}>Компонент высшего порядка</Title>
+    <HigherOrderComponentExample />
     <Divider />
   </div>
 );
