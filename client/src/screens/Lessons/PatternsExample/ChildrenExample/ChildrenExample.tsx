@@ -62,8 +62,12 @@ export type ChildrenExampleProps = {
 export const ChildrenExample: FC<ChildrenExampleProps> = ({ className }) => (
   <div className={cn(s.root, className)}>
     <ChildrenCheck>string</ChildrenCheck>
-    <ChildrenCheck>{2}</ChildrenCheck>
-    <ChildrenCheck>{[2, 3]}</ChildrenCheck>
+    <ChildrenCheck>{0}</ChildrenCheck>
+    <ChildrenCheck>{null}</ChildrenCheck>
+    <ChildrenCheck>{undefined}</ChildrenCheck>
+    <ChildrenCheck>{false}</ChildrenCheck>
+    <ChildrenCheck>{true}</ChildrenCheck>
+    <ChildrenCheck>{[2, '3', null, undefined, false, <div key={1}>test</div>, <div key={2}>test</div>]}</ChildrenCheck>
     <ChildrenCheck>
       <div>Элемент</div>
     </ChildrenCheck>
@@ -71,7 +75,7 @@ export const ChildrenExample: FC<ChildrenExampleProps> = ({ className }) => (
       <Test />
     </ChildrenCheck>
     <FunctionAsChildrenExample>{(count) => <div>{count}</div>}</FunctionAsChildrenExample>
-    <RenderPropsAsJSX header={<div>header</div>} footer={<div>footer</div>} />
     <RenderPropsAsFunction render={(count) => <div>{count}</div>} />
+    <RenderPropsAsJSX header={<div>header</div>} footer={<div>footer</div>} />
   </div>
 );

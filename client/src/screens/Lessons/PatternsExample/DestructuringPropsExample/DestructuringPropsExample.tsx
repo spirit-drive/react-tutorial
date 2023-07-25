@@ -6,16 +6,16 @@ import s from './DestructuringPropsExample.sass';
 type PoorComponentProps = {
   two: string;
   three?: number;
-  [key: string]: unknown;
+  four: string | number;
+};
+
+type ManyProps = PoorComponentProps & {
+  one: number;
 };
 
 const PoorComponent: FC<PoorComponentProps> = (props) => {
   console.log(props);
   return <p>{JSON.stringify(props)}</p>;
-};
-
-type ManyProps = PoorComponentProps & {
-  one: number;
 };
 
 type ButtonProps = {
@@ -28,11 +28,11 @@ const RichComponent: FC<ManyProps> = ({ one, ...props }) => (
   <div>
     {one}
 
-    <PoorComponent {...props} four="4" />
+    <PoorComponent {...props} />
+    {/* <PoorComponent {...{ two: '' }} {...{ two: '2' }} {...{ two: undefined }} /> */}
+    {/* <PoorComponent two="" /> */}
   </div>
 );
-
-// <PoorComponent {...{ two: '' }} />
 
 export type DestructuringPropsExampleProps = {
   className?: string;
@@ -40,7 +40,7 @@ export type DestructuringPropsExampleProps = {
 
 export const DestructuringPropsExample: FC<DestructuringPropsExampleProps> = ({ className }) => (
   <div className={cn(s.root, className)}>
-    <RichComponent one={1} two="two" three={3} four="four" />
+    <RichComponent one={1} two="two" three={3} four={undefined} />
   </div>
 );
 

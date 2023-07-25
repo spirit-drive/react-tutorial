@@ -23,6 +23,12 @@ const SimpleExample: FC = () => {
   );
 };
 
+const HandleQueryComponent: FC<{ loading: boolean; error: Error; data: unknown }> = ({ loading, data, error }) => {
+  if (loading) return <div>loading</div>;
+  if (error) return <div>{error.message}</div>;
+  return <div>{JSON.stringify(data)}</div>;
+};
+
 const AdvancedExample: FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error>();
@@ -46,6 +52,11 @@ const AdvancedExample: FC = () => {
           return JSON.stringify(data);
         })()}
       </ChildrenCheck>
+      <ChildrenCheck>
+        {/* eslint-disable-next-line no-nested-ternary */}
+        {loading ? <div>loading</div> : error ? <div>{error.message}</div> : JSON.stringify(data)}
+      </ChildrenCheck>
+      <HandleQueryComponent loading={loading} error={error} data={data} />
       <button type="button" onClick={onFetch}>
         запросить данные
       </button>

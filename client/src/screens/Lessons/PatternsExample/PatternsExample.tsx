@@ -3,6 +3,7 @@ import cn from 'clsx';
 import { Divider } from 'antd';
 import { Title } from 'src/components/Title';
 import { HigherOrderComponentExample } from 'src/screens/Lessons/PatternsExample/HigherOrderComponentExample';
+import { EventSwitchExample } from 'src/screens/Lessons/PatternsExample/EventSwitchExample';
 import { DestructuringPropsExample } from './DestructuringPropsExample';
 import { ChildrenExample } from './ChildrenExample';
 import { ConditionalRenderExample } from './ConditionalRenderExample';
@@ -25,6 +26,9 @@ export const PatternsExample: FC<BabelExampleProps> = ({ className }) => (
     <Divider />
     <Title className={s.title}>Компонент высшего порядка</Title>
     <HigherOrderComponentExample />
+    <Divider />
+    <Title className={s.title}>Event switch</Title>
+    <EventSwitchExample />
     <Divider />
   </div>
 );
