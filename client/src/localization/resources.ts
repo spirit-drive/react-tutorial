@@ -166,6 +166,7 @@ export const resources = {
         },
         LessonKey: {
           generator: 'Generators iterators',
+          patterns: 'Patterns',
           babel: 'Babel + typescript',
         },
       },
@@ -337,6 +338,7 @@ export const resources = {
         },
         LessonKey: {
           generator: 'Генераторы итераторы',
+          patterns: 'Паттерны',
           babel: 'Babel + typescript',
         },
       },

@@ -5,16 +5,19 @@ import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { Tabs, TabsItem } from 'src/components/Tabs';
 import { GeneratorsExample } from './GeneratorsExample';
 import { BabelExample } from './BabelExample';
+import { PatternsExample } from './PatternsExample';
 import s from './Lessons.sass';
 
 export enum LessonKey {
   babel = 'babel',
   generator = 'generator',
+  patterns = 'patterns',
 }
 
 const lessons = {
   [LessonKey.babel]: <BabelExample />,
   [LessonKey.generator]: <GeneratorsExample />,
+  [LessonKey.patterns]: <PatternsExample />,
 };
 
 const getContent = (key: string) => () => {
