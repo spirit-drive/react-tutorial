@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { FC, useReducer, useState } from 'react';
 import cn from 'clsx';
+import { Divider, Button } from 'antd';
 import s from './ConditionalRenderExample.sass';
 import { ChildrenCheck } from '../ChildrenCheck';
 
@@ -11,14 +12,12 @@ const SimpleExample: FC = () => {
     <div>
       <ChildrenCheck>
         {visible && <div>Видно если true</div>}
-        <hr />
+        <Divider />
         {visible || <div>Видно если false</div>}
-        <hr />
+        <Divider />
         {visible ? <div>Видно если true</div> : <div>Видно если false</div>}
       </ChildrenCheck>
-      <button type="button" onClick={toggle}>
-        toggle
-      </button>
+      <Button onClick={toggle}>toggle</Button>
     </div>
   );
 };
@@ -57,9 +56,7 @@ const AdvancedExample: FC = () => {
         {loading ? <div>loading</div> : error ? <div>{error.message}</div> : JSON.stringify(data)}
       </ChildrenCheck>
       <HandleQueryComponent loading={loading} error={error} data={data} />
-      <button type="button" onClick={onFetch}>
-        запросить данные
-      </button>
+      <Button onClick={onFetch}>запросить данные</Button>
     </div>
   );
 };

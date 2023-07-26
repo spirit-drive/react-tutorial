@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
 import React, { FC, useReducer } from 'react';
 import cn from 'clsx';
-import s from './ChildrenExample.sass';
+import { Divider } from 'antd';
 import { ChildrenCheck } from '../ChildrenCheck';
+import s from './ChildrenExample.sass';
 
 interface RenderPropsAsFunctionProps {
   render: (count: number) => React.ReactElement;
@@ -29,7 +30,7 @@ interface RenderPropsAsJSXProps {
 const RenderPropsAsJSX: FC<RenderPropsAsJSXProps> = ({ footer, header }) => (
   <div>
     {header}
-    <hr />
+    <Divider />
     {footer}
   </div>
 );
