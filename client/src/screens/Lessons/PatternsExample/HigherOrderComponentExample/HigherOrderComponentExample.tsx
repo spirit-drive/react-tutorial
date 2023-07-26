@@ -8,25 +8,31 @@ import { compose } from 'src/utils/compose';
 import s from './HigherOrderComponentExample.sass';
 
 type WithFormatProps = { value: string; onChange: (value: string) => void };
+/* Это компонент высшего порядка или higher-order component (HOC)
+ * Принимает функцию форматирования value, и возвращает другой HOC, который уже принимает компонент
+ * Строго говоря это все единый HOC
+ * Прием, когда одна функция возвращает другую, называется "каррирование",
+ * с помощью него можно легко композировать несколько форматирований
+ * */
 const withFormat =
   (formatter: (value: string) => string) =>
+  // это функция, что принимает компонент, изменяет его поведение и возвращает функциональный компонент, это тоже HOC
   <P extends WithFormatProps>(Component: React.ComponentType<P>) =>
+  // это функциональный компонент
   ({ onChange, ...props }: P) =>
     <Component {...(props as P)} onChange={(v) => onChange(formatter(v))} />;
 
-type InputProps = {
-  value: string;
-  onChange: (value: string) => void;
-};
+type InputProps = WithFormatProps;
 const MyInput: FC<InputProps> = ({ value, onChange }) => (
   <Input value={value} onChange={(e) => onChange(e.target.value)} />
 );
 
 const OnlyDigitInput = withFormat((v) => v.replace(/\D/g, ''))(MyInput);
+
 const InputWithoutOne = withFormat((v) => v.replace(/1/g, ''))(MyInput);
 
 /**
- * Каррирование позволяет нам композировать несколько форматирований
+ * Каррирование позволяет композировать несколько форматирований
  * */
 const withOnlyDigitAndNotOne = compose(
   withFormat((v) => v.replace(/1/g, '')),
