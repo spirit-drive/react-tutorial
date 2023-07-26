@@ -41,6 +41,20 @@ const withOnlyDigitAndNotOne = compose(
 
 const InputWithOnlyDigitAndNotOne = withOnlyDigitAndNotOne(MyInput);
 
+type FrameComponentProps = InputProps;
+/**
+ * Данный компонент никак не изменяет сами данные, а значит тут не нужен HOC
+ * */
+const FrameComponent: FC<FrameComponentProps> = (props) => {
+  const { value } = props;
+  return (
+    <div className={s.frame}>
+      <Title>{`Здесь будет отображаться текст ${value}`}</Title>
+      <InputWithOnlyDigitAndNotOne {...props} />
+    </div>
+  );
+};
+
 export type HigherOrderComponentExampleProps = {
   className?: string;
 };
@@ -53,6 +67,7 @@ export const HigherOrderComponentExample: FC<HigherOrderComponentExampleProps> =
   const [value4, onChange4] = useState<string>('');
   const [value5, onChange5] = useState<string>('');
   const [value6, onChange6] = useState<string>('');
+  const [value7, onChange7] = useState<string>('');
   return (
     <div className={cn(s.root, className)}>
       <Title>Обычный инпут</Title>
@@ -75,6 +90,9 @@ export const HigherOrderComponentExample: FC<HigherOrderComponentExampleProps> =
       <Divider />
       <Title>Форматированный инпут (только числа без единицы)</Title>
       <InputWithOnlyDigitAndNotOne value={value6} onChange={onChange6} />
+      <Divider />
+      <Title>Здесь не нужен HOC</Title>
+      <FrameComponent value={value7} onChange={onChange7} />
       <Divider />
     </div>
   );
