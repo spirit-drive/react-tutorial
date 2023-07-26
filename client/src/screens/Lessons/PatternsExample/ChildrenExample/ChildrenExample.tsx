@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { FC, useReducer } from 'react';
 import cn from 'clsx';
-import { Divider } from 'antd';
+import { Divider, Button } from 'antd';
 import { ChildrenCheck } from '../ChildrenCheck';
 import s from './ChildrenExample.sass';
 
@@ -15,9 +15,7 @@ const RenderPropsAsFunction: FC<RenderPropsAsFunctionProps> = ({ render }) => {
   return (
     <div>
       {render(count)}
-      <button type="button" onClick={increase}>
-        increase
-      </button>
+      <Button onClick={increase}>increase</Button>
     </div>
   );
 };
@@ -45,9 +43,7 @@ const FunctionAsChildrenExample: FC<FunctionAsChildrenExampleProps> = ({ childre
   return (
     <div>
       {children(count)}
-      <button type="button" onClick={increase}>
-        increase
-      </button>
+      <Button onClick={increase}>increase</Button>
     </div>
   );
 };
