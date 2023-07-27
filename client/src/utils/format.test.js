@@ -19,10 +19,10 @@ describe('format', () => {
   });
 
   it('getOnlyRNumber', () => {
-    // expect(getOnlyRNumber('')).toBe('');
-    // expect(getOnlyRNumber('23')).toBe('23');
-    // expect(getOnlyRNumber('-23')).toBe('-23');
-    // expect(getOnlyRNumber('-23----')).toBe('-23');
+    expect(getOnlyRNumber('')).toBe('');
+    expect(getOnlyRNumber('23')).toBe('23');
+    expect(getOnlyRNumber('-23')).toBe('-23');
+    expect(getOnlyRNumber('-23----')).toBe('-23');
     expect(getOnlyRNumber('-23--2-34.-233.34--')).toBe('-23234.23334');
     expect(getOnlyRNumber('-23--2-34-.-233.34--')).toBe('-23234.23334');
   });
