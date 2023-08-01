@@ -11,14 +11,14 @@ function useCounter(initialState = 0) {
 
 describe('basic hooks testing', () => {
   test('render', () => {
-    const { result } = renderHook(() => useCounter());
+    const { result } = renderHook(useCounter);
 
     expect(result.current.count).toBe(0);
     expect(typeof result.current.increment).toBe('function');
   });
 
   test('update', () => {
-    const { result } = renderHook(() => useCounter());
+    const { result } = renderHook(useCounter);
 
     expect(result.current.count).toBe(0);
 
@@ -34,6 +34,8 @@ describe('basic hooks testing', () => {
     const { result, rerender } = renderHook(() => useCounter(initialValue));
 
     initialValue = 10;
+
+    expect(result.current.count).toBe(0);
     rerender();
 
     act(() => {

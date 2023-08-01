@@ -33,6 +33,7 @@ describe('InputEventExample', () => {
     fireEvent.change(input, { target: { value: '23' } });
     expect(input.value).toBe('$23');
   });
+
   test('It should allow a $ to be in the input when the value is changed', () => {
     const { input } = setup();
     fireEvent.change(input, { target: { value: '$23.0' } });
