@@ -1,15 +1,15 @@
 import React, { memo, useEffect, useMemo } from 'react';
 import cn from 'clsx';
-import { ProfileForm, ProfileFormValues, ProfileFormErrors } from 'src/components/Forms/ProfileForm';
 import { FormikConfig, useFormik } from 'formik';
 import { useMutation } from '@apollo/client';
 import { Button, message } from 'antd';
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { ProfileForm, ProfileFormValues, ProfileFormErrors } from 'src/components/Forms/ProfileForm';
 import { createErrorHandlers } from 'src/utils/createErrorHandlers';
 import { isNotDefinedString } from 'src/utils/validation';
-import { useSelector } from 'react-redux';
 import { profileSelectors } from 'src/store/profile';
 import { Title } from 'src/components/Title';
-import { useTranslation } from 'react-i18next';
 import { UPDATE_PROFILE, UpdateProfileResponse, UpdateProfileVars } from './connection';
 import s from './ProfileCompletedForm.sass';
 

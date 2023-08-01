@@ -1,10 +1,10 @@
 import React, { FC, useMemo } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SingInBlock } from 'src/screens/AuthScreen/SingInBlock';
 import { SingUpBlock } from 'src/screens/AuthScreen/SingUpBlock';
 import { StyledLink } from 'src/components/StyledLink';
 import { Title } from 'src/components/Title';
-import { useTranslation } from 'react-i18next';
 import s from './AuthScreen.sass';
 
 export enum AuthMode {

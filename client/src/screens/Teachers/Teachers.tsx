@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Page } from 'src/components/Page';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'src/components/Page';
 import { MarkdownView } from '../MarkdownView';
 import s from './Teachers.sass';
 

@@ -1,13 +1,13 @@
 import React, { memo, useMemo } from 'react';
 import cn from 'clsx';
-import { ChangePasswordForm, ChangePasswordFormValues, ChangePasswordFormErrors } from 'src/components/Forms';
 import { FormikConfig, useFormik } from 'formik';
 import { useMutation } from '@apollo/client';
 import { Button, message } from 'antd';
+import { useTranslation } from 'react-i18next';
+import { ChangePasswordForm, ChangePasswordFormValues, ChangePasswordFormErrors } from 'src/components/Forms';
 import { createErrorHandlers } from 'src/utils/createErrorHandlers';
 import { isNotDefinedString } from 'src/utils/validation';
 import { Title } from 'src/components/Title';
-import { useTranslation } from 'react-i18next';
 import { CHANGE_PASSWORD, ChangePasswordResponse, ChangePasswordVars } from './connection';
 import s from './ChangePasswordCompletedForm.sass';
 

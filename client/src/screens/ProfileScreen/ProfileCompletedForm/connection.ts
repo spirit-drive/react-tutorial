@@ -1,5 +1,5 @@
-import { Mutation, ProfileMutationsUpdateArgs } from 'src/server.types';
 import { gql } from '@apollo/client';
+import { Mutation, ProfileMutationsUpdateArgs } from 'src/server.types';
 import { get } from 'src/utils/unchanged';
 import { PROFILE } from 'src/connection';
 

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import cn from 'clsx';
-import { Title } from 'src/components/Title';
 import { Button } from 'antd';
+import { Title } from 'src/components/Title';
 import { fetchInfinity, fetchOne, getFromToItems } from './helpers';
 import s from './FetchExample.sass';
 

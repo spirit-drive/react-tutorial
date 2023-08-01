@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import cn from 'clsx';
-import { getValidates } from 'src/utils/validation';
-import { FormItem } from 'src/components/FormItem';
 import Input from 'antd/lib/input';
 import { FormikHandlers } from 'formik/dist/types';
 import { useTranslation } from 'react-i18next';
+import { FormItem } from 'src/components/FormItem';
+import { getValidates } from 'src/utils/validation';
 import { ProfileFormProps } from '../types';
 import s from './AboutField.sass';
 

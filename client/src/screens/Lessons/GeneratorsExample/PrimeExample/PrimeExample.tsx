@@ -1,10 +1,10 @@
 import React, { FC, useState, useRef, useEffect } from 'react';
 import cn from 'clsx';
 import { Button } from 'antd';
-import { ProgressIndicator } from 'src/components/ProgressIndicator';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import PauseCircleIcon from '@mui/icons-material/PauseCircle';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { ProgressIndicator } from 'src/components/ProgressIndicator';
 import { Title } from 'src/components/Title';
 import s from './PrimeExample.sass';
 

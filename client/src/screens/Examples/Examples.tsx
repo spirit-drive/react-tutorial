@@ -1,8 +1,8 @@
 import React, { FC, useState, Key, useEffect } from 'react';
-import { Page } from 'src/components/Page';
 import { useTranslation } from 'react-i18next';
 import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
-import { Tabs, TabsItem } from '../../components/Tabs';
+import { Page } from 'src/components/Page';
+import { Tabs, TabsItem } from 'src/components/Tabs';
 import { ModalExample } from './ModalExample';
 import { MovableExample } from './MovableExample';
 import { SortableListExample } from './SortableListExample';

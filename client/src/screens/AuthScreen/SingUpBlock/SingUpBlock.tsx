@@ -1,16 +1,16 @@
 import React, { memo, useMemo } from 'react';
 import cn from 'clsx';
 import { useMutation } from '@apollo/client';
-import { AuthForm, AuthFormErrors, AuthFormValues } from 'src/components/Forms';
 import { FormikConfig, useFormik } from 'formik';
 import { Button, message } from 'antd';
-import { isLongEnough, isNotDefinedString } from 'src/utils/validation';
 import { useDispatch } from 'react-redux';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { AuthForm, AuthFormErrors, AuthFormValues } from 'src/components/Forms';
+import { isLongEnough, isNotDefinedString } from 'src/utils/validation';
 import { tokenActions } from 'src/store/token';
 import { createErrorHandlers } from 'src/utils/createErrorHandlers';
-import { useNavigate, useLocation } from 'react-router-dom';
 import { NavigationState } from 'src/navigation/types';
-import { useTranslation } from 'react-i18next';
 import { SIGN_UP, SignUpResponse, SignUpVars, extractSignUp } from '../connections';
 import s from './SingUpBlock.sass';
 

@@ -1,7 +1,7 @@
 import React, { memo, useLayoutEffect, useRef, useState } from 'react';
 import cn from 'clsx';
-import { useOpenCloseNotMemo } from 'src/hooks/useOpenCloseNotMemo';
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
+import { useOpenCloseNotMemo } from 'src/hooks/useOpenCloseNotMemo';
 import s from './ResponseNavigation.sass';
 
 export type ResponseNavigationItem = {

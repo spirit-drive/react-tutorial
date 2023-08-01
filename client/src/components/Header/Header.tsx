@@ -1,10 +1,10 @@
 import React, { memo, useMemo } from 'react';
 import cn from 'clsx';
+import { WithTranslation, withTranslation } from 'react-i18next';
+import { NavLink, NavLinkProps } from 'react-router-dom';
 import { Frame } from 'src/components/Frame';
 import { Logo } from 'src/components/Logo';
 import { ResponseNavigation, ResponseNavigationProps } from 'src/components/ResponseNavigation';
-import { WithTranslation, withTranslation } from 'react-i18next';
-import { NavLink, NavLinkProps } from 'react-router-dom';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 import { LangSwitcher } from '../LangSwitcher';
 import { Login } from '../Login';

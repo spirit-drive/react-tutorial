@@ -1,6 +1,6 @@
+import { useCallback, useRef } from 'react';
 import { getOnlyNumber } from 'src/utils/format';
 import { NumberInputProps } from 'src/components/Inputs/NumberInput';
-import { useCallback, useRef } from 'react';
 import { DEFAULT_MAX_VALUE } from '../config';
 
 export const getValue = (value: string | number): number => parseFloat(getOnlyNumber(value.toString()));

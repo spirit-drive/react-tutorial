@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import cn from 'clsx';
-import { Title } from 'src/components/Title';
 import { Form } from 'antd';
+import { Title } from 'src/components/Title';
 import s from './FormItem.sass';
 
 export type Help = null | React.ReactNode;

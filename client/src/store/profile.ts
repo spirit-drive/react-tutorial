@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Profile } from 'src/server.types';
 import { CaseReducer } from '@reduxjs/toolkit/src/createReducer';
+import { Profile } from 'src/server.types';
 import { RootState } from './index';
 
 export const profileSlice = createSlice<Profile, { set: CaseReducer<Profile, PayloadAction<Profile>> }, 'profile'>({

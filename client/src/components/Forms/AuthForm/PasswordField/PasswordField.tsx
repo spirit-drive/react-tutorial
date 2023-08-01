@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 import cn from 'clsx';
-import { getValidates } from 'src/utils/validation';
-import { FormItem } from 'src/components/FormItem';
 import Input from 'antd/lib/input';
-import { AuthFormProps } from 'src/components/Forms/AuthForm';
 import { FormikHandlers } from 'formik/dist/types';
 import { LockOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
+import { AuthFormProps } from 'src/components/Forms/AuthForm';
+import { FormItem } from 'src/components/FormItem';
+import { getValidates } from 'src/utils/validation';
 import s from './PasswordField.sass';
 
 export type PasswordFieldProps = Pick<AuthFormProps, 'className' | 'disabled'> & {

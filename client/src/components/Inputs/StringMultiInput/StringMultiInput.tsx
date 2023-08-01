@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useMemo, useRef } from 'react';
-import { inputsListOnlyList } from 'src/components/Inputs/factories/inputsList';
 import { Button } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
+import { inputsListOnlyList } from 'src/components/Inputs/factories/inputsList';
 import { StringInput } from '../StringInput';
 import { Manager } from '../factories/inputsList/types';
 import s from './StringMultiInput.module.sass';

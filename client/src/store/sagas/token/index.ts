@@ -1,7 +1,7 @@
 import { put, select, takeEvery, takeLatest } from 'redux-saga/effects';
+import { FetchResult } from '@apollo/client';
 import { storage } from 'src/utils/storage';
 import { client } from 'src/client';
-import { FetchResult } from '@apollo/client';
 import { TOKEN_KEY, tokenActions, tokenSelectors } from '../../token';
 import { profileActions } from '../../profile';
 import { GET_PROFILE, extractGetProfile, GetProfileResponse } from './connections';
