@@ -32,32 +32,14 @@ describe('advanced hooks testing', () => {
     expect(result.current.count).toBe(22);
   });
 
-  // test('should use custom step when incrementing', () => {
-  //   const wrapper = ({ children, step }: any) => <CounterStepProvider step={step}>{children}</CounterStepProvider>;
-  //   const { result, rerender } = renderHook(() => useCounter(), {
-  //     wrapper,
-  //     initialProps: {
-  //       step: 2,
-  //     },
-  //   });
-  //
-  //   act(() => {
-  //     result.current.increment();
-  //   });
-  //
-  //   expect(result.current.count).toBe(2);
-  //
-  //   /**
-  //    * Change the step value
-  //    */
-  //   rerender({ step: 8 });
-  //
-  //   act(() => {
-  //     result.current.increment();
-  //   });
-  //
-  //   expect(result.current.count).toBe(10);
-  // });
+  test('returns logged in user', () => {
+    const { result, rerender } = renderHook((props: Record<string, unknown> = {}) => props, {
+      initialProps: { name: 'Alice' },
+    });
+    expect(result.current).toEqual({ name: 'Alice' });
+    rerender();
+    expect(result.current).toEqual({ name: undefined });
+  });
 
   test('should increment counter after delay', async () => {
     const { result } = renderHook(() => useCounter());
