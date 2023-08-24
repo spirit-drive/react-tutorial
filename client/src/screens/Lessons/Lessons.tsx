@@ -6,18 +6,21 @@ import { Tabs, TabsItem } from 'src/components/Tabs';
 import { GeneratorsExample } from './GeneratorsExample';
 import { BabelExample } from './BabelExample';
 import { PatternsExample } from './PatternsExample';
+import { RestApiExample } from './RestApiExample';
 import s from './Lessons.sass';
 
 export enum LessonKey {
   babel = 'babel',
   generator = 'generator',
   patterns = 'patterns',
+  restApi = 'restApi',
 }
 
 const lessons = {
   [LessonKey.babel]: <BabelExample />,
   [LessonKey.generator]: <GeneratorsExample />,
   [LessonKey.patterns]: <PatternsExample />,
+  [LessonKey.restApi]: <RestApiExample />,
 };
 
 const getContent = (key: string) => () => {

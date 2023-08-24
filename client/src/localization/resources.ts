@@ -167,6 +167,7 @@ export const resources = {
         LessonKey: {
           generator: 'Generators iterators',
           patterns: 'Patterns',
+          restApi: 'Rest Api',
           babel: 'Babel + typescript',
         },
       },
@@ -339,6 +340,7 @@ export const resources = {
         LessonKey: {
           generator: 'Генераторы итераторы',
           patterns: 'Паттерны',
+          restApi: 'Rest Api',
           babel: 'Babel + typescript',
         },
       },
