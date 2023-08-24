@@ -2,8 +2,8 @@ import React, { FC, Reducer, useEffect, useReducer } from 'react';
 import cn from 'clsx';
 import { Alert, Spin } from 'antd';
 import { myCustomFetch } from 'src/client/myCustomFetch';
-import { User } from 'src/screens/Lessons/RestApiExample/FetchExample/UserCard/types';
-import { UserCardManaged } from './UserCardManaged';
+import { User } from 'src/components/UserCard/types';
+import { UserCardManaged } from 'src/components/UserCardManaged';
 import { QueryAction, QueryData, reducer } from './common';
 import s from './FetchByMounting.sass';
 

@@ -3,7 +3,7 @@ import cn from 'clsx';
 import { DeleteOutlined, EditOutlined, SaveOutlined } from '@ant-design/icons';
 import { UserCard, UserCardProps } from '../UserCard';
 import { User } from '../UserCard/types';
-import { UserInput } from '../UserInput';
+import { UserInput } from '../Inputs/UserInput';
 import s from './UserCardManaged.sass';
 
 export type UserCardManagedProps = UserCardProps & {

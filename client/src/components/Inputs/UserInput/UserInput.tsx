@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import cn from 'clsx';
 import { Input } from 'antd';
 import { UserCoverInput } from 'src/components/Inputs/UserCoverInput';
-import { User } from '../UserCard/types';
+import { User } from 'src/components/UserCard/types';
 import s from './UserInput.sass';
 
 export type UserInputProps = {

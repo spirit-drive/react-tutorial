@@ -3,8 +3,8 @@ import cn from 'clsx';
 import { Alert, Button, Input, Spin } from 'antd';
 import { myCustomFetch } from 'src/client/myCustomFetch';
 import { Title } from 'src/components/Title';
-import { User } from 'src/screens/Lessons/RestApiExample/FetchExample/UserCard/types';
-import { UserCardManaged } from './UserCardManaged';
+import { User } from 'src/components/UserCard/types';
+import { UserCardManaged } from 'src/components/UserCardManaged';
 import { QueryAction, QueryData, reducer } from './common';
 import s from './FetchByAction.sass';
 
