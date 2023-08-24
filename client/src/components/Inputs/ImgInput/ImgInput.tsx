@@ -29,6 +29,7 @@ export const ImgInput: FC<ImgInputProps> = ({ className, value, onChange }) => {
       .catch((err) => {
         console.error(err); // eslint-disable-line no-console
         message.error(err.message);
+        setProgress(0);
       });
   };
 
