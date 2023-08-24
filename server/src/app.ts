@@ -2,6 +2,7 @@ import * as express from 'express';
 import * as cors from 'cors';
 import * as passport from 'passport';
 import { server } from './graphql';
+import { setRestApiRoutes } from './setRestApiRoutes';
 
 (async () => {
   const app = express();
@@ -12,6 +13,8 @@ import { server } from './graphql';
   app.use(express.json());
 
   app.use(cors());
+
+  setRestApiRoutes(app);
 
   await server.start();
 

@@ -3,7 +3,7 @@ const fs = require('fs');
 const p = require('path');
 /* eslint-enable @typescript-eslint/no-var-requires */
 
-const pathMain = p.join(__dirname, 'src', 'server.types.ts');
+const pathMain = p.join(__dirname, 'src', 'server.common.ts');
 
 const update = (path: string) => {
   let fileContent = fs.readFileSync(path, 'utf8');
