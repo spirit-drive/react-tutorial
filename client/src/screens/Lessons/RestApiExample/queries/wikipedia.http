@@ -1,0 +1,2 @@
+GET /wiki/HTTP HTTP/1.0
+Host: ru.wikipedia.org

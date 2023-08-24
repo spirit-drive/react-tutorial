@@ -22,15 +22,12 @@ export const ImgInput: FC<ImgInputProps> = ({ className, value, onChange }) => {
     myCustomXML<{ url: string }>(data, {
       onProgress: (loaded, total) => setProgress(Math.round((loaded / total) * 100)),
     })
-      .then(({ url }) => {
-        onChange(`${URL}${url}`);
-        setProgress(0);
-      })
+      .then(({ url }) => onChange(`${URL}${url}`))
       .catch((err) => {
         console.error(err); // eslint-disable-line no-console
         message.error(err.message);
-        setProgress(0);
-      });
+      })
+      .finally(() => setProgress(0));
   };
 
   return (
