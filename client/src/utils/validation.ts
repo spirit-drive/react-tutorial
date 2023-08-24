@@ -36,7 +36,7 @@ export const getFieldCallbacks = <T = unknown>(
   { setFieldValue, setFieldTouched }: Pick<FormikContextType<unknown>, 'setFieldValue' | 'setFieldTouched'>
 ): { onBlur: () => void; onChange: (value: T) => void } => ({
   onBlur: (): void => setFieldTouched(key, true),
-  onChange: (value): void => setFieldValue(key, value),
+  onChange: (value): unknown => setFieldValue(key, value),
 });
 
 export const useFieldCallbacks = <T = unknown>(
