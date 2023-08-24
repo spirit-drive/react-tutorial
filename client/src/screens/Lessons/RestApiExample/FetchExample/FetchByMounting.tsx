@@ -25,6 +25,24 @@ export const FetchByMounting: FC<FetchByMountingProps> = ({ className }) => {
       .catch((e) => dispatch({ type: 'error', payload: e }));
   }, []);
 
+  const onRemove = (id: string) => {
+    dispatch({ type: 'loading' });
+    myCustomFetch<User[]>(`/users/${id}`, { method: 'delete' })
+      .then((res) => dispatch({ type: 'data', payload: res }))
+      .catch((e) => dispatch({ type: 'error', payload: e }));
+  };
+
+  const onSave = (id: string, user: User) => {
+    dispatch({ type: 'loading' });
+    myCustomFetch<User[]>(`/users/${id}`, {
+      method: 'put',
+      body: JSON.stringify(user),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then((res) => dispatch({ type: 'data', payload: res }))
+      .catch((e) => dispatch({ type: 'error', payload: e }));
+  };
+
   const content = (() => {
     if (state.loading) return <Spin />;
     if (state.error) return <Alert message={state.error.message} type="error" showIcon />;
@@ -32,7 +50,14 @@ export const FetchByMounting: FC<FetchByMountingProps> = ({ className }) => {
       return (
         <div className={s.users}>
           {state.data?.map((item) => (
-            <UserCardManaged id={item.id} name={item.name} img={item.img} key={item.id} />
+            <UserCardManaged
+              onSave={onSave}
+              onRemove={onRemove}
+              id={item.id}
+              name={item.name}
+              img={item.img}
+              key={item.id}
+            />
           ))}
         </div>
       );
