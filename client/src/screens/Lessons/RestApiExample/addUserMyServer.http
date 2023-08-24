@@ -1,0 +1,7 @@
+POST http://localhost:4042/users
+Content-Type: application/json
+
+{
+  "name": "Катя",
+  "img": "https://sun2-22.userapi.com/s/v1/ig2/UVEvXXXOQZurOftu1X4baRwo4UPXr2MZ-GQQjgI6_Owd3grAzKNnVzL5LVzmtnqIPW4JYk2WLAXhYQr-umaYiM2M.jpg?size=100x100&quality=95&crop=151,2,1078,1078&ava=1"
+}

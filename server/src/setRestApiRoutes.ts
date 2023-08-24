@@ -72,7 +72,8 @@ export const setRestApiRoutes = (app: Express) => {
   });
 
   app.post('/users', (req, res) => {
-    fakeDB.users.push({ ...req.body, id: Math.random().toString(16) });
+    const id = (Math.max(...fakeDB.users.map((i) => parseInt(i.id, 10))) + 1).toString();
+    fakeDB.users.push({ ...req.body, id });
     res.send(fakeDB.users);
   });
 
