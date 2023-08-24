@@ -1,13 +1,17 @@
 import * as express from 'express';
 import * as cors from 'cors';
 import * as passport from 'passport';
+import * as fileUpload from 'express-fileupload';
 import { server } from './graphql';
 import { setRestApiRoutes } from './setRestApiRoutes';
+import { setUpload } from './setUpload';
 
 (async () => {
   const app = express();
 
   app.use(passport.initialize());
+
+  app.use(fileUpload());
 
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
@@ -15,6 +19,7 @@ import { setRestApiRoutes } from './setRestApiRoutes';
   app.use(cors());
 
   setRestApiRoutes(app);
+  setUpload(app);
 
   await server.start();
 
