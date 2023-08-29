@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { Page } from 'src/components/Page';
 import { Tabs, TabsItem } from 'src/components/Tabs';
+import { WebSocketsWorkersExample } from 'src/screens/Lessons/WebSocketsWorkersExample';
 import { GeneratorsExample } from './GeneratorsExample';
 import { BabelExample } from './BabelExample';
 import { PatternsExample } from './PatternsExample';
@@ -14,6 +15,7 @@ export enum LessonKey {
   generator = 'generator',
   patterns = 'patterns',
   restApi = 'restApi',
+  socketsAndWorkers = 'socketsAndWorkers',
 }
 
 const lessons = {
@@ -21,6 +23,7 @@ const lessons = {
   [LessonKey.generator]: <GeneratorsExample />,
   [LessonKey.patterns]: <PatternsExample />,
   [LessonKey.restApi]: <RestApiExample />,
+  [LessonKey.socketsAndWorkers]: <WebSocketsWorkersExample />,
 };
 
 const getContent = (key: string) => () => {

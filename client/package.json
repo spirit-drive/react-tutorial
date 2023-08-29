@@ -38,6 +38,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.10.0",
     "redux-saga": "^1.2.3",
+    "socket.io-client": "^4.7.2",
     "symbol-observable": "^4.0.0",
     "unchanged": "^2.2.1"
   },
