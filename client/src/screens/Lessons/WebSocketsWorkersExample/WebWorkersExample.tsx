@@ -11,16 +11,20 @@ export type WebWorkersExampleProps = {
 };
 
 export const WebWorkersExample: FC<WebWorkersExampleProps> = ({ className }) => {
-  const [withWorker, setWithWorker] = useState<number[][]>();
-  const [origin, setOrigin] = useState<number[][]>();
+  const [withWorker, setWithWorker] = useState<number[][] | string>();
+  const [origin, setOrigin] = useState<number[][] | string>();
   const [value, onChange] = useState<number>(8);
 
   const calculateOrigin = () => {
-    setOrigin([...permute(getArray(value))]);
+    setOrigin('loading...');
+    setTimeout(() => {
+      setOrigin([...permute(getArray(value))]);
+    });
   };
   const calculateWithWorker = () => {
+    setWithWorker('loading...');
     if (window.Worker) {
-      const worker = new Worker(new URL('./workerMain.ts', import.meta.url));
+      const worker = new Worker(new URL('./worker.ts', import.meta.url));
       worker.postMessage({ value });
       worker.addEventListener('message', (e) => {
         setWithWorker(e.data);
