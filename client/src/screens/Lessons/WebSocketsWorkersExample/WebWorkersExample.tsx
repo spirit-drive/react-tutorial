@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import cn from 'clsx';
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 import { IntInput } from 'src/components/Inputs';
 import { Title } from 'src/components/Title';
 import { getArray, permute } from './helpers';
@@ -19,12 +19,16 @@ export const WebWorkersExample: FC<WebWorkersExampleProps> = ({ className }) => 
     setOrigin([...permute(getArray(value))]);
   };
   const calculateWithWorker = () => {
-    const worker = new Worker(new URL('./workerMain.ts', import.meta.url));
-    worker.postMessage({ value });
-    worker.addEventListener('message', (e) => {
-      setWithWorker(e.data);
-      worker.terminate();
-    });
+    if (window.Worker) {
+      const worker = new Worker(new URL('./workerMain.ts', import.meta.url));
+      worker.postMessage({ value });
+      worker.addEventListener('message', (e) => {
+        setWithWorker(e.data);
+        worker.terminate();
+      });
+    } else {
+      message.error(`К сожалению веб вокреры не поддерживаются на вашем устройстве`);
+    }
   };
   return (
     <div className={cn(s.root, className)}>
