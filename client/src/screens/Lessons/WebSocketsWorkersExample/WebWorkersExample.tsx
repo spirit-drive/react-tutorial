@@ -3,40 +3,28 @@ import cn from 'clsx';
 import { Button } from 'antd';
 import { IntInput } from 'src/components/Inputs';
 import { Title } from 'src/components/Title';
+import { getArray, permute } from './helpers';
 import s from './WebWorkersExample.sass';
 
 export type WebWorkersExampleProps = {
   className?: string;
 };
 
-const getArray = (length: number) =>
-  Array(length)
-    .fill('')
-    .map((_, i) => i);
-
-function* permute(arr: number[], m: number[] = []): Generator<number[]> {
-  // написать свою реализацию
-  if (arr.length === 0) {
-    yield m;
-  } else {
-    for (let i = 0; i < arr.length; i++) {
-      const curr = [...arr];
-      const next = curr.splice(i, 1);
-      yield* permute(curr.slice(), m.concat(next));
-    }
-  }
-}
-
 export const WebWorkersExample: FC<WebWorkersExampleProps> = ({ className }) => {
   const [withWorker, setWithWorker] = useState<number[][]>();
   const [origin, setOrigin] = useState<number[][]>();
-  const [value, onChange] = useState<number>(7);
+  const [value, onChange] = useState<number>(8);
 
   const calculateOrigin = () => {
     setOrigin([...permute(getArray(value))]);
   };
   const calculateWithWorker = () => {
-    setWithWorker([...permute(getArray(value))]);
+    const worker = new Worker(new URL('./workerMain.ts', import.meta.url));
+    worker.postMessage({ value });
+    worker.addEventListener('message', (e) => {
+      setWithWorker(e.data);
+      worker.terminate();
+    });
   };
   return (
     <div className={cn(s.root, className)}>
