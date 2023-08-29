@@ -1,5 +1,10 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import cn from 'clsx';
+import { Button, Divider, Input } from 'antd';
+import { useSelector } from 'react-redux';
+import { Title } from 'src/components/Title';
+import { profileSelectors } from 'src/store/profile';
+import { MessageView, Message } from './MessageView';
 import { socket } from './socket';
 import s from './WebSocketsExample.sass';
 
@@ -8,12 +13,47 @@ export type WebSocketsExampleProps = {
 };
 
 export const WebSocketsExample: FC<WebSocketsExampleProps> = ({ className }) => {
+  const profile = useSelector(profileSelectors.get);
+
+  const [value, setValue] = useState('');
+  const [messages, setMessages] = useState<Message[]>([]);
   useEffect(() => {
     socket.connect();
+    socket.emit('getMsgs', setMessages);
+    socket.on('msgs', setMessages);
 
     return () => {
       socket.disconnect();
+      socket.off('msgs', setMessages);
     };
   }, []);
-  return <div className={cn(s.root, className)}>WebSocketsExample</div>;
+
+  const sendMsg = (msg: string) => socket.emit('msg', { msg, name: profile?.name });
+
+  const onSend = () => {
+    sendMsg(value);
+    setValue('');
+  };
+  return (
+    <div className={cn(s.root, className)}>
+      <div>
+        <Title className={s.title}>Сообщения</Title>
+        <div className={s.field}>
+          {messages?.map((msg, i) => (
+            <MessageView className={s.msg} value={msg} key={i} />
+          ))}
+        </div>
+      </div>
+      <Divider />
+      <div>
+        <Title className={s.title}>Введите сообщение</Title>
+        <Input.TextArea onPressEnter={onSend} value={value} rows={5} onChange={(e) => setValue(e.target.value)} />
+      </div>
+      <div>
+        <Button type="primary" onClick={onSend} className={s.btn}>
+          Отправить
+        </Button>
+      </div>
+    </div>
+  );
 };
