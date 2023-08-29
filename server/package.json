@@ -90,6 +90,7 @@
     "graphql-type-json": "^0.3.2",
     "jsonwebtoken": "^9.0.0",
     "passport": "^0.5.2",
+    "socket.io": "^4.7.2",
     "ts-node-dev": "^2.0.0"
   }
 }
