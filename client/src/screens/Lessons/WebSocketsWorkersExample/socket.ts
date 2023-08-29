@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { io } from 'socket.io-client';
 import { HOST, SOCKET_PORT } from 'src/client/config';
 
