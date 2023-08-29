@@ -3,7 +3,7 @@ import { getArray, permute } from './helpers';
 
 const handle = compose(permute, getArray);
 
-onmessage = function (e) {
-  const { value } = e.data as { value: number };
+onmessage = function (e: MessageEvent<{ value: number }>) {
+  const { value } = e.data;
   postMessage([...handle(value)]);
 };
