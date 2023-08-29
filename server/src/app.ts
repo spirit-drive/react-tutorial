@@ -2,10 +2,10 @@ import * as express from 'express';
 import * as cors from 'cors';
 import * as passport from 'passport';
 import * as fileUpload from 'express-fileupload';
-import { Server } from 'socket.io';
 import { server } from './graphql';
 import { setRestApiRoutes } from './setRestApiRoutes';
 import { setUpload } from './setUpload';
+import { runSocket } from './socket';
 
 (async () => {
   const app = express();
@@ -30,14 +30,5 @@ import { setUpload } from './setUpload';
   // eslint-disable-next-line no-console
   app.listen(PORT, () => console.log(`Server started on port ${PORT}${server.graphqlPath}`));
 
-  const SOCKET_PORT = parseInt(process.env.SOCKET_PORT) || 4043;
-  const io = new Server(SOCKET_PORT, {
-    cors: {
-      origin: 'http://localhost:2033',
-    },
-  });
-
-  io.on('connection', () => {
-    console.log('connection');
-  });
+  runSocket();
 })();
