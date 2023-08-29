@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import cn from 'clsx';
+import { socket } from './socket';
 import s from './WebSocketsExample.sass';
 
 export type WebSocketsExampleProps = {
@@ -7,6 +8,12 @@ export type WebSocketsExampleProps = {
 };
 
 export const WebSocketsExample: FC<WebSocketsExampleProps> = ({ className }) => {
-  console.log(WebSocketsExample);
+  useEffect(() => {
+    socket.connect();
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
   return <div className={cn(s.root, className)}>WebSocketsExample</div>;
 };
