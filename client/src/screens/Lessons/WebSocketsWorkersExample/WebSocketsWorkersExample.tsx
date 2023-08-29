@@ -11,9 +11,9 @@ export type BabelExampleProps = {
 
 export const WebSocketsWorkersExample: FC<BabelExampleProps> = ({ className }) => (
   <div className={cn(s.root, className)}>
-    <Title className={s.title}>Веб сокеты пример</Title>
+    <Title className={s.title}>Веб сокеты</Title>
     <WebSocketsExample />
-    <Title className={s.title}>Веб воркеры пример</Title>
+    <Title className={s.title}>Веб воркеры</Title>
     <WebWorkersExample />
   </div>
 );
