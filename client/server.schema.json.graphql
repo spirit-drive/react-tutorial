@@ -1,4 +1,4 @@
-# This file was generated based on "server.schema.json". Do not edit manually.
+# This file was generated. Do not edit manually.
 
 schema {
     query: Query
@@ -12,11 +12,38 @@ interface UserInterface {
     signUpDate: String!
 }
 
+union Animal = Cat | Dog
+
 type AuthResult {
     token: String!
 }
 
+type Cat {
+    age: Float
+    id: ID!
+    name: String
+}
+
+type Customer {
+    id: ID!
+    img: String
+    name: String
+}
+
+type CustomerMutations {
+    add(img: String, name: String!): Customer!
+    edit(id: ID!, img: String, name: String!): Customer!
+    remove(id: ID!): Boolean!
+}
+
+type Dog {
+    age: Float
+    id: ID!
+    name: String
+}
+
 type Mutation {
+    customers: CustomerMutations
     profile: ProfileMutations
 }
 
@@ -40,6 +67,8 @@ type ProfilePasswordMutations {
 }
 
 type Query {
+    animals: [Animal]
+    customers(ids: [ID!]): [Customer]
     profile: Profile
 }
 

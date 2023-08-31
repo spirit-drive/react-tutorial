@@ -7,16 +7,25 @@ export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> =
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string };
-  String: { input: string; output: string };
-  Boolean: { input: boolean; output: boolean };
-  Int: { input: number; output: number };
-  Float: { input: number; output: number };
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
 };
+
+export type Animal = Cat | Dog;
 
 export type AuthResult = {
   __typename?: 'AuthResult';
   token: Scalars['String']['output'];
+};
+
+export type Cat = {
+  __typename?: 'Cat';
+  age?: Maybe<Scalars['Float']['output']>;
+  id: Scalars['ID']['output'];
+  name?: Maybe<Scalars['String']['output']>;
 };
 
 export type ChangePasswordInput = {
@@ -38,10 +47,12 @@ export type CustomerMutations = {
   remove: Scalars['Boolean']['output'];
 };
 
+
 export type CustomerMutationsAddArgs = {
   img?: InputMaybe<Scalars['String']['input']>;
   name: Scalars['String']['input'];
 };
+
 
 export type CustomerMutationsEditArgs = {
   id: Scalars['ID']['input'];
@@ -49,8 +60,16 @@ export type CustomerMutationsEditArgs = {
   name: Scalars['String']['input'];
 };
 
+
 export type CustomerMutationsRemoveArgs = {
   id: Scalars['ID']['input'];
+};
+
+export type Dog = {
+  __typename?: 'Dog';
+  age?: Maybe<Scalars['Float']['output']>;
+  id: Scalars['ID']['output'];
+  name?: Maybe<Scalars['String']['output']>;
 };
 
 export type Mutation = {
@@ -76,15 +95,18 @@ export type ProfileMutations = {
   update: Profile;
 };
 
+
 export type ProfileMutationsSigninArgs = {
   email: Scalars['String']['input'];
   password: Scalars['String']['input'];
 };
 
+
 export type ProfileMutationsSignupArgs = {
   email: Scalars['String']['input'];
   password: Scalars['String']['input'];
 };
+
 
 export type ProfileMutationsUpdateArgs = {
   input: UpdateProfileInput;
@@ -95,15 +117,18 @@ export type ProfilePasswordMutations = {
   change: ResetPassword;
 };
 
+
 export type ProfilePasswordMutationsChangeArgs = {
   input: ChangePasswordInput;
 };
 
 export type Query = {
   __typename?: 'Query';
+  animals?: Maybe<Array<Maybe<Animal>>>;
   customers?: Maybe<Array<Maybe<Customer>>>;
   profile?: Maybe<Profile>;
 };
+
 
 export type QueryCustomersArgs = {
   ids?: InputMaybe<Array<Scalars['ID']['input']>>;
