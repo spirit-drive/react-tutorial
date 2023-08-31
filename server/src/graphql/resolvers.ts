@@ -2,6 +2,7 @@ import { ApolloServerExpressConfig } from 'apollo-server-express/src/ApolloServe
 import { ProfileMutations, ProfilePasswordMutations, profile } from './resolvers/profile';
 import { customers } from './resolvers/customers/customers';
 import { CustomerMutations } from './resolvers/customers/CustomerMutations';
+import { animals } from './resolvers/animals';
 
 export const resolvers: ApolloServerExpressConfig['resolvers'] = {
   // Мутации по группам
@@ -17,5 +18,6 @@ export const resolvers: ApolloServerExpressConfig['resolvers'] = {
   Query: {
     profile,
     customers,
+    animals,
   },
 };

@@ -12,9 +12,18 @@ export type Scalars = {
   Float: number;
 };
 
+export type Animal = Cat | Dog;
+
 export type AuthResult = {
   __typename?: 'AuthResult';
   token: Scalars['String'];
+};
+
+export type Cat = {
+  __typename?: 'Cat';
+  age?: Maybe<Scalars['Float']>;
+  id: Scalars['ID'];
+  name?: Maybe<Scalars['String']>;
 };
 
 export type ChangePasswordInput = {
@@ -52,6 +61,13 @@ export type CustomerMutationsEditArgs = {
 
 export type CustomerMutationsRemoveArgs = {
   id: Scalars['ID'];
+};
+
+export type Dog = {
+  __typename?: 'Dog';
+  age?: Maybe<Scalars['Float']>;
+  id: Scalars['ID'];
+  name?: Maybe<Scalars['String']>;
 };
 
 export type Mutation = {
@@ -106,6 +122,7 @@ export type ProfilePasswordMutationsChangeArgs = {
 
 export type Query = {
   __typename?: 'Query';
+  animals?: Maybe<Array<Maybe<Animal>>>;
   customers?: Maybe<Array<Maybe<Customer>>>;
   profile?: Maybe<Profile>;
 };

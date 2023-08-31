@@ -53,6 +53,20 @@ export const typeDefs = gql`
     token: String!
   }
 
+  type Cat {
+    id: ID!
+    name: String
+    age: Float
+  }
+
+  type Dog {
+    id: ID!
+    name: String
+    age: Float
+  }
+
+  union Animal = Cat | Dog
+
   type ProfilePasswordMutations {
     change(input: ChangePasswordInput!): ResetPassword!
   }
@@ -73,6 +87,7 @@ export const typeDefs = gql`
   type Query {
     profile: Profile
     customers(ids: [ID!]): [Customer]
+    animals: [Animal]
   }
 
   type Mutation {

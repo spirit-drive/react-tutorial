@@ -34,7 +34,7 @@ export type ApolloContext = {
   locale: Locale;
 };
 
-export type ResolverWithoutParent<Args extends Record<string, unknown>, Res extends unknown = AccountResponse> = (
+export type ResolverWithoutParent<Args extends Record<string, unknown>, Res = AccountResponse> = (
   parent: undefined,
   args: Args,
   context: ApolloContext
