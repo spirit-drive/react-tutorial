@@ -1,0 +1,11 @@
+POST http://localhost:4042/graphql
+Content-Type: application/json
+
+{
+  "operationName":"addCustomer",
+  "variables":{
+    "name":"Test",
+    "img":"https://sun2-18.userapi.com/s/v1/ig2/SF4atf3pMy8dSNU7dWIHgg4vCsfBPUqwAQXyd9R3oZf1AAoGbI8hddm94TUiJ2CfwfKQcoQbwpUyFFPkL9Lq4Npg.jpg?size=100x100&quality=95&crop=47,47,452,452&ava=1"
+  },
+  "query":"mutation addCustomer($name: String\u0021, $img: String) {\n  customers {\n    add(name: $name, img: $img) {\n      ...Customer\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment Customer on Customer {\n  id\n  name\n  img\n  __typename\n}"
+}
