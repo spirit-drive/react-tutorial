@@ -2,7 +2,7 @@ import React, { FC, useMemo } from 'react';
 import cn from 'clsx';
 import { Alert, Spin } from 'antd';
 import { useQuery } from '@apollo/client';
-import { extractGetCustomers, GET_CUSTOMERS } from '../connection';
+import { extractGetCustomers, GET_CUSTOMERS, GetCustomerArgs, GetCustomerResponse } from '../connection';
 import { UserCardManagedWithGraphql } from '../UserCardManagedWithGraphql';
 import s from './FetchByMounting.sass';
 
@@ -11,7 +11,7 @@ export type FetchByMountingProps = {
 };
 
 export const FetchByMounting: FC<FetchByMountingProps> = ({ className }) => {
-  const { data, loading, error, refetch } = useQuery(GET_CUSTOMERS);
+  const { data, loading, error, refetch } = useQuery<GetCustomerResponse, GetCustomerArgs>(GET_CUSTOMERS);
 
   const customers = useMemo(() => extractGetCustomers(data), [data]);
 

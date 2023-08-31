@@ -1,7 +1,7 @@
 import { ResolverWithoutParent } from '../../../types';
-import { Animal } from '../../graphql.types';
+import { Animal, QueryAnimalsArgs } from '../../graphql.types';
 
-const fakeRewards: Animal[] = [
+const fakeAnimals: Animal[] = [
   {
     id: '1',
     name: 'Мурзик',
@@ -34,4 +34,5 @@ const fakeRewards: Animal[] = [
   },
 ];
 
-export const animals: ResolverWithoutParent<never, Animal[] | Error> = async () => fakeRewards;
+export const animals: ResolverWithoutParent<QueryAnimalsArgs, Animal[] | Error> = async (_, { ids }) =>
+  ids ? fakeAnimals.filter((i) => ids.includes(i.id)) : fakeAnimals;

@@ -128,6 +128,11 @@ export type Query = {
 };
 
 
+export type QueryAnimalsArgs = {
+  ids?: InputMaybe<Array<Scalars['ID']>>;
+};
+
+
 export type QueryCustomersArgs = {
   ids?: InputMaybe<Array<Scalars['ID']>>;
 };

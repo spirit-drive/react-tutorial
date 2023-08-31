@@ -81,6 +81,7 @@ export const REMOVE_CUSTOMER = gql`
 `;
 
 export const extractGetCustomers = (data: GetCustomerResponse): Query['customers'] => get('customers', data);
+export const extractGetCustomer = (data: GetCustomerResponse): Query['customers'][number] => get('customers[0]', data);
 export const extractAddCustomer = (data: AddCustomerResponse): Mutation['customers']['add'] =>
   get(`customers.add`, data);
 export const extractEditCustomer = (data: EditCustomerResponse): Mutation['customers']['edit'] =>

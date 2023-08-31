@@ -87,7 +87,7 @@ export const typeDefs = gql`
   type Query {
     profile: Profile
     customers(ids: [ID!]): [Customer]
-    animals: [Animal]
+    animals(ids: [ID!]): [Animal]
   }
 
   type Mutation {
