@@ -10,14 +10,15 @@ export const setUpload = (app: Express) => {
     }
 
     const file = req.files.file as UploadedFile;
+    const name = encodeURI(file.name);
     const assetsPath = path.join(__dirname, 'assets');
     if (!fs.existsSync(assetsPath)) fs.mkdirSync(assetsPath);
 
-    const uploadPath = path.join(__dirname, 'assets', file.name);
+    const uploadPath = path.join(__dirname, 'assets', name);
 
     file.mv(uploadPath, function (err) {
       if (err) return res.status(500).send(err);
-      res.send({ url: `/img/${file.name}` });
+      res.send({ url: `/img/${name}` });
     });
   });
 
