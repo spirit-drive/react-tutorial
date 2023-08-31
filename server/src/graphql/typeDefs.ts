@@ -43,6 +43,12 @@ export const typeDefs = gql`
     success: Boolean!
   }
 
+  type Customer {
+    id: ID!
+    name: String
+    img: String
+  }
+
   type AuthResult {
     token: String!
   }
@@ -58,11 +64,19 @@ export const typeDefs = gql`
     password: ProfilePasswordMutations
   }
 
+  type CustomerMutations {
+    add(name: String!, img: String): Customer!
+    edit(id: ID!, name: String!, img: String): Customer!
+    remove(id: ID!): Boolean!
+  }
+
   type Query {
     profile: Profile
+    customers(ids: [ID!]): [Customer]
   }
 
   type Mutation {
     profile: ProfileMutations
+    customers: CustomerMutations
   }
 `;

@@ -1,6 +1,6 @@
 # Важно! Токен необходимо обновлять и не забывайте про vpn. Чтобы получить токен, необходимо запустить тест login.http (ищи в корне)
 overwrite: true
-schema: "http://localhost:4000/graphql"
+schema: "http://localhost:4042/graphql"
 documents: ""
 generates:
   src/graphql.types.ts:

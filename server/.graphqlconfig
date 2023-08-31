@@ -4,7 +4,7 @@
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {
-        "url": "https://education-server.herokuapp.com/graphql",
+        "url": "http://localhost:4042/graphql",
         "introspect": false
       }
     }
