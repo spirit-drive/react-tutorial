@@ -106,4 +106,4 @@
 
 ### Урок 24: Обзор GraphQL
 
-[Презентация]()
+[Презентация](https://docs.google.com/presentation/d/1Yop3c3ejd29Rd8pzKIM4NU3uB0B6PpJCguaZjK8XXc8)
