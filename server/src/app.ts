@@ -21,7 +21,15 @@ import { makeStandaloneServer } from './graphql';
   const PORT = parseInt(process.env.PORT) || 4042;
   const { server } = await makeStandaloneServer(httpServer, PORT);
 
-  app.use('/graphql', cors<cors.CorsRequest>(), express.json(), expressMiddleware(server));
+  app.use(
+    '/graphql',
+    cors<cors.CorsRequest>({
+      credentials: true,
+      origin: ['http://localhost:2033/'],
+    }),
+    express.json(),
+    expressMiddleware(server)
+  );
 
   // eslint-disable-next-line no-console
   httpServer.listen(() => console.log(`Server is now running on http://localhost:${PORT}/graphql`));
