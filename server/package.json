@@ -8,6 +8,7 @@
     "test": "jest src",
     "build": "tsc --project tsconfig.json",
     "start": "ts-node-dev src/app.ts",
+    "start:graphql": "ts-node-dev src/full-graphql-app.ts",
     "schemagen": "graphql-codegen && ts-node enhance.graphql.types.ts"
   },
   "jest": {
@@ -80,6 +81,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "apollo-server-express": "^3.1.2",
     "@apollo/server": "^4.9.3",
     "@graphql-tools/schema": "^10.0.0",
     "bcrypt": "^5.0.1",
