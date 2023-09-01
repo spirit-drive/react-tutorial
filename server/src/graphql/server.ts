@@ -4,8 +4,7 @@ import { resolvers } from './resolvers';
 
 export const AUTHENTICATION_TYPE = 'Bearer';
 const regexpForRemoveAuthenticationType = new RegExp(`^${AUTHENTICATION_TYPE}\\s`);
-const getToken = (authentication: string): string =>
-  authentication && authentication.replace(regexpForRemoveAuthenticationType, '');
+const getToken = (authentication: string): string => authentication?.replace(regexpForRemoveAuthenticationType, '');
 
 export const server = new ApolloServer({
   typeDefs,
