@@ -106,4 +106,9 @@
 
 ### Урок 24: Обзор GraphQL
 
-[Презентация]()
+[Презентация](https://docs.google.com/presentation/d/1Yop3c3ejd29Rd8pzKIM4NU3uB0B6PpJCguaZjK8XXc8)
+
+Дополнительные репозитории с полной поддержкой всех возможностей graphql
+
+[Клиент](https://github.com/spirit-drive/graphql-learn-client)
+[Сервер](https://github.com/spirit-drive/graphql-learn-server)
