@@ -33,7 +33,6 @@ export const myCustomXML = <T = Response>(
     };
 
     xhr.open('POST', `${URL}/upload`);
-    xhr.setRequestHeader('Apollo-Require-Preflight', 'true');
 
     xhr.send(body);
   });

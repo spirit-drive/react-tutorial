@@ -10,19 +10,23 @@
 
 [Стартовый шаблон](https://github.com/spirit-drive/react-start-template) - его нужно форкнуть (только ветку main), с его помощью будут выполняться все домашние задания.
 
+При git pull в собственный (форкнутый) стартовый шаблон может возникнуть ошибка **Permission denied**.
+
+Решение на _Linux/MacOS_ - sudo git pull.
+
+Решение на _Windows_ - открыть терминал с правами администратора и выполнить git pull.
+
 ## Модуль 1 - предисловие
 
-### Урок 1: Введение в современную frontend разработку
-
+### Введение в современную frontend разработку
 
   [Презентация](https://docs.google.com/presentation/d/1Az2Y5ltjlz-YK2dyfya2ReMhum1SiomGGyM5m5b3XPU/edit?usp=sharing)
 
-### Урок 2: Установка и настройка React
-
+### Установка и настройка React
 
 [Презентация](https://docs.google.com/presentation/d/1THc00FQjJXYXPUIXrXAI5rEHeDXbASreBgWOJ-VwEkM)
 
-### Урок 3: Typescript (часть 1)
+### Typescript (часть 1)
 
 [Презентация](https://drive.google.com/file/d/1w_JZM1i3cyF0u-hhsCJ7dUbBNSc5oU2i/view)
 
@@ -30,81 +34,81 @@
 
 ## Модуль 2 - React
 
-### Урок 6: Основы ReactJS. Компоненты
+### Основы ReactJS. Компоненты
 
 [Презентация](https://drive.google.com/file/d/1PsjdlXjAyEQKq3j-1xPZnRLKfV_cvW08)
 
-### Урок 7: JSX + CSS
+### JSX + CSS
 
 [Презентация](https://docs.google.com/presentation/d/1FvqXN0r7qZ63yNvlu4FLw3ia_6xz7Fo_TmhKCcoIpSQ)
 
-### Урок 8: Typescript (2)
+### Typescript (2)
 
 [Презентация](https://docs.google.com/presentation/d/1yfosShq5k7WgzEjOa48nXgMnpl_Bo_BYOnEKH2oVgcc)
 
-### Урок 9: React lifecycle
+### React lifecycle
 
 [Презентация](https://docs.google.com/presentation/d/1HGabKyPoJaqCiZguRh0gsvDQAdTUGOpRDvDMEzUkRJc)
 
-### Урок 10-11: React hooks
+### React hooks
 
 [Презентация](https://docs.google.com/presentation/d/1xnPdj7dxzVuBbhExhaJY6Z72YDQWZvFlOGFppyBd4GU)
 
-### Урок 12: Списки, ключи, события, порталы
+### Списки, ключи, события, порталы
 
 [Презентация](https://docs.google.com/presentation/d/1cOY0cXinh7pFqeL1c-XcUi847QdDCLh7gYADNVPOxl0)
 
 ## Модуль 3 - React и окружение
 
-### Урок 12: Формы, formik, react-hooks-form
+### Формы, formik, react-hooks-form
 
 [Презентация]()
 
-### Урок 13: MVC, SOLID in React. Архитектура
+### MVC, SOLID in React. Архитектура
 
 [Презентация](https://docs.google.com/presentation/d/1qWBl0aNVlLaQYfEeW9030JzX5cpolM7O1l8gPKEqtR8)
 
-### Урок 14: Основы функционального программирования
+### Основы функционального программирования
 
 [Презентация](https://docs.google.com/presentation/d/1aA-G6cZQYGSNwhEwbmL91DbgmQe4zOqHKs_7Q09YrWc)
 
-### Урок 15: React patterns
+### React patterns
 
 [Презентация](https://docs.google.com/presentation/d/1lPNxbBZaGeMV-5JuTYaVJmukx4Ip2KR1ZuOn6dp5e5E)
 
-### Урок 16: Jest и тестирование
+### Jest и тестирование
 
 [Презентация](https://docs.google.com/presentation/d/1CPNQYkx0Zv6BDrjuNmWN8GInU-65PWpW1BxmD9eG4V0)
 
-### Урок 17: React-Testing-Library
+### React-Testing-Library
 
 [Презентация](https://docs.google.com/presentation/d/1ca5XP4ttnKljGfPc5f0iHrA0tJX4ts5nQGpxslf9qfk)
 
-### Урок 18: React router
+### React router
 
 [Презентация](https://docs.google.com/presentation/d/1p0POGR-P0hBxbu9onlKIVtHe3ugKTJnuXG7qmq4fJE4)
 
-### Урок 19: Redux toolkit
+### Redux toolkit
 
 [Презентация]()
 
-### Урок 20: Redux thunk
+### Redux thunk
 
 [Презентация]()
 
-### Урок 21: Redux-Saga
+### Redux-Saga
 
 [Презентация]()
 
-### Урок 22: HTTP and REST API
+### HTTP and REST API
 
 [Презентация](https://docs.google.com/presentation/d/1JOhui3BtRGvvcf4gsJC9Y3xCEc7b_4G_5IicWNpyoUw)
 
-### Урок 23: WebSockets and WebWorkers
+### WebSockets and WebWorkers
 
 [Презентация](https://docs.google.com/presentation/d/1wMYXPywhz2f6BrjlXCTR--OBo4ACLUrAoMIh-jMO-W4)
 
-### Урок 24: Обзор GraphQL
+### Обзор GraphQL
 
 [Презентация](https://docs.google.com/presentation/d/1Yop3c3ejd29Rd8pzKIM4NU3uB0B6PpJCguaZjK8XXc8)
 
@@ -112,3 +116,11 @@
 
 [Клиент](https://github.com/spirit-drive/graphql-learn-client)
 [Сервер](https://github.com/spirit-drive/graphql-learn-server)
+
+## Практический модуль
+
+### Разработка мессенджера Websockets
+
+[Итоговое приложение](http://ac4366b428e4.vps.myjino.ru/)
+[Клиент](https://github.com/spirit-drive/otus-websockets-client)
+[Сервер](https://github.com/spirit-drive/otus-socket-server)
