@@ -16,11 +16,13 @@
 
 Решение на _Windows_ - открыть терминал с правами администратора и выполнить git pull.
 
+Для выполнения домашних заданий может понадобится макет. [Здесь](https://t.me/figma2html) можно найти множество макетов веб приложений.
+
 ## Модуль 1 - предисловие
 
 ### Введение в современную frontend разработку
 
-  [Презентация](https://docs.google.com/presentation/d/1Az2Y5ltjlz-YK2dyfya2ReMhum1SiomGGyM5m5b3XPU/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/1Az2Y5ltjlz-YK2dyfya2ReMhum1SiomGGyM5m5b3XPU/edit?usp=sharing)
 
 ### Установка и настройка React
 
