@@ -6,10 +6,12 @@ import { User } from 'src/components/UserCard/types';
 import { UserCardManaged } from 'src/components/UserCardManaged';
 import { QueryAction, QueryData, reducer } from './common';
 import s from './FetchByMounting.sass';
+import {runServerText} from "src/screens/Lessons/RestApiExample/common";
 
 export type FetchByMountingProps = {
   className?: string;
 };
+
 
 export const FetchByMounting: FC<FetchByMountingProps> = ({ className }) => {
   const [state, dispatch] = useReducer<Reducer<QueryData<User[]>, QueryAction<User[]>>>(reducer, {
@@ -45,7 +47,15 @@ export const FetchByMounting: FC<FetchByMountingProps> = ({ className }) => {
 
   const content = (() => {
     if (state.loading) return <Spin />;
-    if (state.error) return <Alert message={state.error.message} type="error" showIcon />;
+    if (state.error) {
+      return (
+        <Alert
+          message={state.error.message === 'Failed to fetch' ? runServerText : state.error.message}
+          type="error"
+          showIcon
+        />
+      );
+    }
     if (state.data) {
       return (
         <div className={s.users}>

@@ -7,6 +7,7 @@ import { User } from 'src/components/UserCard/types';
 import { UserCardManaged } from 'src/components/UserCardManaged';
 import { QueryAction, QueryData, reducer } from './common';
 import s from './FetchByAction.sass';
+import {runServerText} from "src/screens/Lessons/RestApiExample/common";
 
 export type FetchByActionProps = {
   className?: string;
@@ -49,7 +50,15 @@ export const FetchByAction: FC<FetchByActionProps> = ({ className }) => {
 
   const content = (() => {
     if (state.loading) return <Spin />;
-    if (state.error) return <Alert message={state.error.message} className={s.result} type="error" showIcon />;
+    if (state.error) {
+      return (
+        <Alert
+          message={state.error.message === 'Failed to fetch' ? runServerText : state.error.message}
+          type="error"
+          showIcon
+        />
+      );
+    }
     if (state.data) {
       return (
         <div className={s.users}>
