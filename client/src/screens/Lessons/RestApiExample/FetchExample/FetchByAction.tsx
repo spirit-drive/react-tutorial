@@ -5,9 +5,9 @@ import { myCustomFetch } from 'src/client/myCustomFetch';
 import { Title } from 'src/components/Title';
 import { User } from 'src/components/UserCard/types';
 import { UserCardManaged } from 'src/components/UserCardManaged';
+import { runServerText } from 'src/screens/Lessons/RestApiExample/common';
 import { QueryAction, QueryData, reducer } from './common';
 import s from './FetchByAction.sass';
-import {runServerText} from "src/screens/Lessons/RestApiExample/common";
 
 export type FetchByActionProps = {
   className?: string;

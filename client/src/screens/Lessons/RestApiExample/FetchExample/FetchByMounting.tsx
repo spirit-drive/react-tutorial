@@ -4,14 +4,13 @@ import { Alert, Spin } from 'antd';
 import { myCustomFetch } from 'src/client/myCustomFetch';
 import { User } from 'src/components/UserCard/types';
 import { UserCardManaged } from 'src/components/UserCardManaged';
+import { runServerText } from 'src/screens/Lessons/RestApiExample/common';
 import { QueryAction, QueryData, reducer } from './common';
 import s from './FetchByMounting.sass';
-import {runServerText} from "src/screens/Lessons/RestApiExample/common";
 
 export type FetchByMountingProps = {
   className?: string;
 };
-
 
 export const FetchByMounting: FC<FetchByMountingProps> = ({ className }) => {
   const [state, dispatch] = useReducer<Reducer<QueryData<User[]>, QueryAction<User[]>>>(reducer, {
