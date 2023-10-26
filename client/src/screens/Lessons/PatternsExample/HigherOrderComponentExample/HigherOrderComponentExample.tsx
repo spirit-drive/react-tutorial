@@ -5,9 +5,11 @@ import { IntInput, InputIntRangeList, IntInputWithArrows, IntRangeInput } from '
 import type { InputIntRangeListProps, IntRangeInputProps } from 'src/components/Inputs';
 import { Title } from 'src/components/Title';
 import { compose } from 'src/utils/compose';
+import { withArrows } from 'src/components/Inputs/NumberInput/withArrows';
+import { createRangeInput, RangeInputValue } from 'src/components/Inputs/createRangeInput';
 import s from './HigherOrderComponentExample.sass';
 
-type WithFormatProps = { value: string; onChange: (value: string) => void };
+type WithFormatProps = { onChange: (value: string) => void };
 /* Это компонент высшего порядка или higher-order component (HOC)
  * Принимает функцию форматирования value, и возвращает другой HOC, который уже принимает компонент
  * Строго говоря это все единый HOC
@@ -22,38 +24,48 @@ const withFormat =
   ({ onChange, ...props }: P) =>
     <Component {...(props as P)} onChange={(v) => onChange(formatter(v))} />;
 
-type InputProps = WithFormatProps;
+type InputProps = WithFormatProps & {
+  value: string;
+};
 const MyInput: FC<InputProps> = ({ value, onChange }) => (
   <Input value={value} onChange={(e) => onChange(e.target.value)} />
 );
 
-const OnlyDigitInput = withFormat((v) => v.replace(/\D/g, ''))(MyInput);
+const getOnlyDigits = (v: string) => v.replace(/\D/g, '');
+const getWithoutOne = (v: string) => v.replace(/1/g, '');
 
-const InputWithoutOne = withFormat((v) => v.replace(/1/g, ''))(MyInput);
+const OnlyDigitInput = withFormat(getOnlyDigits)(MyInput);
+
+const InputWithoutOne = withFormat(getWithoutOne)(MyInput);
 
 /**
- * Каррирование позволяет композировать несколько форматирований
+ * Каррирование позволяет композировать несколько форматирований, а также несколько компонентов высшего порядка
  * */
-const withOnlyDigitAndNotOne = compose(
-  withFormat((v) => v.replace(/1/g, '')),
-  withFormat((v) => v.replace(/\D/g, ''))
-);
+
+// Композиция форматирвания
+const formatter = compose(getWithoutOne, getOnlyDigits);
+
+const withOnlyDigitAndNotOne = withFormat(formatter);
+
+// Композиция HOC
+const withHOCComposition = compose(createRangeInput<number>, withArrows, withFormat(formatter));
 
 const InputWithOnlyDigitAndNotOne = withOnlyDigitAndNotOne(MyInput);
+const InputWithHOCComposition = withHOCComposition(MyInput);
 
-type FrameComponentProps = InputProps;
+type FrameComponentProps = {
+  value: string;
+  children: React.ReactNode;
+};
 /**
  * Данный компонент никак не изменяет сами данные, а значит тут не нужен HOC
  * */
-const FrameComponent: FC<FrameComponentProps> = (props) => {
-  const { value } = props;
-  return (
-    <div className={s.frame}>
-      <Title>{`Здесь будет отображаться текст ${value}`}</Title>
-      <InputWithOnlyDigitAndNotOne {...props} />
-    </div>
-  );
-};
+const FrameComponent: FC<FrameComponentProps> = ({ value, children }) => (
+  <div className={s.frame}>
+    <Title>{`Здесь будет отображаться текст ${value}`}</Title>
+    {children}
+  </div>
+);
 
 export type HigherOrderComponentExampleProps = {
   className?: string;
@@ -67,7 +79,8 @@ export const HigherOrderComponentExample: FC<HigherOrderComponentExampleProps> =
   const [value4, onChange4] = useState<string>('');
   const [value5, onChange5] = useState<string>('');
   const [value6, onChange6] = useState<string>('');
-  const [value7, onChange7] = useState<string>('');
+  const [value7, onChange7] = useState<RangeInputValue<number>>({ from: 0, to: 0 });
+  const [value8, onChange8] = useState<string>('');
   return (
     <div className={cn(s.root, className)}>
       <Title>Обычный инпут</Title>
@@ -91,8 +104,13 @@ export const HigherOrderComponentExample: FC<HigherOrderComponentExampleProps> =
       <Title>Форматированный инпут (только числа без единицы)</Title>
       <InputWithOnlyDigitAndNotOne value={value6} onChange={onChange6} />
       <Divider />
+      <Title>Композированный инпут</Title>
+      <InputWithHOCComposition value={value7} onChange={onChange7} />
+      <Divider />
       <Title>Здесь не нужен HOC</Title>
-      <FrameComponent value={value7} onChange={onChange7} />
+      <FrameComponent value={value8}>
+        <InputWithOnlyDigitAndNotOne value={value8} onChange={onChange8} />
+      </FrameComponent>
       <Divider />
     </div>
   );
