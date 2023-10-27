@@ -1,40 +1,17 @@
-import { ResolverWithoutParent } from '../../../../../types';
+import { ResolverWithoutSource } from '../../../../../types';
 import { ProfilePasswordMutationsChangeArgs } from '../../../../graphql.types';
-import { getParamsFromToken } from '../../../../utils/helpers';
-import {
-  DataBaseError,
-  IncorrectPasswordError,
-  InvalidPasswordError,
-  JWTError,
-  UserNotFoundError,
-} from '../../../../Errors';
-import { UserDocument, UserModel } from '../../../../models/User';
+import { DataBaseError, IncorrectPasswordError, InvalidPasswordError, UserNotFoundError } from '../../../../Errors';
 import { isValidPassword } from '../../../../models/User/helpers';
-import { AccountJWTParams } from '../../../account';
 import { ResetPassword } from '../../../../graphql.types';
+import { withAuth } from '../../../auth';
 
-export const change: ResolverWithoutParent<ProfilePasswordMutationsChangeArgs, ResetPassword | Error> = async (
+export const changeRaw: ResolverWithoutSource<ProfilePasswordMutationsChangeArgs, ResetPassword | Error> = async (
   _,
   { input },
-  { token }
+  { user }
 ) => {
-  let id: string;
-  try {
-    const res = await getParamsFromToken<AccountJWTParams>(token);
-    id = res.id;
-  } catch (e) {
-    return new JWTError('invalid token');
-  }
-
-  let user;
-  try {
-    user = (await UserModel.findById(id)) as UserDocument;
-  } catch (e) {
-    return new DataBaseError(e);
-  }
-
   if (!user) {
-    return new UserNotFoundError(`User by id: ${id} not found`);
+    return new UserNotFoundError(`User not found`);
   }
 
   const { password, newPassword } = input;
@@ -58,3 +35,5 @@ export const change: ResolverWithoutParent<ProfilePasswordMutationsChangeArgs, R
     success: true,
   };
 };
+
+export const change = withAuth(changeRaw);

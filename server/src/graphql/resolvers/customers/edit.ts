@@ -1,16 +1,14 @@
-import { ResolverWithoutParent } from '../../../../types';
+import { ResolverWithoutSource } from '../../../../types';
 import { CustomerModel } from '../../../models/Customer';
 import { CustomerMutations, CustomerMutationsEditArgs } from '../../../graphql.types';
-import { DataBaseError } from '../../../Errors';
+import { withAuth } from '../../auth';
 
-export const edit: ResolverWithoutParent<CustomerMutationsEditArgs, CustomerMutations['edit'] | Error> = async (
+export const editRaw: ResolverWithoutSource<CustomerMutationsEditArgs, CustomerMutations['edit'] | Error> = async (
   _,
   args
 ) => {
   const { id, name, img } = args;
-  try {
-    return await CustomerModel.findByIdAndUpdate(id, { name, img });
-  } catch (e) {
-    return new DataBaseError(e);
-  }
+  return await CustomerModel.findByIdAndUpdate(id, { name, img });
 };
+
+export const edit = withAuth(editRaw);

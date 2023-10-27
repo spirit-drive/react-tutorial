@@ -1,12 +1,12 @@
 import { GraphQLError, Source } from 'graphql';
 import { ASTNode } from 'graphql/language/ast';
-import { Messages } from '../types';
+import { ErrorCode } from '../types';
 
 export class ApolloError extends Error implements GraphQLError {
   public extensions: Record<string, unknown>;
   readonly name: string;
   readonly message: string;
-  public code: Messages;
+  public code: ErrorCode;
   readonly locations: { line: number; column: number }[];
   readonly path: string[];
   readonly source?: Source;
@@ -18,7 +18,7 @@ export class ApolloError extends Error implements GraphQLError {
 
   [key: string]: unknown;
 
-  constructor(message: string, code?: Messages, extensions?: Record<string, any>) {
+  constructor(message: string, code?: ErrorCode, extensions?: Record<string, any>) {
     super(message);
 
     // This variable was previously named `properties`, which allowed users to set
@@ -59,7 +59,7 @@ export class ApolloError extends Error implements GraphQLError {
 
 export class DataBaseError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.DATA_BASE_ERROR, properties);
+    super(message, ErrorCode.DATA_BASE_ERROR, properties);
 
     Object.defineProperty(this, 'name', { value: 'DataBaseError' });
   }
@@ -67,23 +67,23 @@ export class DataBaseError extends ApolloError {
 
 export class InvalidNickNameError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.INVALID_NICKNAME, properties);
+    super(message, ErrorCode.INVALID_NICKNAME, properties);
 
     Object.defineProperty(this, 'name', { value: 'InvalidNickNameError' });
   }
 }
 
-export class JWTError extends ApolloError {
+export class AuthError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.JWT_ERROR, properties);
+    super(message, ErrorCode.AUTH_ERROR, properties);
 
-    Object.defineProperty(this, 'name', { value: 'JWTError' });
+    Object.defineProperty(this, 'name', { value: 'AuthError' });
   }
 }
 
 export class TokenRequiredError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.TOKEN_REQUIRED_ERROR, properties);
+    super(message, ErrorCode.TOKEN_REQUIRED_ERROR, properties);
 
     Object.defineProperty(this, 'name', { value: 'TokenRequiredError' });
   }
@@ -91,7 +91,7 @@ export class TokenRequiredError extends ApolloError {
 
 export class IncorrectPasswordOrEmailError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.INCORRECT_EMAIL_OR_PASSWORD, properties);
+    super(message, ErrorCode.INCORRECT_EMAIL_OR_PASSWORD, properties);
 
     Object.defineProperty(this, 'name', { value: 'IncorrectPasswordOrEmailError' });
   }
@@ -99,7 +99,7 @@ export class IncorrectPasswordOrEmailError extends ApolloError {
 
 export class IncorrectPasswordError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.INCORRECT_PASSWORD, properties);
+    super(message, ErrorCode.INCORRECT_PASSWORD, properties);
 
     Object.defineProperty(this, 'name', { value: 'IncorrectPasswordError' });
   }
@@ -107,7 +107,7 @@ export class IncorrectPasswordError extends ApolloError {
 
 export class AccountAlreadyExistError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.ACCOUNT_ALREADY_EXIST, properties);
+    super(message, ErrorCode.ACCOUNT_ALREADY_EXIST, properties);
 
     Object.defineProperty(this, 'name', { value: 'AccountAlreadyExistError' });
   }
@@ -115,7 +115,7 @@ export class AccountAlreadyExistError extends ApolloError {
 
 export class InvalidPasswordError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.INVALID_PASSWORD, properties);
+    super(message, ErrorCode.INVALID_PASSWORD, properties);
 
     Object.defineProperty(this, 'name', { value: 'InvalidPasswordError' });
   }
@@ -123,7 +123,7 @@ export class InvalidPasswordError extends ApolloError {
 
 export class InvalidEmailError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.INVALID_EMAIL, properties);
+    super(message, ErrorCode.INVALID_EMAIL, properties);
 
     Object.defineProperty(this, 'name', { value: 'InvalidEmailError' });
   }
@@ -131,7 +131,7 @@ export class InvalidEmailError extends ApolloError {
 
 export class UserNotFoundError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.USER_NOT_FOUND, properties);
+    super(message, ErrorCode.USER_NOT_FOUND, properties);
 
     Object.defineProperty(this, 'name', { value: 'UserNotFoundError' });
   }
@@ -139,7 +139,7 @@ export class UserNotFoundError extends ApolloError {
 
 export class NotFoundError extends ApolloError {
   constructor(message: string, properties?: Record<string, unknown>) {
-    super(message, Messages.NOT_FOUND, properties);
+    super(message, ErrorCode.NOT_FOUND, properties);
 
     Object.defineProperty(this, 'name', { value: 'NotFoundError' });
   }

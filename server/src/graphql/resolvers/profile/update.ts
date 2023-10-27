@@ -1,38 +1,19 @@
-import { ResolverWithoutParent } from '../../../../types';
+import { ResolverWithoutSource } from '../../../../types';
 import { ProfileMutations, ProfileMutationsUpdateArgs } from '../../../graphql.types';
-import { getParamsFromToken } from '../../../utils/helpers';
-import { JWTError } from '../../../Errors';
-import { UserDocument, UserModel } from '../../../models/User';
-import { AccountJWTParams } from '../../account';
 import { prepareProfile } from '../../../models/helpers/prepareProfile';
+import { withAuth } from '../../auth';
 
-export const update: ResolverWithoutParent<ProfileMutationsUpdateArgs, ProfileMutations['update'] | Error> = async (
+export const updateRaw: ResolverWithoutSource<ProfileMutationsUpdateArgs, ProfileMutations['update'] | Error> = async (
   _,
   { input },
-  { token }
+  { user }
 ) => {
-  let id: string;
-  try {
-    const res = await getParamsFromToken<AccountJWTParams>(token);
-    id = res.id;
-  } catch (e) {
-    return new JWTError('invalid token');
-  }
-  let user;
-  try {
-    user = (await UserModel.findById(id)) as UserDocument;
-  } catch (e) {
-    return e;
-  }
+  const { name, about } = input;
+  user.name = name || user.name;
+  user.about = about || user.about;
+  await user.save();
 
-  try {
-    const { name, about } = input;
-    user.name = name || user.name;
-    user.about = about || user.about;
-    await user.save();
-
-    return prepareProfile(user);
-  } catch (e) {
-    return e;
-  }
+  return prepareProfile(user);
 };
+
+export const update = withAuth(updateRaw);

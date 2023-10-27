@@ -1,10 +1,10 @@
-import { AccountResponse, ResolverWithoutParent } from '../../../../types';
+import { AccountResponse, ResolverWithoutSource } from '../../../../types';
 import { UserDocument, UserModel } from '../../../models/User';
 import { ProfileMutations, ProfileMutationsSigninArgs } from '../../../graphql.types';
 import { DataBaseError, IncorrectPasswordOrEmailError } from '../../../Errors';
 import { getTokenByParams } from '../../../utils/helpers';
 
-export const signin: ResolverWithoutParent<ProfileMutationsSigninArgs, ProfileMutations['signin'] | Error> = async (
+export const signin: ResolverWithoutSource<ProfileMutationsSigninArgs, ProfileMutations['signin'] | Error> = async (
   _,
   args
 ) => {

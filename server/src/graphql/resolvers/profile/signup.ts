@@ -1,11 +1,11 @@
-import { ResolverWithoutParent } from '../../../../types';
+import { ResolverWithoutSource } from '../../../../types';
 import { ProfileMutations, ProfileMutationsSignupArgs } from '../../../graphql.types';
 import { UserDocument, UserModel } from '../../../models/User';
 import { AccountAlreadyExistError, DataBaseError, InvalidEmailError } from '../../../Errors';
 import { getTokenByParams } from '../../../utils/helpers';
 import { isValidEmail } from '../../../models/User/helpers';
 
-export const signup: ResolverWithoutParent<ProfileMutationsSignupArgs, ProfileMutations['signup'] | Error> = async (
+export const signup: ResolverWithoutSource<ProfileMutationsSignupArgs, ProfileMutations['signup'] | Error> = async (
   _,
   args
 ) => {

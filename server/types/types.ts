@@ -5,7 +5,7 @@ export enum Locale {
 
 import { UserDocument } from '../src/models/User';
 
-export enum Messages {
+export enum ErrorCode {
   INCORRECT_EMAIL_OR_PASSWORD = 'ERR_INCORRECT_EMAIL_OR_PASSWORD',
   INCORRECT_PASSWORD = 'ERR_INCORRECT_PASSWORD',
   ACCOUNT_ALREADY_EXIST = 'ERR_ACCOUNT_ALREADY_EXIST',
@@ -13,13 +13,13 @@ export enum Messages {
   USER_NOT_FOUND = 'ERR_USER_NOT_FOUND',
   NOT_FOUND = 'ERR_NOT_FOUND',
   TOKEN_REQUIRED_ERROR = 'ERR_TOKEN_REQUIRED_ERROR',
-  JWT_ERROR = 'ERR_JWT_ERROR',
+  AUTH_ERROR = 'ERR_AUTH_ERROR',
   DATA_BASE_ERROR = 'ERR_DATA_BASE_ERROR',
   INVALID_NICKNAME = 'ERR_INVALID_NICKNAME',
   INVALID_EMAIL = 'ERR_INVALID_EMAIL',
 }
 
-export type CustomError = Error & { code: Messages };
+export type CustomError = Error & { code: ErrorCode };
 
 export type AccountResponseRaw = {
   token: string | null;
@@ -28,14 +28,20 @@ export type AccountResponseRaw = {
 
 export type AccountResponse = AccountResponseRaw | CustomError;
 
-export type ApolloContext = {
+export type ServerContext = {
   user: UserDocument;
   token: string;
   locale: Locale;
 };
 
-export type ResolverWithoutParent<Args extends Record<string, unknown>, Res = AccountResponse> = (
-  parent: undefined,
+export type ResolverWithoutSource<Args extends Record<string, unknown>, Res = AccountResponse> = (
+  source: undefined,
   args: Args,
-  context: ApolloContext
+  context: ServerContext
+) => Promise<Res>;
+
+export type ApolloResolver<T, Res = AccountResponse, Args extends Record<string, unknown> = Record<string, unknown>> = (
+  doc: T,
+  args: Args,
+  context: ServerContext
 ) => Promise<Res>;
