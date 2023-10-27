@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'broadcastchannel-polyfill';
 import { store } from '../../index';
 import { tokenActions } from '../../token';
 

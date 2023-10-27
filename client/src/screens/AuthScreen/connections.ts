@@ -14,8 +14,7 @@ export const SIGN_IN = gql`
   }
 `;
 
-export const extractSignIn = (data: SignInResponse): Mutation['profile']['signin']['token'] =>
-  get('profile.signin.token', data);
+export const extractSignIn = (data: SignInResponse): Mutation['profile']['signin'] => get('profile.signin', data);
 
 export type SignUpVars = ProfileMutationsSignupArgs;
 export type SignUpResponse = AuthResult;
@@ -29,5 +28,4 @@ export const SIGN_UP = gql`
   }
 `;
 
-export const extractSignUp = (data: SignUpResponse): Mutation['profile']['signup']['token'] =>
-  get(`profile.signup.token`, data);
+export const extractSignUp = (data: SignUpResponse): Mutation['profile']['signup'] => get(`profile.signup`, data);

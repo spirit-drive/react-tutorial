@@ -11,6 +11,7 @@ import { isLongEnough, isNotDefinedString } from 'src/utils/validation';
 import { tokenActions } from 'src/store/token';
 import { createErrorHandlers } from 'src/utils/createErrorHandlers';
 import { NavigationState } from 'src/navigation/types';
+import { profileActions } from 'src/store/profile';
 import { SIGN_IN, SignInResponse, SignInVars, extractSignIn } from '../connections';
 import s from './SingInBlock.sass';
 
@@ -42,7 +43,11 @@ export const SingInBlock = memo<SingInBlockProps>(({ className }) => {
       onSubmit: (values, { resetForm }) => {
         signIn({ variables: { email: values.email, password: values.password } })
           .then((res) => {
-            dispatch(tokenActions.set(extractSignIn(res.data)));
+            const result = extractSignIn(res.data);
+            if (result) {
+              dispatch(tokenActions.set(result.token));
+              dispatch(profileActions.set(result.profile));
+            }
             resetForm();
             navigate((location.state as NavigationState)?.from || '/');
           })
