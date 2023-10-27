@@ -49,6 +49,7 @@ export const typeDefs = `#graphql
 
   type AuthResult {
     token: String!
+    profile: Profile!
   }
 
   type Cat {

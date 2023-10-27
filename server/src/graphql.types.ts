@@ -16,6 +16,7 @@ export type Animal = Cat | Dog;
 
 export type AuthResult = {
   __typename?: 'AuthResult';
+  profile: Profile;
   token: Scalars['String'];
 };
 

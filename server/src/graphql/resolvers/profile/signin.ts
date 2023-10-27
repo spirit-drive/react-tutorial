@@ -1,6 +1,6 @@
-import { AccountResponse, ResolverWithoutSource } from '../../../../types';
+import { ResolverWithoutSource } from '../../../../types';
 import { UserDocument, UserModel } from '../../../models/User';
-import { ProfileMutations, ProfileMutationsSigninArgs } from '../../../graphql.types';
+import { AuthResult, ProfileMutations, ProfileMutationsSigninArgs } from '../../../graphql.types';
 import { DataBaseError, IncorrectPasswordOrEmailError } from '../../../Errors';
 import { getTokenByParams } from '../../../utils/helpers';
 
@@ -20,9 +20,9 @@ export const signin: ResolverWithoutSource<ProfileMutationsSigninArgs, ProfileMu
   }
 
   const token = getTokenByParams({ id: user.id });
-  const result: AccountResponse = {
+  const result: AuthResult = {
     token,
-    user,
+    profile: user,
   };
   return result;
 };
