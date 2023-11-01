@@ -9,9 +9,9 @@ function CostInput() {
   const getOnlyDigit = (v: string) => v.replace(/[^\d.]/g, '');
   const getReturnValue = (v: string) => (v === '' ? '' : `$${v}`);
 
-  const handleChange = (v: React.ChangeEvent<HTMLInputElement>) => {
-    v.preventDefault();
-    const noDollarSign = getOnlyDigit(v.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const noDollarSign = getOnlyDigit(e.target.value);
     setValue(getReturnValue(noDollarSign));
   };
 

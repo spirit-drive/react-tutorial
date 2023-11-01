@@ -3,6 +3,7 @@
 exports[`snapshot testing SomeComponent 1`] = `
 <div>
   <div
+    aria-label="test"
     id="some-component"
   >
     <div

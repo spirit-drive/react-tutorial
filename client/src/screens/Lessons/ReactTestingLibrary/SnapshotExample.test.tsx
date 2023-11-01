@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 
 function SomeComponent() {
   return (
-    <div id="some-component">
+    <div aria-label="test" id="some-component">
       <div aria-label="test">Название</div>
       <div>Описание</div>
     </div>
