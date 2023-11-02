@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState } from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom'; // Чтобы использовать дополнительное api для expect. Без этого будет говорить что метода нет
 
 const AsyncComponent = () => {
@@ -19,15 +19,32 @@ const AsyncComponent = () => {
 };
 
 describe('AsyncComponent', () => {
-  test('component should write data after loading', async () => {
-    render(<AsyncComponent />);
+  test('component should write data after loading 1', async () => {
+    const { queryByText, findByText } = render(<AsyncComponent />);
 
     // Проверяем, что данные еще не отрисованы
-    expect(screen.queryByText('Loading...')).toBeInTheDocument();
-    expect(screen.queryByText('Data:')).not.toBeInTheDocument();
+    expect(queryByText('Loading...')).toBeInTheDocument();
+    expect(queryByText('Data:')).not.toBeInTheDocument();
 
     // Ждем загрузки данных и проверяем, что данные отрисованы
-    expect(await screen.findByText('Data: Hello, World!', {}, { timeout: 2000 })).toBeInTheDocument();
-    expect(screen.queryByText('Loading...')).not.toBeInTheDocument();
+    expect(await findByText('Data: Hello, World!')).toBeInTheDocument();
+    expect(queryByText('Loading...')).not.toBeInTheDocument();
+  });
+
+  test('component should write data after loading 2', async () => {
+    const { queryByText } = render(<AsyncComponent />);
+
+    // Проверяем, что данные еще не отрисованы
+    expect(queryByText('Loading...')).toBeInTheDocument();
+    expect(queryByText('Data:')).not.toBeInTheDocument();
+
+    // Ждем загрузки данных и проверяем, что данные отрисованы
+    await waitFor(
+      () => {
+        expect(queryByText('Data: Hello, World!')).toBeInTheDocument();
+        expect(queryByText('Loading...')).not.toBeInTheDocument();
+      },
+      { timeout: 2000 }
+    );
   });
 });
