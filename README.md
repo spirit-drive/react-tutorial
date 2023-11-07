@@ -64,7 +64,7 @@
 
 ### Формы, formik, react-hooks-form
 
-[Презентация]()
+[Презентация](https://docs.google.com/presentation/d/1IyTeMVB174qXLex4yCYlDyLoDy4wMD33xOWdCaWDhq8/edit#slide=id.g2948d4f1a98_0_0)
 
 ### MVC, SOLID in React. Архитектура
 
