@@ -92,7 +92,8 @@
 
 ### Redux toolkit
 
-[Презентация]()
+[Презентация](https://docs.google.com/presentation/d/1-bioh1yGPXfuFGbPGJC7kskAvv9D_X2dL1jBt51q4o0/edit)
+[Репозиторий](https://github.com/spirit-drive/redux-example/tree/main)
 
 ### Redux thunk
 
