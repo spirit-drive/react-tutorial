@@ -6,7 +6,7 @@ export const myCustomFetch = <T = Response>(input: string, init?: RequestInit): 
     return Promise.reject(await res.json());
   });
 
-export const myCustomXML = <T = Response>(
+export const myCustomXHR = <T = Response>(
   body: FormData,
   {
     onProgress,

@@ -3,7 +3,7 @@ import React, { FC, useState } from 'react';
 import cn from 'clsx';
 import { UploadOutlined } from '@ant-design/icons';
 import { message } from 'antd';
-import { myCustomXML } from 'src/client/myCustomFetch';
+import { myCustomXHR } from 'src/client/myCustomFetch';
 import { URL } from 'src/client/config';
 import s from './ImgInput.sass';
 
@@ -19,7 +19,7 @@ export const ImgInput: FC<ImgInputProps> = ({ className, value, onChange }) => {
     const [file] = e.target.files;
     const data = new FormData();
     data.append('file', file);
-    myCustomXML<{ url: string }>(data, {
+    myCustomXHR<{ url: string }>(data, {
       onProgress: (loaded, total) => setProgress(Math.round((loaded / total) * 100)),
     })
       .then(({ url }) => onChange(`${URL}${url}`))
