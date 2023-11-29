@@ -18,9 +18,7 @@
 
 Для выполнения домашних заданий может понадобится макет. [Здесь](https://t.me/figma2html) можно найти множество макетов веб приложений.
 
-## Модуль 1 - предисловие
-
-### Введение в современную frontend разработку
+### Введение в современную frontend разработку (по желанию)
 
 [Презентация](https://docs.google.com/presentation/d/1Az2Y5ltjlz-YK2dyfya2ReMhum1SiomGGyM5m5b3XPU/edit?usp=sharing)
 
@@ -33,8 +31,6 @@
 [Презентация](https://drive.google.com/file/d/1w_JZM1i3cyF0u-hhsCJ7dUbBNSc5oU2i/view)
 
 [Дополнительная песочница](https://codesandbox.io/s/typescript-1-hfer2p?file=/src/basis.ts:7265-7308)
-
-## Модуль 2 - React
 
 ### Основы ReactJS. Компоненты
 
@@ -59,8 +55,6 @@
 ### Списки, ключи, события, порталы
 
 [Презентация](https://docs.google.com/presentation/d/1cOY0cXinh7pFqeL1c-XcUi847QdDCLh7gYADNVPOxl0)
-
-## Модуль 3 - React и окружение
 
 ### Формы, formik, react-hooks-form
 
@@ -119,8 +113,6 @@
 
 [Клиент](https://github.com/spirit-drive/graphql-learn-client)
 [Сервер](https://github.com/spirit-drive/graphql-learn-server)
-
-## Практический модуль
 
 ### Разработка мессенджера Websockets
 
