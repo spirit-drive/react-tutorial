@@ -24,7 +24,7 @@
 
 ### Установка и настройка React
 
-[Презентация](https://docs.google.com/presentation/d/1THc00FQjJXYXPUIXrXAI5rEHeDXbASreBgWOJ-VwEkM)
+[Презентация](https://docs.google.com/presentation/d/108itUI1XneXKAomV7yz1waXqU9M-Yi1Yc16GEaqHzC4)
 
 ### Typescript (часть 1)
 
