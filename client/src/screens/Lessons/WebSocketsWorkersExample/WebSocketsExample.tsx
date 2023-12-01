@@ -17,9 +17,10 @@ export const WebSocketsExample: FC<WebSocketsExampleProps> = ({ className }) => 
 
   const [value, setValue] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
+
   useEffect(() => {
     socket.connect();
-    socket.emit('getMsgs', setMessages);
+    socket.emit('getMsgs');
     socket.on('msgs', setMessages);
 
     return () => {
@@ -29,6 +30,7 @@ export const WebSocketsExample: FC<WebSocketsExampleProps> = ({ className }) => 
   }, []);
 
   const sendMsg = (msg: string) => socket.emit('msg', { msg, name: profile?.name });
+  const onText = () => socket.emit('test', (a: number, b: number) => a + b); // Функция работать не будет
 
   const onSend = () => {
     sendMsg(value);
@@ -52,6 +54,9 @@ export const WebSocketsExample: FC<WebSocketsExampleProps> = ({ className }) => 
       <div>
         <Button type="primary" onClick={onSend} className={s.btn}>
           Отправить
+        </Button>{' '}
+        <Button type="primary" onClick={onText} className={s.btn}>
+          Тест
         </Button>
       </div>
     </div>

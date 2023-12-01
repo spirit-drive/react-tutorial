@@ -2,4 +2,10 @@
 import { io } from 'socket.io-client';
 import { HOST, SOCKET_PORT } from 'src/client/config';
 
-export const socket = io(`ws://${HOST}:${SOCKET_PORT}`);
+export const socket = io(`ws://${HOST}:${SOCKET_PORT}`, {
+  auth: (cb) => {
+    cb({
+      token: 'token',
+    });
+  },
+});

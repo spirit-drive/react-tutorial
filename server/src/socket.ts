@@ -25,5 +25,9 @@ export const runSocket = () => {
     socket.on('getMsgs', () => {
       socket.emit('msgs', fakeDataBase);
     });
+
+    socket.on('test', (fun) => {
+      console.log(fun, fun(1, 3));
+    });
   });
 };
