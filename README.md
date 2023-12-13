@@ -18,6 +18,8 @@
 
 Для выполнения домашних заданий может понадобится макет. [Здесь](https://t.me/figma2html) можно найти множество макетов веб приложений.
 
+[Памятка по работе в команде](https://docs.google.com/presentation/d/1eVorYFSACyLJ6mQTvWd9ZGdJc0sUwGny-BcV3jdrvqo/edit#slide=id.p)
+
 ### Введение в современную frontend разработку (по желанию)
 
 [Презентация](https://docs.google.com/presentation/d/1Az2Y5ltjlz-YK2dyfya2ReMhum1SiomGGyM5m5b3XPU/edit?usp=sharing)
@@ -91,11 +93,13 @@
 
 ### Redux thunk
 
-[Презентация]()
+[Презентация](https://docs.google.com/presentation/d/1MX3z_GTd2I1L1O8ITFqKABSZtXdWYxb4zZzkFidUNjk/edit?usp=sharing)
+[Репозиторий](https://github.com/spirit-drive/redux-thunk-example)
 
 ### Redux-Saga
 
-[Презентация]()
+[Презентация](https://docs.google.com/presentation/d/1PpnH6FPDzYrzFK3Vrpvz9gy7bBXgARwLK6yekyEDzZk/edit?usp=sharing)
+[Репозиторий](https://github.com/spirit-drive/redux-saga-example)
 
 ### HTTP and REST API
 
