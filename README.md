@@ -36,11 +36,11 @@
 
 ### Основы ReactJS. Компоненты
 
-[Презентация](https://drive.google.com/file/d/1PsjdlXjAyEQKq3j-1xPZnRLKfV_cvW08)
+[Презентация](https://docs.google.com/presentation/d/1tdi4AZEQFLGEEX1jxD8Fu9axomDrm8grZws9YrLrumo/edit?usp=sharing)
 
 ### JSX + CSS
 
-[Презентация](https://docs.google.com/presentation/d/1FvqXN0r7qZ63yNvlu4FLw3ia_6xz7Fo_TmhKCcoIpSQ)
+[Презентация](https://docs.google.com/presentation/d/1uO_wIaDPWBZ2grKwuAaaizT2zJx1lYHAsqUEhC9Gw30/edit?usp=sharing)
 
 ### Typescript (2)
 
