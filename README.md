@@ -123,3 +123,9 @@
 [Итоговое приложение](http://ac4366b428e4.vps.myjino.ru/)
 [Клиент](https://github.com/spirit-drive/otus-websockets-client)
 [Сервер](https://github.com/spirit-drive/otus-socket-server)
+
+### Разработка игры Ветклиника - graphql
+
+[Итоговое приложение](http://9f9afff13ee4.vps.myjino.ru/)
+[Клиент](https://github.com/spirit-drive/otus-lesson-graphql-client)
+[Сервер](https://github.com/spirit-drive/otus-lesson-graphql-server)
