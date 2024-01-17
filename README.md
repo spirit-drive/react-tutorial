@@ -64,7 +64,7 @@
 
 ### MVC, SOLID in React. Архитектура
 
-[Презентация](https://docs.google.com/presentation/d/1qWBl0aNVlLaQYfEeW9030JzX5cpolM7O1l8gPKEqtR8)
+[Презентация](https://docs.google.com/presentation/d/1b1H_y1KK3pd9LcPI7G4x6_xY8EOsfcjCUI3AvSyTePM/edit?usp=sharing)
 
 ### Основы функционального программирования
 
