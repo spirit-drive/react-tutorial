@@ -167,7 +167,7 @@ export const resources = {
         LessonKey: {
           generator: 'Generators iterators',
           patterns: 'Patterns',
-          restApi: 'Rest Api',
+          functionalProgramming: 'Functional Programming',
           babel: 'Babel + typescript',
           socketsAndWorkers: 'Web sockets & Web workers',
           graphql: 'Graphql',
@@ -343,6 +343,7 @@ export const resources = {
           generator: 'Генераторы итераторы',
           patterns: 'Паттерны',
           restApi: 'Rest Api',
+          functionalProgramming: 'Функциональное программирование',
           babel: 'Babel + typescript',
           socketsAndWorkers: 'Web sockets & Web workers',
           graphql: 'Graphql',

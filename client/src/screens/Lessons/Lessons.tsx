@@ -9,6 +9,7 @@ import { GeneratorsExample } from './GeneratorsExample';
 import { BabelExample } from './BabelExample';
 import { PatternsExample } from './PatternsExample';
 import { RestApiExample } from './RestApiExample';
+import { FunctionalProgramming } from './FunctionalProgramming';
 import s from './Lessons.sass';
 
 export enum LessonKey {
@@ -18,6 +19,7 @@ export enum LessonKey {
   restApi = 'restApi',
   socketsAndWorkers = 'socketsAndWorkers',
   graphql = 'graphql',
+  functionalProgramming = 'functionalProgramming',
 }
 
 const lessons = {
@@ -27,6 +29,7 @@ const lessons = {
   [LessonKey.restApi]: <RestApiExample />,
   [LessonKey.socketsAndWorkers]: <WebSocketsWorkersExample />,
   [LessonKey.graphql]: <GraphqlExample />,
+  [LessonKey.functionalProgramming]: <FunctionalProgramming />,
 };
 
 const getContent = (key: string) => () => {
