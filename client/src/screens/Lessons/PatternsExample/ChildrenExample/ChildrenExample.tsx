@@ -6,15 +6,17 @@ import { ChildrenCheck } from '../ChildrenCheck';
 import s from './ChildrenExample.sass';
 
 interface RenderPropsAsFunctionProps {
-  render: (count: number) => React.ReactElement;
+  renderCount: (count: number) => React.ReactElement;
+  children?: React.ReactNode;
 }
 
-const RenderPropsAsFunction: FC<RenderPropsAsFunctionProps> = ({ render }) => {
+const RenderPropsAsFunction: FC<RenderPropsAsFunctionProps> = ({ renderCount, children }) => {
   const [count, increase] = useReducer((v) => v + 1, 0);
 
   return (
     <div>
-      {render(count)}
+      {children}
+      {renderCount(count)}
       <Button onClick={increase}>increase</Button>
     </div>
   );
@@ -34,7 +36,7 @@ const RenderPropsAsJSX: FC<RenderPropsAsJSXProps> = ({ footer, header }) => (
 );
 
 interface FunctionAsChildrenExampleProps {
-  children: (count: number) => React.ReactElement;
+  children: (count: number) => React.ReactNode;
 }
 
 const FunctionAsChildrenExample: FC<FunctionAsChildrenExampleProps> = ({ children }) => {
@@ -58,21 +60,22 @@ export type ChildrenExampleProps = {
 
 export const ChildrenExample: FC<ChildrenExampleProps> = ({ className }) => (
   <div className={cn(s.root, className)}>
-    <ChildrenCheck>string</ChildrenCheck>
+    <ChildrenCheck>0</ChildrenCheck>
     <ChildrenCheck>{0}</ChildrenCheck>
     <ChildrenCheck>{null}</ChildrenCheck>
     <ChildrenCheck>{undefined}</ChildrenCheck>
     <ChildrenCheck>{false}</ChildrenCheck>
     <ChildrenCheck>{true}</ChildrenCheck>
-    <ChildrenCheck>{[2, '3', null, undefined, false, <div key={1}>test</div>, <div key={2}>test</div>]}</ChildrenCheck>
+
+    <ChildrenCheck>{[2, '3', null, undefined, false, <div key="1">test</div>, <div key="2">test</div>]}</ChildrenCheck>
     <ChildrenCheck>
       <div>Элемент</div>
     </ChildrenCheck>
     <ChildrenCheck>
       <Test />
     </ChildrenCheck>
-    <FunctionAsChildrenExample>{(count) => <div>{count}</div>}</FunctionAsChildrenExample>
-    <RenderPropsAsFunction render={(count) => <div>{count}</div>} />
+    <FunctionAsChildrenExample>{(count) => <div>{`${count * 1000} руб`}</div>}</FunctionAsChildrenExample>
+    <RenderPropsAsFunction renderCount={(count) => <div>{count}</div>}>Child</RenderPropsAsFunction>
     <RenderPropsAsJSX header={<div>header</div>} footer={<div>footer</div>} />
   </div>
 );

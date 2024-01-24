@@ -17,9 +17,9 @@ const removeFewZerosInStart = (v: string) => v.replace(/^0+/, '');
 // const getNoMinus1 = universalFormat(/-/g);
 // const removeFewZerosInStart1 = universalFormat(/^0+/);
 
-console.log(getOnlyDigits('asdedew23423dwer34rfew'));
-console.log(removeMinus('-23-12-312-3-'));
-console.log(removeFewZerosInStart('0001232300034000'));
+// console.log(getOnlyDigits('asdedew23423dwer34rfew'));
+// console.log(removeMinus('-23-12-312-3-'));
+// console.log(removeFewZerosInStart('0001232300034000'));
 
 const anonymous = universalFormat(/\w/g);
 
@@ -33,9 +33,9 @@ const prepare2 = (string: string) => {
   return removeMinus(_3);
 };
 
-console.log(prepare('000asde000dew23000423d- --wer34r--few000'));
-console.log(prepare1('000asde000dew23000423d- --wer34r--few000'));
-console.log(prepare2('000asde000dew23000423d- --wer34r--few000'));
+// console.log(prepare('000asde000dew23000423d- --wer34r--few000'));
+// console.log(prepare1('000asde000dew23000423d- --wer34r--few000'));
+// console.log(prepare2('000asde000dew23000423d- --wer34r--few000'));
 
 export const FunctionalProgramming = ({ className }: FunctionalProgrammingProps) => {
   const [value, onChange] = useState('');

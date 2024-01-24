@@ -27,7 +27,7 @@
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": ["error"],
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true, "caughtErrors": "none", "args": "after-used" }],
+    "@typescript-eslint/no-unused-vars": ["warn", { "ignoreRestSiblings": true, "caughtErrors": "none", "args": "after-used" }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "@typescript-eslint/no-empty-function": "off",

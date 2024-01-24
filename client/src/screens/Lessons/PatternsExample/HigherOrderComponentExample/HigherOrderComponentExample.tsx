@@ -24,8 +24,9 @@ const withFormat =
   ({ onChange, ...props }: P) =>
     <Component {...(props as P)} onChange={(v) => onChange(formatter(v))} />;
 
-type InputProps = WithFormatProps & {
+type InputProps = {
   value: string;
+  onChange: (value: string) => void;
 };
 const MyInput: FC<InputProps> = ({ value, onChange }) => (
   <Input value={value} onChange={(e) => onChange(e.target.value)} />

@@ -5,17 +5,25 @@ import { Divider, Button } from 'antd';
 import s from './ConditionalRenderExample.sass';
 import { ChildrenCheck } from '../ChildrenCheck';
 
+const Test = ({ children, id }: { children: React.ReactNode; id: string }) => {
+  console.log(id);
+  return <div>{children}</div>;
+};
+
+const arr: number[] = [];
+
 const SimpleExample: FC = () => {
   const [visible, toggle] = useReducer((v) => !v, false);
 
   return (
     <div>
       <ChildrenCheck>
-        {visible && <div>Видно если true</div>}
+        {!!Object.keys(arr).length && <div>Есть элементы</div>}
+        {visible && <Test id="1">Видно если true</Test>}
         <Divider />
-        {visible || <div>Видно если false</div>}
+        {visible || <Test id="2">Видно если false</Test>}
         <Divider />
-        {visible ? <div>Видно если true</div> : <div>Видно если false</div>}
+        {visible ? <Test id="3">Видно если true</Test> : <Test id="4">Видно если false</Test>}
       </ChildrenCheck>
       <Button onClick={toggle}>toggle</Button>
     </div>
@@ -44,6 +52,11 @@ const AdvancedExample: FC = () => {
 
   return (
     <div>
+      <ChildrenCheck>
+        {loading && <div>loading</div>}
+        {error && <div>error.message</div>}
+        {!error && !loading && <div>error.message</div>}
+      </ChildrenCheck>
       <ChildrenCheck>
         {(() => {
           if (loading) return <div>loading</div>;

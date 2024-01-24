@@ -4,13 +4,13 @@ import cn from 'clsx';
 import s from './DestructuringPropsExample.sass';
 
 type PoorComponentProps = {
-  two: string;
+  two?: string;
   three?: number;
-  four: string | number;
+  four?: string | number;
 };
 
 type ManyProps = PoorComponentProps & {
-  one: number;
+  one?: number;
 };
 
 const PoorComponent: FC<PoorComponentProps> = (props) => {
@@ -28,7 +28,7 @@ const RichComponent: FC<ManyProps> = ({ one, ...props }) => (
   <div>
     {one}
 
-    <PoorComponent {...props} />
+    <PoorComponent two="2" four={4} {...props} />
     {/* <PoorComponent {...{ two: '' }} {...{ two: '2' }} {...{ two: undefined }} /> */}
     {/* <PoorComponent two="" /> */}
   </div>

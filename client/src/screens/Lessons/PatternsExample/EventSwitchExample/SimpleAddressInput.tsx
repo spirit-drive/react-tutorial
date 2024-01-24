@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { ChangeEvent, memo, useCallback, useMemo, useRef } from 'react';
+import { useEvent } from 'src/hooks/useEvent';
 import { MemoInput } from './MemoInput';
 
 export type Address = {
@@ -45,6 +46,13 @@ export const SimpleAddressInput = memo<SimpleAddressInputProps>(({ className, va
   );
 });
 
+// const test = () => {
+//   const variable = 1;
+// };
+//
+// test();
+// test();
+
 // export const SimpleAddressInput = memo<SimpleAddressInputProps>(({ className, value, onChange }) => {
 //   const valueCopy = useRef(value);
 //   valueCopy.current = value;
@@ -52,12 +60,19 @@ export const SimpleAddressInput = memo<SimpleAddressInputProps>(({ className, va
 //   const handleChange = useCallback(
 //     (e: ChangeEvent<HTMLInputElement>) => {
 //       onChange({
-//         ...(valueCopy.current || {}),
+//         ...valueCopy.current,
 //         [e.target.name]: e.target.value,
 //       });
 //     },
 //     [onChange]
 //   );
+//
+//   // const handleChange = useEvent((e: ChangeEvent<HTMLInputElement>) => {
+//   //   onChange({
+//   //     ...value,
+//   //     [e.target.name]: e.target.value,
+//   //   });
+//   // });
 //
 //   return (
 //     <div className={className}>
