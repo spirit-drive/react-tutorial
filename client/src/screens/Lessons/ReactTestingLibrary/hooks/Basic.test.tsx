@@ -37,6 +37,7 @@ describe('basic hooks testing', () => {
 
     expect(result.current.count).toBe(0);
     rerender();
+    expect(result.current.count).toBe(0);
 
     act(() => {
       result.current.reset();

@@ -19,7 +19,7 @@ export function useCounter(initialValue = 0) {
 }
 
 describe('advanced hooks testing', () => {
-  test('should use custom step when incrementing', () => {
+  test('should use custom step when incrementing', async () => {
     const wrapper = ({ children }: { children: React.ReactNode }) => (
       <CounterStepProvider step={2}>{children}</CounterStepProvider>
     );
