@@ -1,0 +1,11 @@
+@import src/app/styles/common
+
+.root
+  +theme(color, accent)
+  text-decoration: none
+
+  &:visited,
+  &:focus,
+  &:hover,
+  &:active
+    +theme(color, accent)

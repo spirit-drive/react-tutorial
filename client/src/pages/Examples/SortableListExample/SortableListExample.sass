@@ -1,0 +1,15 @@
+@import src/app/styles/common
+
+.root
+  text-align: center
+  padding: 20px 0
+
+.target
+  position: relative
+  display: inline-block
+  padding: 8px
+  border-radius: 4px
+  +theme(background-color, accent)
+  +theme(color, inverseText)
+  cursor: move
+  z-index: 100

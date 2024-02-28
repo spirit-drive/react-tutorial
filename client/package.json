@@ -10,7 +10,7 @@
     "build": "webpack --mode production",
     "test": "jest src",
     "lint": "eslint src --fix",
-    "schemagen": "graphql-codegen && ts-node enhance.server.types.ts && node src/client/possibleTypesGen.js"
+    "schemagen": "graphql-codegen && ts-node enhance.server.types.ts && node src/app/client/possibleTypesGen.js"
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",

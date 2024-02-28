@@ -1,0 +1,19 @@
+@import "src/app/styles/common"
+
+.root
+  display: flex
+  align-items: center
+  gap: 8px
+
+  .btn
+    display: inline-flex
+    align-items: center
+    gap: 8px
+    padding: 4px 12px
+    border-radius: 16px
+    +theme(background-color, accent)
+    +theme(color, inverseText)
+    cursor: pointer
+    outline: none
+    border: 0
+    text-decoration: none

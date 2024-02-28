@@ -1,0 +1,92 @@
+@import src/app/styles/common
+
+.root
+  height: $headerHeight
+  +theme(background-color, mainBg)
+  +theme(box-shadow, boxShadow)
+  +theme(color, text)
+
+.switcher
+  +theme(color, text)
+
+.frame
+  display: flex
+  align-items: center
+  justify-content: space-between
+  height: 100%
+
+.logo
+  margin-right: 20px
+
+.menu
+  flex: 1
+  
+  :global(.response-navigation__list_hor)
+    gap: 8px
+
+  :global(.response-navigation__icon)
+    +theme(color, text)
+
+  :global(.response-navigation__list_ver_right)
+    display: flex
+    align-items: center
+    flex-direction: row-reverse
+    justify-content: space-between
+    gap: 16px
+    padding: 0 16px
+    margin-top: 12px
+
+  :global(.response-navigation__list-item_ver_right)
+    display: inline-block
+    vertical-align: middle
+
+.container
+  background: none
+  outline: none
+  cursor: pointer
+  border: 0
+  padding: 0
+  +theme(color, text)
+
+  & + &
+    margin-left: 20px
+
+.horizontalLink
+  display: flex
+  align-items: center
+  position: relative
+  +theme(color, text)
+  text-decoration: none
+  height: 40px
+  line-height: $headerHeight
+
+  &:after
+    position: absolute
+    bottom: -3px
+    left: 50%
+    content: ''
+    height: 3px
+    display: block
+    border-top-left-radius: 4px
+    border-top-right-radius: 4px
+    +theme(background-color, accent)
+    width: 0
+    transition: 0.3s
+    transform: translate(-50%, -100%)
+
+  &.active
+    &:after
+      width: 100%
+
+.verticalLink
+  padding: 0 16px
+  height: 40px
+  display: flex
+  align-items: center
+  position: relative
+  text-decoration: none
+  +theme(color, text)
+  +theme(border-bottom, border)
+
+  &.active
+    +theme(color, accent)

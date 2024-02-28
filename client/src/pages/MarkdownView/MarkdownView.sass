@@ -1,0 +1,67 @@
+@import src/app/styles/common
+
+.root
+  line-height: 1.2
+  font-size: 16px
+  +theme(color, brightColor)
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    font-weight: 700
+    margin-top: 0.8em
+    margin-bottom: 0.6em
+
+  h1
+    font-size: 32px
+
+  h2
+    font-size: 28px
+
+  h3
+    font-size: 24px
+
+  h4
+    font-size: 21px
+
+  h5
+    font-size: 18px
+
+  h6
+    font-size: 16px
+
+  p
+    margin: 8px 0
+
+  strong
+    font-weight: 700
+
+  li
+    list-style: inside
+    margin: 8px 0
+
+  img
+    width: 100%
+    object-fit: cover
+
+  blockquote
+    position: relative
+    margin: 12px 0
+    padding: 2px 0 2px 20px
+    font-size: 17px
+    font-style: italic
+    line-height: 1.56
+
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      content: ''
+      height: 100%
+      width: 3px
+      border-radius: 4px
+      +theme(background-color, accent)

@@ -1,0 +1,14 @@
+@import src/app/styles/common
+
+.root
+  font-weight: 600
+  line-height: 1.5
+  +theme(color, brightText)
+
+.required
+  &:after
+    display: inline-block
+    padding-left: 4px
+    content: '*'
+    +theme(color, mainRed)
+    font-size: 12px

@@ -1,0 +1,83 @@
+@import src/app/styles/common
+
+.root
+  position: relative
+  height: 100%
+  overflow: hidden
+
+.wrapper
+  width: 100%
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: space-between
+  flex-wrap: wrap
+  gap: 16px
+
+  &.mobile
+    padding-right: 40px
+
+.elem
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  height: 100%
+  gap: 8px
+
+.list:empty
+  display: none
+
+.li
+  list-style: none
+
+.holder
+  padding: 0 16px 16px
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  +theme(background-color, mainBg)
+  transition: 0.3s
+  transform: translateX(100%)
+
+  &.opened
+    transform: translateX(0)
+
+.closeHolder
+  display: flex
+  align-items: baseline
+  justify-content: space-between
+  gap: 8px
+  padding: 0 4px
+
+.menuTitle
+  font-weight: 600
+  font-size: 18px
+
+.menu
+  visibility: hidden
+  position: absolute
+  top: 0
+  right: 0
+  height: 100%
+
+  &.mobile
+    visibility: visible
+
+.menuButton
+  padding: 8px
+  height: 40px
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  border: 0
+  background: none
+  outline: none
+  transition: 0.3s color
+
+  &:hover,
+  &:focus
+    +theme(color, accent)

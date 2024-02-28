@@ -1,0 +1,31 @@
+@import src/app/styles/common
+
+.root
+  position: relative
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  column-gap: 8px
+  row-gap: 4px
+  overflow: hidden
+
+.runner
+  position: absolute
+  top: 8px
+  left: 8px
+  width: 8px
+  height: 8px
+  border-radius: 100%
+  transition: 0.3s
+  transform: translate(-1000px, -1000px)
+  +theme(background-color, accent)
+
+.tab
+  padding: 4px 20px
+  border: 0
+  cursor: pointer
+  background: none
+  outline: none
+  border-radius: 16px
+  +theme(background-color, bg)
+  +theme(color, brightText)

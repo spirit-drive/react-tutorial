@@ -1,5 +1,5 @@
 import { message as messageAntD } from 'antd';
-import i18n from 'src/localization';
+import i18n from 'src/app/localization';
 import { feedbackDev } from './feedbackDev';
 
 type Type = 'unexpected_error' | undefined;

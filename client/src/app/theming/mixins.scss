@@ -1,0 +1,34 @@
+@import "theme";
+
+/**
+Пример использования:
+  body
+    @include theme(color, text)
+
+  создаст
+  html.light body {
+    color: text для светлой темы
+  }
+
+  html.dark body {
+    color: text для темной темы
+  }
+*/
+
+/**
+Как это работает
+@at-root обозначает это написанные свойства не должны быть вложены. То есть не body html.light body, а html.light body
+html:global(.light) #{&} обозначает, что нужно в html с классом light в выбранном элементе (& будет заменен на соответствущий селектор) указать следующие свойства
+последующая строка создает свойства, например color: #ccc
+map-get - встроенная функция sass, которая достает из карты (map) значение переменной $var
+в некоторых свойствах недостаточно указать просто значение, а нужно указать дополнительные данные,
+например theme(border, var, 1px solid) создаст border: 1px solid varValue(тот цвет, который находится в по ключу var)
+*/
+@mixin theme($property, $var, $before:null, $after:null) {
+  @at-root html:global(.light) #{&} {
+    #{$property}: #{$before} #{map-get($light, $var)} #{$after};
+  }
+  @at-root html:global(.dark) #{&} {
+    #{$property}: #{$before} #{map-get($dark, $var)} #{$after};
+  }
+}
