@@ -4,7 +4,6 @@ export const getArray = (length: number) =>
     .map((_, i) => i);
 
 export function* permute(arr: number[], m: number[] = []): Generator<number[]> {
-  // написать свою реализацию
   if (arr.length === 0) {
     yield m;
   } else {
