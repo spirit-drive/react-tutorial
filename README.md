@@ -30,7 +30,7 @@
 
 ### Typescript (часть 1)
 
-[Презентация](https://drive.google.com/file/d/1w_JZM1i3cyF0u-hhsCJ7dUbBNSc5oU2i/view)
+[Презентация](https://docs.google.com/presentation/d/1JbxjZfQeoQcxzKdSsVtoAgUswU3ECbjf_qvn73RxLrQ/edit?usp=sharing)
 
 [Дополнительная песочница](https://codesandbox.io/s/typescript-1-hfer2p?file=/src/basis.ts:7265-7308)
 
