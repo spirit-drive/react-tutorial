@@ -111,7 +111,7 @@
 
 ### Обзор GraphQL
 
-[Презентация](https://docs.google.com/presentation/d/1Yop3c3ejd29Rd8pzKIM4NU3uB0B6PpJCguaZjK8XXc8)
+[Презентация](https://docs.google.com/presentation/d/1jTirHKENZIdMGvLqS3iFIHvkRTSNU5auLzGSOqazDGo/edit?usp=sharing)
 
 Дополнительные репозитории с полной поддержкой всех возможностей graphql
 
