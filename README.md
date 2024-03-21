@@ -118,6 +118,9 @@
 [Клиент](https://github.com/spirit-drive/graphql-learn-client)
 [Сервер](https://github.com/spirit-drive/graphql-learn-server)
 
+### Аутентификация в современном веб приложении
+[Презентация](https://docs.google.com/presentation/d/1gIFkSmoGI-UVb4vSU3c_Wz6VmmYVElGLsiVilKYPTxM/edit?usp=sharing)
+
 ### Разработка мессенджера Websockets
 
 [Итоговое приложение](http://ac4366b428e4.vps.myjino.ru/)
