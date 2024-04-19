@@ -105,6 +105,10 @@
 
 [Презентация](https://docs.google.com/presentation/d/1JOhui3BtRGvvcf4gsJC9Y3xCEc7b_4G_5IicWNpyoUw)
 
+### React Query, Redux-toolkit-query
+
+[Презентация](https://docs.google.com/presentation/d/1wkF44NH7iCEo_iQ2Wd0_lg54B7ytH3rJMD5pErpX5PA/edit?usp=sharing)
+
 ### WebSockets and WebWorkers
 
 [Презентация](https://docs.google.com/presentation/d/1wMYXPywhz2f6BrjlXCTR--OBo4ACLUrAoMIh-jMO-W4)
