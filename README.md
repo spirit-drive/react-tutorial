@@ -22,88 +22,88 @@
 
 ### Введение в современную frontend разработку (по желанию)
 
-[Презентация](https://docs.google.com/presentation/d/1Az2Y5ltjlz-YK2dyfya2ReMhum1SiomGGyM5m5b3XPU/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/1ljvQ6ysNzdh4CT-MbMSeLuFj_Nmy4iDulJrqXCjdiJ4/edit?usp=sharing)
 
 ### Установка и настройка React
 
-[Презентация](https://docs.google.com/presentation/d/108itUI1XneXKAomV7yz1waXqU9M-Yi1Yc16GEaqHzC4)
+[Презентация](https://docs.google.com/presentation/d/168acgd_80dpfBqW3Lqp2LJSqBNGrgsXdASNd6Z3dwWA/edit?usp=sharing)
 
 ### Typescript (часть 1)
 
-[Презентация](https://docs.google.com/presentation/d/1IdpDq4LGlEzm640pfKl4tR93nn2YNfuQ1-7bjmsZQB4/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/12xqTFTntMrsy-FyjS01ivg0sbYAFKGEV9hfvBCQGuD4/edit?usp=sharing)
 
 [Дополнительная песочница](https://codesandbox.io/s/typescript-1-hfer2p?file=/src/basis.ts:7265-7308)
 
 ### Основы ReactJS. Компоненты
 
-[Презентация](https://docs.google.com/presentation/d/1tdi4AZEQFLGEEX1jxD8Fu9axomDrm8grZws9YrLrumo/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/1cIKdir5jLDDq-VAmlBgk7Px_hPJy-Ge6FJzvjWTiFhw/edit?usp=sharing)
 
 ### JSX + CSS
 
-[Презентация](https://docs.google.com/presentation/d/1uO_wIaDPWBZ2grKwuAaaizT2zJx1lYHAsqUEhC9Gw30/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/1FBFNmW10dsG94R_C30eVbp_cHTjSwULCI1qiud5RK0A/edit?usp=sharing)
 
 ### Typescript (2)
 
-[Презентация](https://docs.google.com/presentation/d/1yfosShq5k7WgzEjOa48nXgMnpl_Bo_BYOnEKH2oVgcc)
+[Презентация](https://docs.google.com/presentation/d/1qSZ2oYy_LTyc6khYCv_BcIBn3MiLWUreT_cXEmWUCgY/edit?usp=sharing)
 
 ### React lifecycle
 
-[Презентация](https://docs.google.com/presentation/d/1HGabKyPoJaqCiZguRh0gsvDQAdTUGOpRDvDMEzUkRJc)
+[Презентация](https://docs.google.com/presentation/d/1dsegEyTIbglnGO_85uDk3LH0PwEVrFF1dpTbwL3y7QA/edit?usp=sharing)
 
 ### React hooks
 
-[Презентация](https://docs.google.com/presentation/d/1xnPdj7dxzVuBbhExhaJY6Z72YDQWZvFlOGFppyBd4GU)
+[Презентация](https://docs.google.com/presentation/d/18a9RHLztuRKOmBTmuTTAuUlIC_hzBvmUxWAyjvkxuAk/edit?usp=sharing)
 
 ### Списки, ключи, события, порталы
 
-[Презентация](https://docs.google.com/presentation/d/1cOY0cXinh7pFqeL1c-XcUi847QdDCLh7gYADNVPOxl0)
+[Презентация](https://docs.google.com/presentation/d/1WysmnSMBeFZsFGgJ3-iGft2Qh3o03I6xTtbwUX67Kl8/edit?usp=sharing)
 
 ### Формы, formik, react-hooks-form
 
-[Презентация](https://docs.google.com/presentation/d/1IyTeMVB174qXLex4yCYlDyLoDy4wMD33xOWdCaWDhq8/edit#slide=id.g2948d4f1a98_0_0)
+[Презентация](https://docs.google.com/presentation/d/1ic2TA8m1B78qOS_WyKz45hTISLySIKViaqeyFkJq6Qs/edit?usp=sharing)
 
 ### MVC, SOLID in React. Архитектура
 
-[Презентация](https://docs.google.com/presentation/d/1b1H_y1KK3pd9LcPI7G4x6_xY8EOsfcjCUI3AvSyTePM/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/13LTB0dyDBlKC40ETwNx53H6RMxBn-As_D509CLPU5-E/edit?usp=sharing)
 
 ### Основы функционального программирования
 
-[Презентация](https://docs.google.com/presentation/d/1iAIi4f5cWeFSjARisPeqNGJeFXu5cFGg-Cc5TWnhu5w)
+[Презентация](https://docs.google.com/presentation/d/1gfuCWyH47aBCi9nL9T9t-FnybNPPZt5FrjRuXFNKjbU/edit?usp=sharing)
 
 ### React patterns
 
-[Презентация](https://docs.google.com/presentation/d/1lPNxbBZaGeMV-5JuTYaVJmukx4Ip2KR1ZuOn6dp5e5E)
+[Презентация](https://docs.google.com/presentation/d/1FEQ2bOqhYzvpFdVtx-B2pQPrT-_wBj_f3lCmcurgkFQ/edit?usp=sharing)
 
 ### Jest и тестирование
 
-[Презентация](https://docs.google.com/presentation/d/1CPNQYkx0Zv6BDrjuNmWN8GInU-65PWpW1BxmD9eG4V0)
+[Презентация](https://docs.google.com/presentation/d/12uSy5L6SNxePdOioFQLKlkRfnnA6LC2n4QAPUpUGg0c/edit?usp=sharing)
 
 ### React-Testing-Library
 
-[Презентация](https://docs.google.com/presentation/d/1ca5XP4ttnKljGfPc5f0iHrA0tJX4ts5nQGpxslf9qfk)
+[Презентация](https://docs.google.com/presentation/d/1u2U2wRWhNHG8bMRRbv2l8snZlz4qczfao7QD-3LwKDE/edit?usp=sharing)
 
 ### React router
 
-[Презентация](https://docs.google.com/presentation/d/1p0POGR-P0hBxbu9onlKIVtHe3ugKTJnuXG7qmq4fJE4)
+[Презентация](https://docs.google.com/presentation/d/1CIHVVkV6rvuitS5ctiIwBuYmb-oViqhAslB27rV6s2Y/edit?usp=sharing)
 
 ### Redux toolkit
 
-[Презентация](https://docs.google.com/presentation/d/1-bioh1yGPXfuFGbPGJC7kskAvv9D_X2dL1jBt51q4o0/edit)
+[Презентация](https://docs.google.com/presentation/d/1buXGSxK4LroGRyifGOGty6TX3BzyU7GyVq_I7XX_Z9c/edit?usp=sharing)
 [Репозиторий](https://github.com/spirit-drive/redux-example/tree/main)
 
 ### Redux thunk
 
-[Презентация](https://docs.google.com/presentation/d/1MX3z_GTd2I1L1O8ITFqKABSZtXdWYxb4zZzkFidUNjk/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/19luVFowlHECeMyhrPuUeApj6afYH5P2qtcMVVo8BE2A/edit?usp=sharing)
 [Репозиторий](https://github.com/spirit-drive/redux-thunk-example)
 
 ### Redux-Saga
 
-[Презентация](https://docs.google.com/presentation/d/1PpnH6FPDzYrzFK3Vrpvz9gy7bBXgARwLK6yekyEDzZk/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/1_8oRVXGRhvkzXJ4_h_sdw6GPegKxwUYHlPijPIN_AE0/edit?usp=sharing)
 [Репозиторий](https://github.com/spirit-drive/redux-saga-example)
 
 ### HTTP and REST API
 
-[Презентация](https://docs.google.com/presentation/d/1JOhui3BtRGvvcf4gsJC9Y3xCEc7b_4G_5IicWNpyoUw)
+[Презентация](https://docs.google.com/presentation/d/105eAORBcoOIBLRozJjnD865QSvUo6_jYw12zRYOU4MA/edit?usp=sharing)
 
 ### React Query, Redux-toolkit-query
 
@@ -111,11 +111,11 @@
 
 ### WebSockets and WebWorkers
 
-[Презентация](https://docs.google.com/presentation/d/1wMYXPywhz2f6BrjlXCTR--OBo4ACLUrAoMIh-jMO-W4)
+[Презентация](https://docs.google.com/presentation/d/1x_CWEJcePhG2GnCbNhfQYyiusLFqZU7AT0j-VLiD1Sk/edit?usp=sharing)
 
 ### Обзор GraphQL
 
-[Презентация](https://docs.google.com/presentation/d/1jTirHKENZIdMGvLqS3iFIHvkRTSNU5auLzGSOqazDGo/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/1pLNojygCtBtYOpn9RxE_BLLblbMNaIr60rGPnufuLW4/edit?usp=sharing)
 
 Дополнительные репозитории с полной поддержкой всех возможностей graphql
 
