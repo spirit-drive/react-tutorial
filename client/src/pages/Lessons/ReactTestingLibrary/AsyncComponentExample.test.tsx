@@ -25,7 +25,7 @@ describe('AsyncComponent', () => {
 
     // Проверяем, что данные еще не отрисованы
     expect(queryByText('Loading...')).toBeInTheDocument();
-    expect(queryByText('Data:')).not.toBeInTheDocument();
+    expect(queryByText('Data: ')).not.toBeInTheDocument();
 
     // Ждем загрузки данных и проверяем, что данные отрисованы
     expect(await findByText('Data: Hello, World!')).toBeInTheDocument();
@@ -38,7 +38,7 @@ describe('AsyncComponent', () => {
 
     // Проверяем, что данные еще не отрисованы
     expect(queryByText('Loading...')).toBeInTheDocument();
-    expect(queryByText('Data:')).not.toBeInTheDocument();
+    expect(queryByText('Data: ')).not.toBeInTheDocument();
 
     // Ждем загрузки данных и проверяем, что данные отрисованы
     await waitFor(
@@ -55,7 +55,7 @@ describe('AsyncComponent', () => {
 
     // Проверяем, что данные еще не отрисованы
     expect(queryByText('Loading...')).toBeInTheDocument();
-    expect(queryByText('Data:')).not.toBeInTheDocument();
+    expect(queryByText('Data: ')).not.toBeInTheDocument();
 
     // Ждем загрузки данных и проверяем, что данные отрисованы
     await waitForElementToBeRemoved(() => queryByText('Loading...'), { timeout: 2000 });

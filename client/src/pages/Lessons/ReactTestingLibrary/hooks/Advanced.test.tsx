@@ -14,7 +14,16 @@ export function useCounter(initialValue = 0) {
   const step = useContext(CounterStepContext);
   const increment = useCallback(() => setCount((x) => x + step), [step]);
   const reset = useCallback(() => setCount(initialValue), [initialValue]);
-  const incrementAsync = useCallback(() => setTimeout(increment, 100), [increment]);
+  const incrementAsync = useCallback(
+    () =>
+      new Promise((resolve) => {
+        setTimeout(() => {
+          increment();
+          resolve(null);
+        }, 100);
+      }),
+    [increment]
+  );
   return { count, increment, reset, incrementAsync };
 }
 
@@ -39,6 +48,7 @@ describe('advanced hooks testing', () => {
     expect(result.current).toEqual({ name: 'Alice' });
     rerender();
     expect(result.current).toEqual({ name: undefined });
+    expect(result.current).toStrictEqual({});
   });
 
   test('should increment counter after delay', async () => {
@@ -47,5 +57,14 @@ describe('advanced hooks testing', () => {
     result.current.incrementAsync();
 
     await waitFor(() => expect(result.current.count).toBe(1));
+  });
+
+  test('should increment counter after delay 2', async () => {
+    const { result } = renderHook(() => useCounter());
+
+    await act(async () => {
+      await result.current.incrementAsync();
+    });
+    expect(result.current.count).toBe(1);
   });
 });
