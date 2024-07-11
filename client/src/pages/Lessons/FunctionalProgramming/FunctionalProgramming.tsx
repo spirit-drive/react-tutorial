@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import cn from 'clsx';
+import { Input } from 'antd';
 import { compose } from 'src/utils/compose';
 import s from './FunctionalProgramming.sass';
 
@@ -24,7 +25,16 @@ const removeFewZerosInStart = (v: string) => v.replace(/^0+/, '');
 const anonymous = universalFormat(/\w/g);
 
 const prepare = compose(removeMinus, removeFewZerosInStart, anonymous, getOnlyDigits);
+
 const prepare1 = compose(removeMinus, removeFewZerosInStart, universalFormat(/\w/g), getOnlyDigits);
+
+// const prepare0 = compose(
+//   (a: boolean) => a,
+//   (a: number) => a,
+//   (a: string) => ({ a, b, c })
+// );
+
+// const test = prepare1('', 2, 3);
 
 const prepare2 = (string: string) => {
   const _1 = getOnlyDigits(string);
@@ -32,6 +42,8 @@ const prepare2 = (string: string) => {
   const _3 = removeFewZerosInStart(_2);
   return removeMinus(_3);
 };
+
+const prepare3 = (string: string) => removeMinus(removeFewZerosInStart(anonymous(getOnlyDigits(string))));
 
 // console.log(prepare('000asde000dew23000423d- --wer34r--few000'));
 // console.log(prepare1('000asde000dew23000423d- --wer34r--few000'));
@@ -42,7 +54,12 @@ export const FunctionalProgramming = ({ className }: FunctionalProgrammingProps)
 
   return (
     <div className={cn(s.root, className)}>
-      <input type="text" value={value} onChange={(e) => onChange(prepare(e.target.value))} />
+      <Input
+        value={value}
+        onChange={(e) => {
+          onChange(prepare2(e.target.value));
+        }}
+      />
     </div>
   );
 };
