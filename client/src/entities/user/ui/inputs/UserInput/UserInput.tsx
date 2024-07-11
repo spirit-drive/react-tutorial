@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import cn from 'clsx';
 import { Input } from 'antd';
-import { UserCoverInput } from 'src/entities/user/inputs/UserCoverInput';
-import { User } from 'src/entities/user/views/UserCard/types';
+import { UserCoverInput } from 'src/entities/user/ui/inputs/UserCoverInput';
+import { User } from 'src/entities/user/ui/views/UserCard/types';
 import s from './UserInput.sass';
 
 export type UserInputProps = {

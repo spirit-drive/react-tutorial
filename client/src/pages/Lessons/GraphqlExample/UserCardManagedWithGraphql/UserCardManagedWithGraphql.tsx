@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import cn from 'clsx';
 import { FetchResult, useMutation } from '@apollo/client';
-import { UserCardManaged, UserCardManagedProps } from 'src/entities/user/views/UserCardManaged';
+import { UserCardManaged, UserCardManagedProps } from 'src/entities/user/ui/views/UserCardManaged';
 import s from './UserCardManagedWithGraphql.sass';
 import {
   EDIT_CUSTOMER,

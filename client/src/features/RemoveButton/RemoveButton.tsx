@@ -4,7 +4,6 @@ import { DeleteOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 
 export type RemoveButtonProps = ButtonProps & {
-  className?: string;
   confirmed: boolean;
   onRemove: () => void;
 };
