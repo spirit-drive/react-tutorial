@@ -68,7 +68,7 @@
 
 ### Основы функционального программирования
 
-[Презентация](https://docs.google.com/presentation/d/1gfuCWyH47aBCi9nL9T9t-FnybNPPZt5FrjRuXFNKjbU/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/1JhUrzp_pjFWKLVwhw0AKCCW-wfE3etxCFxJvtC1dCjM/edit?usp=sharing)
 
 ### React patterns
 
