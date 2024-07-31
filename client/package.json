@@ -55,6 +55,7 @@
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.0",
     "@types/react": "^18.0.33",
     "@types/react-addons-shallow-compare": "^0.14.22",

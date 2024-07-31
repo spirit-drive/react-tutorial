@@ -31,12 +31,14 @@ describe('basic hooks testing', () => {
 
   test('should reset counter to updated initial value', () => {
     let initialValue = 0;
-    const { result, rerender } = renderHook(() => useCounter(initialValue));
+    const { result, rerender } = renderHook(useCounter, {
+      initialProps: initialValue,
+    });
 
     initialValue = 10;
 
     expect(result.current.count).toBe(0);
-    rerender();
+    rerender(initialValue);
     expect(result.current.count).toBe(0);
 
     act(() => {
